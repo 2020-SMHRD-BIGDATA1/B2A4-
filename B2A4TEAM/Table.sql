@@ -1,5 +1,3 @@
-drop table member
-
 create table gae_member(
 mem_name varchar2(100) not null,
 mem_mail varchar2(100),
