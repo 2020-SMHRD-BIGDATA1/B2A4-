@@ -12,7 +12,6 @@ public class MemberDTO {
 
 	public MemberDTO(String mem_name, String mem_mail, String mem_pw, String mem_nick, String mem_gender,
 			String mem_birth, String mem_tel, String mem_addr) {
-		super();
 		this.mem_name = mem_name;
 		this.mem_mail = mem_mail;
 		this.mem_pw = mem_pw;

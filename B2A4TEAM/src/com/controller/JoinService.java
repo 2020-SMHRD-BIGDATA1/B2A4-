@@ -33,11 +33,11 @@ public class JoinService extends HttpServlet {
 		if (cnt > 0) {
 			System.out.println("회원가입 성공");
 			// main.jsp로 이동
-			response.sendRedirect("home.jsp");
+			response.sendRedirect("index.html");
 		} else {
 			System.out.println("회원가입 실패");
 			// join.jsp로 이동
-			response.sendRedirect("home.jsp");
+			response.sendRedirect("index.html");
 		}
 	}
 

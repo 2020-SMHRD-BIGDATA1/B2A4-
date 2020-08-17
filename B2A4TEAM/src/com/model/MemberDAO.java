@@ -78,7 +78,7 @@ public class MemberDAO {
 		getConnction();
 
 		try {
-			String sql = "INSERT INTO gae_member VALUES(?,?,?,?,?,?,?,?)";
+			String sql = "INSERT INTO GAE_MEMBER VALUES(?,?,?,?,?,?,?,?)";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getMem_name());
 			psmt.setString(2, dto.getMem_mail());
@@ -89,7 +89,6 @@ public class MemberDAO {
 			psmt.setString(7, dto.getMem_tel());
 			psmt.setString(8, dto.getMem_addr());
 			cnt = psmt.executeUpdate();
-
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
