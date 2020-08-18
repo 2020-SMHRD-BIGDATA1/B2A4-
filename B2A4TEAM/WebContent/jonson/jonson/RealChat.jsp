@@ -1,3 +1,6 @@
+<%@page import="Chat.model.ChatDTO"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -255,7 +258,19 @@ opacity
 				<div "ng-repeat" = "chat in chats">
 					<li "ng-click" = "uid(chat.id)">
 					<img class="avatar" src="img/yohan.jpg">
-						<p class="username ng-binding">문요한</p>
+						<p class="username ng-binding">문요한<%
+						
+						
+						%></p>
+					</li>
+				</div>
+			</ul>
+			
+			<ul "ng-controller" ="chatCtrl as chat">
+				<div "ng-repeat" ="chat in chats">
+					<li "ng-click" ="uid(chat.id)">
+					<img class="avatar" src="img/yohan.jpg">
+					<p class="username ng-binding">박수진</p>
 					</li>
 				</div>
 			</ul>
@@ -276,6 +291,12 @@ opacity
 					<p class="ng-binding">수진아 안녕? 나는 귀염둥이 요한이라구 해~~~~(찡긋)</p>
 					<img ng-src="https://imgflip.com/s/meme/Futurama-Leela.jpg" src="img/yohan.jpg">
 				</div>
+				
+				<div class="message" ng-repeat = "i in message.messages track by $index">
+					<p class="ng-binding">수진아 안녕? 나는 귀염둥이 요한이라구 해~~~~(찡긋)</p>
+					
+				</div>
+				
 			</div>
 			
 			<footer>

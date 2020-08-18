@@ -14,10 +14,10 @@
 	.controller("chatCtrl", function($scope, $timeout, $rootScope) {
 	  $scope.chats = [{
 	    id: 0,
-	    username: "Leela",
-	    avatar: "https://imgflip.com/s/meme/Futurama-Leela.jpg",
+	    username: "문요한",
+	    avatar: "img/yohan.jpg",
 	    messages: [
-	      "I can explain. It's very valuable. You won't have time for sleeping, soldier, not with all the bed making you'll be doing",
+	      "하이 안녕",
 	      "Who am I making this out to? We'll go deliver this crate like professionals, and then we'll go home",
 	      "No! The cat shelter's on to me. I never loved you",
 	      "Oh Leela! You're the only person I could turn to",
