@@ -12,6 +12,7 @@
 
 <!-- CSS here -->
 <link rel="stylesheet" type="text/css" href="Doc/css/login.css?ver=3">
+<link rel="shortcut icon" type="image/x-icon" href="assets/img/gaelogo.ico">
 <body>
 	<%
 		MemberDTO info = (MemberDTO) session.getAttribute("info");
@@ -20,7 +21,7 @@
 	<div class="container">
 		<div class="login-cover">
 			<div class="loginHead">
-				<a class="navbar-brand" href="home.jsp"><img
+				<a class="navbar-brand" href="index.html"><img
 					src="Doc/img/mainLogo.png" style="width: 200px; height: auto;"></a>
 			</div>
 			<form action="LoginService" method="post" accept-charset="utf-8">
