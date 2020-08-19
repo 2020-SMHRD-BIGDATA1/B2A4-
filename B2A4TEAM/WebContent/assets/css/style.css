@@ -3455,7 +3455,7 @@ hr {
 
 /* line 25, C:/Users/HP/Desktop/jun-2020/283.Personal/assets/scss/_h1-hero.scss */
 .slider-area .hero__caption {
-  text-align: right;
+  text-align: center;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
