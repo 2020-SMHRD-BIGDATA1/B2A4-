@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
 import com.model.MemberDAO;
 import com.model.MemberDTO;
@@ -16,12 +17,11 @@ public class LoginService extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		
+
 		String mail = request.getParameter("mail");
 		String pw = request.getParameter("pw");
 		MemberDTO dto = new MemberDTO(mail, pw);
 		MemberDAO dao = new MemberDAO();
-
 		MemberDTO info = dao.login(dto);
 		if (info != null) {
 			// 로그인 성공시에는 session에 info라는 네임으로 info객체를 저장
