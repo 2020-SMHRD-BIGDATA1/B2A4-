@@ -9,8 +9,9 @@
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="manifest" href="site.webmanifest">
-<link rel="shortcut icon" type="image/x-icon"
-	href="assets/img/gaelogo.ico">
+<link rel="shortcut icon" type="image/x-icon" href="img/gaelogo.ico">
+
+
 
 <!-- CSS here -->
 <link rel="stylesheet" href="assets/css/bootstrap.min.css">
