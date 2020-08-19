@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="manifest" href="site.webmanifest">
 <link rel="shortcut icon" type="image/x-icon"
-	href="assets/img/favicon.ico">
+	href="img/gaelogo.ico">
 
 <!-- CSS here -->
 <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -54,7 +54,7 @@
 						class="menu-wrapper d-flex align-items-center justify-content-between">
 						<!-- Logo -->
 						<div class="logo">
-							<a href="index.jsp"><img src="img/yohan.jpg"
+							<a href="index.jsp"><img src="img/gaelogo.ico"
 								alt=""></a>
 						</div>
 						<!-- Main-menu -->
