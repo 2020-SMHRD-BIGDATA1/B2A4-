@@ -15,7 +15,7 @@ public class JoinService extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		request.setCharacterEncoding("EUC-KR");
+		request.setCharacterEncoding("UTF-8");
 
 		String name = request.getParameter("mem_name");
 		String mail = request.getParameter("mem_mail");
@@ -32,12 +32,14 @@ public class JoinService extends HttpServlet {
 
 		if (cnt > 0) {
 			System.out.println("회원가입 성공");
+			System.out.println(name);
+			
 			// main.jsp로 이동
-			response.sendRedirect("index.html");
+			response.sendRedirect("index.jsp");
 		} else {
 			System.out.println("회원가입 실패");
 			// join.jsp로 이동
-			response.sendRedirect("index.html");
+			response.sendRedirect("index.jsp");
 		}
 	}
 

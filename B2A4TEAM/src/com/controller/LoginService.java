@@ -15,7 +15,7 @@ import com.model.MemberDTO;
 public class LoginService extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.setCharacterEncoding("EUC-KR");
+		request.setCharacterEncoding("UTF-8");
 		
 		String mail = request.getParameter("mail");
 		String pw = request.getParameter("pw");
@@ -27,7 +27,7 @@ public class LoginService extends HttpServlet {
 			// 로그인 성공시에는 session에 info라는 네임으로 info객체를 저장
 			HttpSession session = request.getSession();
 			session.setAttribute("info", info);
-			response.sendRedirect("index.html");
+			response.sendRedirect("index.jsp");
 		}else {
 			response.sendRedirect("loginForm.jsp");
 		}

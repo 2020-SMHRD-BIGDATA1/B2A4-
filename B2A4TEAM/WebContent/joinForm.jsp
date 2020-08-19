@@ -14,7 +14,7 @@
 	<div class="container">
 		<div class="join-cover">
 			<div class="joinHead">
-				<a class="navbar-brand" href="index.html"><img
+				<a class="navbar-brand" href="index.jsp"><img
 					src="Doc/img/mainLogo.png" style="width: 200px; height: auto;"></a>
 			</div>
 			<form action="JoinService" method="post" accept-charset="utf-8">

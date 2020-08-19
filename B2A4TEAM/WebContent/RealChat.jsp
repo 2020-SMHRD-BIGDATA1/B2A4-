@@ -1,6 +1,6 @@
 <%@page import="Chat.model.ChatDTO"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -258,7 +258,7 @@ opacity
 				<div "ng-repeat" = "chat in chats">
 					<li "ng-click" = "uid(chat.id)">
 					<img class="avatar" src="img/yohan.jpg">
-						<p class="username ng-binding">¹®¿äÇÑ<%
+						<p class="username ng-binding">ë¬¸ìš”í•œ<%
 						
 						
 						%></p>
@@ -270,7 +270,7 @@ opacity
 				<div "ng-repeat" ="chat in chats">
 					<li "ng-click" ="uid(chat.id)">
 					<img class="avatar" src="img/yohan.jpg">
-					<p class="username ng-binding">¹Ú¼öÁø</p>
+					<p class="username ng-binding">ë°•ìˆ˜ì§„</p>
 					</li>
 				</div>
 			</ul>
@@ -285,15 +285,15 @@ opacity
 				<p></p>
 				<h4>Loading</h4>
 			</div>
-		<!-- ¿©±â ¹Ø¿¡´Â Ã¤ÆÃÃ¢ -->
+		<!-- ì—¬ê¸° ë°‘ì—ëŠ” ì±„íŒ…ì°½ -->
 			<div class="message-wrap" ng-repeat = "message in chats" ng-show="value==message.id">
 				<div class="message" ng-repeat = "i in message.messages track by $index">
-					<p class="ng-binding">¼öÁø¾Æ ¾È³ç? ³ª´Â ±Í¿°µÕÀÌ ¿äÇÑÀÌ¶ó±¸ ÇØ~~~~(Âô±ß)</p>
+					<p class="ng-binding">ìˆ˜ì§„ì•„ ì•ˆë…•? ë‚˜ëŠ” ê·€ì—¼ë‘¥ì´ ìš”í•œì´ë¼êµ¬ í•´~~~~(ì°¡ê¸‹)</p>
 					<img ng-src="https://imgflip.com/s/meme/Futurama-Leela.jpg" src="img/yohan.jpg">
 				</div>
 				
 				<div class="message" ng-repeat = "i in message.messages track by $index">
-					<p class="ng-binding">¼öÁø¾Æ ¾È³ç? ³ª´Â ±Í¿°µÕÀÌ ¿äÇÑÀÌ¶ó±¸ ÇØ~~~~(Âô±ß)</p>
+					<p class="ng-binding">ìˆ˜ì§„ì•„ ì•ˆë…•? ë‚˜ëŠ” ê·€ì—¼ë‘¥ì´ ìš”í•œì´ë¼êµ¬ í•´~~~~(ì°¡ê¸‹)</p>
 					
 				</div>
 				
