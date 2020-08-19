@@ -1,9 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
+<link rel="shortcut icon" type="image/x-icon"
+	href="assets/img/gaelogo.ico">
 <style>
 #mapwrap {
 	position: relative;
@@ -25,7 +27,7 @@
 	height: 50px;
 	z-index: 10;
 	border: 1px solid black;
-	font-family: 'Malgun Gothic', '¸¼Àº °íµñ', sans-serif;
+	font-family: 'Malgun Gothic', 'ë§‘ì€ ê³ ë”•', sans-serif;
 	font-size: 12px;
 	text-align: center;
 	background-color: #fff;
@@ -73,17 +75,17 @@
 </head>
 <body>
 	<div id="mapwrap">
-		<!-- Áöµµ°¡ Ç¥½ÃµÉ div -->
+		<!-- ì§€ë„ê°€ í‘œì‹œë  div -->
 		<div id="map" style="width: 800px; height: 800px;"></div>
-		<!-- Áöµµ À§¿¡ Ç¥½ÃµÉ ¸¶Ä¿ Ä«Å×°í¸® -->
+		<!-- ì§€ë„ ìœ„ì— í‘œì‹œë  ë§ˆì»¤ ì¹´í…Œê³ ë¦¬ -->
 		<div class="category">
 			<ul>
 				<li id="coffeeMenu" onclick="changeMarker('coffee')"><span
-					class="ico_comm ico_coffee"></span> Ä¿ÇÇ¼ó</li>
+					class="ico_comm ico_coffee"></span> ì»¤í”¼ìˆ</li>
 				<li id="storeMenu" onclick="changeMarker('store')"><span
-					class="ico_comm ico_store"></span> ÆíÀÇÁ¡</li>
+					class="ico_comm ico_store"></span> í¸ì˜ì </li>
 				<li id="carparkMenu" onclick="changeMarker('carpark')"><span
-					class="ico_comm ico_carpark"></span> ÁÖÂ÷Àå</li>
+					class="ico_comm ico_carpark"></span> ì£¼ì°¨ì¥</li>
 			</ul>
 		</div>
 	</div>
@@ -91,16 +93,16 @@
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ffc49ea565e2fbec610df4e61bf40f65"></script>
 	<script>
-		var mapContainer = document.getElementById('map'), // Áöµµ¸¦ Ç¥½ÃÇÒ div  
+		var mapContainer = document.getElementById('map'), // ì§€ë„ë¥¼ í‘œì‹œí•  div  
 		mapOption = {
-			center : new kakao.maps.LatLng(35.111108, 126.877574), // ÁöµµÀÇ Áß½ÉÁÂÇ¥ 
+			center : new kakao.maps.LatLng(35.111108, 126.877574), // ì§€ë„ì˜ ì¤‘ì‹¬ì¢Œí‘œ 
 			level : 3
-		// ÁöµµÀÇ È®´ë ·¹º§ 
+		// ì§€ë„ì˜ í™•ëŒ€ ë ˆë²¨ 
 		};
 
-		var map = new kakao.maps.Map(mapContainer, mapOption); // Áöµµ¸¦ »ı¼ºÇÕ´Ï´Ù
+		var map = new kakao.maps.Map(mapContainer, mapOption); // ì§€ë„ë¥¼ ìƒì„±í•©ë‹ˆë‹¤
 
-		// Ä¿ÇÇ¼ó ¸¶Ä¿°¡ Ç¥½ÃµÉ ÁÂÇ¥ ¹è¿­ÀÔ´Ï´Ù
+		// ì»¤í”¼ìˆ ë§ˆì»¤ê°€ í‘œì‹œë  ì¢Œí‘œ ë°°ì—´ì…ë‹ˆë‹¤
 		var coffeePositions = [
 				new kakao.maps.LatLng(37.499590490909185, 127.0263723554437),
 				new kakao.maps.LatLng(37.499427948430814, 127.02794423197847),
@@ -110,7 +112,7 @@
 				new kakao.maps.LatLng(37.49629291770947, 127.02587362608637),
 				new kakao.maps.LatLng(37.49754540521486, 127.02546694890695) ];
 
-		// ÆíÀÇÁ¡ ¸¶Ä¿°¡ Ç¥½ÃµÉ ÁÂÇ¥ ¹è¿­ÀÔ´Ï´Ù
+		// í¸ì˜ì  ë§ˆì»¤ê°€ í‘œì‹œë  ì¢Œí‘œ ë°°ì—´ì…ë‹ˆë‹¤
 		var storePositions = [
 				new kakao.maps.LatLng(37.497535461505684, 127.02948149502778),
 				new kakao.maps.LatLng(37.49671536281186, 127.03020491448352),
@@ -120,7 +122,7 @@
 				new kakao.maps.LatLng(37.49932849491523, 127.02935780247945),
 				new kakao.maps.LatLng(37.49996818951873, 127.02943721562295) ];
 
-		// ÁÖÂ÷Àå ¸¶Ä¿°¡ Ç¥½ÃµÉ ÁÂÇ¥ ¹è¿­ÀÔ´Ï´Ù
+		// ì£¼ì°¨ì¥ ë§ˆì»¤ê°€ í‘œì‹œë  ì¢Œí‘œ ë°°ì—´ì…ë‹ˆë‹¤
 		var carparkPositions = [
 				new kakao.maps.LatLng(37.49966168796031, 127.03007039430118),
 				new kakao.maps.LatLng(37.499463762912974, 127.0288828824399),
@@ -130,24 +132,24 @@
 				new kakao.maps.LatLng(37.49813096097184, 127.02591949495914),
 				new kakao.maps.LatLng(37.497680616783086, 127.02518427952202) ];
 
-		var markerImageSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/category.png'; // ¸¶Ä¿ÀÌ¹ÌÁöÀÇ ÁÖ¼ÒÀÔ´Ï´Ù. ½ºÇÁ¶óÀÌÆ® ÀÌ¹ÌÁö ÀÔ´Ï´Ù
-		coffeeMarkers = [], // Ä¿ÇÇ¼ó ¸¶Ä¿ °´Ã¼¸¦ °¡Áö°í ÀÖÀ» ¹è¿­ÀÔ´Ï´Ù
-		storeMarkers = [], // ÆíÀÇÁ¡ ¸¶Ä¿ °´Ã¼¸¦ °¡Áö°í ÀÖÀ» ¹è¿­ÀÔ´Ï´Ù
-		carparkMarkers = []; // ÁÖÂ÷Àå ¸¶Ä¿ °´Ã¼¸¦ °¡Áö°í ÀÖÀ» ¹è¿­ÀÔ´Ï´Ù
+		var markerImageSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/category.png'; // ë§ˆì»¤ì´ë¯¸ì§€ì˜ ì£¼ì†Œì…ë‹ˆë‹¤. ìŠ¤í”„ë¼ì´íŠ¸ ì´ë¯¸ì§€ ì…ë‹ˆë‹¤
+		coffeeMarkers = [], // ì»¤í”¼ìˆ ë§ˆì»¤ ê°ì²´ë¥¼ ê°€ì§€ê³  ìˆì„ ë°°ì—´ì…ë‹ˆë‹¤
+		storeMarkers = [], // í¸ì˜ì  ë§ˆì»¤ ê°ì²´ë¥¼ ê°€ì§€ê³  ìˆì„ ë°°ì—´ì…ë‹ˆë‹¤
+		carparkMarkers = []; // ì£¼ì°¨ì¥ ë§ˆì»¤ ê°ì²´ë¥¼ ê°€ì§€ê³  ìˆì„ ë°°ì—´ì…ë‹ˆë‹¤
 
-		createCoffeeMarkers(); // Ä¿ÇÇ¼ó ¸¶Ä¿¸¦ »ı¼ºÇÏ°í Ä¿ÇÇ¼ó ¸¶Ä¿ ¹è¿­¿¡ Ãß°¡ÇÕ´Ï´Ù
-		createStoreMarkers(); // ÆíÀÇÁ¡ ¸¶Ä¿¸¦ »ı¼ºÇÏ°í ÆíÀÇÁ¡ ¸¶Ä¿ ¹è¿­¿¡ Ãß°¡ÇÕ´Ï´Ù
-		createCarparkMarkers(); // ÁÖÂ÷Àå ¸¶Ä¿¸¦ »ı¼ºÇÏ°í ÁÖÂ÷Àå ¸¶Ä¿ ¹è¿­¿¡ Ãß°¡ÇÕ´Ï´Ù
+		createCoffeeMarkers(); // ì»¤í”¼ìˆ ë§ˆì»¤ë¥¼ ìƒì„±í•˜ê³  ì»¤í”¼ìˆ ë§ˆì»¤ ë°°ì—´ì— ì¶”ê°€í•©ë‹ˆë‹¤
+		createStoreMarkers(); // í¸ì˜ì  ë§ˆì»¤ë¥¼ ìƒì„±í•˜ê³  í¸ì˜ì  ë§ˆì»¤ ë°°ì—´ì— ì¶”ê°€í•©ë‹ˆë‹¤
+		createCarparkMarkers(); // ì£¼ì°¨ì¥ ë§ˆì»¤ë¥¼ ìƒì„±í•˜ê³  ì£¼ì°¨ì¥ ë§ˆì»¤ ë°°ì—´ì— ì¶”ê°€í•©ë‹ˆë‹¤
 
-		changeMarker('coffee'); // Áöµµ¿¡ Ä¿ÇÇ¼ó ¸¶Ä¿°¡ º¸ÀÌµµ·Ï ¼³Á¤ÇÕ´Ï´Ù    
+		changeMarker('coffee'); // ì§€ë„ì— ì»¤í”¼ìˆ ë§ˆì»¤ê°€ ë³´ì´ë„ë¡ ì„¤ì •í•©ë‹ˆë‹¤    
 
-		// ¸¶Ä¿ÀÌ¹ÌÁöÀÇ ÁÖ¼Ò¿Í, Å©±â, ¿É¼ÇÀ¸·Î ¸¶Ä¿ ÀÌ¹ÌÁö¸¦ »ı¼ºÇÏ¿© ¸®ÅÏÇÏ´Â ÇÔ¼öÀÔ´Ï´Ù
+		// ë§ˆì»¤ì´ë¯¸ì§€ì˜ ì£¼ì†Œì™€, í¬ê¸°, ì˜µì…˜ìœ¼ë¡œ ë§ˆì»¤ ì´ë¯¸ì§€ë¥¼ ìƒì„±í•˜ì—¬ ë¦¬í„´í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤
 		function createMarkerImage(src, size, options) {
 			var markerImage = new kakao.maps.MarkerImage(src, size, options);
 			return markerImage;
 		}
 
-		// ÁÂÇ¥¿Í ¸¶Ä¿ÀÌ¹ÌÁö¸¦ ¹Ş¾Æ ¸¶Ä¿¸¦ »ı¼ºÇÏ¿© ¸®ÅÏÇÏ´Â ÇÔ¼öÀÔ´Ï´Ù
+		// ì¢Œí‘œì™€ ë§ˆì»¤ì´ë¯¸ì§€ë¥¼ ë°›ì•„ ë§ˆì»¤ë¥¼ ìƒì„±í•˜ì—¬ ë¦¬í„´í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤
 		function createMarker(position, image) {
 			var marker = new kakao.maps.Marker({
 				position : position,
@@ -157,7 +159,7 @@
 			return marker;
 		}
 
-		// Ä¿ÇÇ¼ó ¸¶Ä¿¸¦ »ı¼ºÇÏ°í Ä¿ÇÇ¼ó ¸¶Ä¿ ¹è¿­¿¡ Ãß°¡ÇÏ´Â ÇÔ¼öÀÔ´Ï´Ù
+		// ì»¤í”¼ìˆ ë§ˆì»¤ë¥¼ ìƒì„±í•˜ê³  ì»¤í”¼ìˆ ë§ˆì»¤ ë°°ì—´ì— ì¶”ê°€í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤
 		function createCoffeeMarkers() {
 
 			for (var i = 0; i < coffeePositions.length; i++) {
@@ -167,24 +169,24 @@
 					spriteSize : new kakao.maps.Size(36, 98)
 				};
 
-				// ¸¶Ä¿ÀÌ¹ÌÁö¿Í ¸¶Ä¿¸¦ »ı¼ºÇÕ´Ï´Ù
+				// ë§ˆì»¤ì´ë¯¸ì§€ì™€ ë§ˆì»¤ë¥¼ ìƒì„±í•©ë‹ˆë‹¤
 				var markerImage = createMarkerImage(markerImageSrc, imageSize,
 						imageOptions), marker = createMarker(
 						coffeePositions[i], markerImage);
 
-				// »ı¼ºµÈ ¸¶Ä¿¸¦ Ä¿ÇÇ¼ó ¸¶Ä¿ ¹è¿­¿¡ Ãß°¡ÇÕ´Ï´Ù
+				// ìƒì„±ëœ ë§ˆì»¤ë¥¼ ì»¤í”¼ìˆ ë§ˆì»¤ ë°°ì—´ì— ì¶”ê°€í•©ë‹ˆë‹¤
 				coffeeMarkers.push(marker);
 			}
 		}
 
-		// Ä¿ÇÇ¼ó ¸¶Ä¿µéÀÇ Áöµµ Ç¥½Ã ¿©ºÎ¸¦ ¼³Á¤ÇÏ´Â ÇÔ¼öÀÔ´Ï´Ù
+		// ì»¤í”¼ìˆ ë§ˆì»¤ë“¤ì˜ ì§€ë„ í‘œì‹œ ì—¬ë¶€ë¥¼ ì„¤ì •í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤
 		function setCoffeeMarkers(map) {
 			for (var i = 0; i < coffeeMarkers.length; i++) {
 				coffeeMarkers[i].setMap(map);
 			}
 		}
 
-		// ÆíÀÇÁ¡ ¸¶Ä¿¸¦ »ı¼ºÇÏ°í ÆíÀÇÁ¡ ¸¶Ä¿ ¹è¿­¿¡ Ãß°¡ÇÏ´Â ÇÔ¼öÀÔ´Ï´Ù
+		// í¸ì˜ì  ë§ˆì»¤ë¥¼ ìƒì„±í•˜ê³  í¸ì˜ì  ë§ˆì»¤ ë°°ì—´ì— ì¶”ê°€í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤
 		function createStoreMarkers() {
 			for (var i = 0; i < storePositions.length; i++) {
 
@@ -193,24 +195,24 @@
 					spriteSize : new kakao.maps.Size(36, 98)
 				};
 
-				// ¸¶Ä¿ÀÌ¹ÌÁö¿Í ¸¶Ä¿¸¦ »ı¼ºÇÕ´Ï´Ù
+				// ë§ˆì»¤ì´ë¯¸ì§€ì™€ ë§ˆì»¤ë¥¼ ìƒì„±í•©ë‹ˆë‹¤
 				var markerImage = createMarkerImage(markerImageSrc, imageSize,
 						imageOptions), marker = createMarker(storePositions[i],
 						markerImage);
 
-				// »ı¼ºµÈ ¸¶Ä¿¸¦ ÆíÀÇÁ¡ ¸¶Ä¿ ¹è¿­¿¡ Ãß°¡ÇÕ´Ï´Ù
+				// ìƒì„±ëœ ë§ˆì»¤ë¥¼ í¸ì˜ì  ë§ˆì»¤ ë°°ì—´ì— ì¶”ê°€í•©ë‹ˆë‹¤
 				storeMarkers.push(marker);
 			}
 		}
 
-		// ÆíÀÇÁ¡ ¸¶Ä¿µéÀÇ Áöµµ Ç¥½Ã ¿©ºÎ¸¦ ¼³Á¤ÇÏ´Â ÇÔ¼öÀÔ´Ï´Ù
+		// í¸ì˜ì  ë§ˆì»¤ë“¤ì˜ ì§€ë„ í‘œì‹œ ì—¬ë¶€ë¥¼ ì„¤ì •í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤
 		function setStoreMarkers(map) {
 			for (var i = 0; i < storeMarkers.length; i++) {
 				storeMarkers[i].setMap(map);
 			}
 		}
 
-		// ÁÖÂ÷Àå ¸¶Ä¿¸¦ »ı¼ºÇÏ°í ÁÖÂ÷Àå ¸¶Ä¿ ¹è¿­¿¡ Ãß°¡ÇÏ´Â ÇÔ¼öÀÔ´Ï´Ù
+		// ì£¼ì°¨ì¥ ë§ˆì»¤ë¥¼ ìƒì„±í•˜ê³  ì£¼ì°¨ì¥ ë§ˆì»¤ ë°°ì—´ì— ì¶”ê°€í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤
 		function createCarparkMarkers() {
 			for (var i = 0; i < carparkPositions.length; i++) {
 
@@ -219,65 +221,65 @@
 					spriteSize : new kakao.maps.Size(36, 98)
 				};
 
-				// ¸¶Ä¿ÀÌ¹ÌÁö¿Í ¸¶Ä¿¸¦ »ı¼ºÇÕ´Ï´Ù
+				// ë§ˆì»¤ì´ë¯¸ì§€ì™€ ë§ˆì»¤ë¥¼ ìƒì„±í•©ë‹ˆë‹¤
 				var markerImage = createMarkerImage(markerImageSrc, imageSize,
 						imageOptions), marker = createMarker(
 						carparkPositions[i], markerImage);
 
-				// »ı¼ºµÈ ¸¶Ä¿¸¦ ÁÖÂ÷Àå ¸¶Ä¿ ¹è¿­¿¡ Ãß°¡ÇÕ´Ï´Ù
+				// ìƒì„±ëœ ë§ˆì»¤ë¥¼ ì£¼ì°¨ì¥ ë§ˆì»¤ ë°°ì—´ì— ì¶”ê°€í•©ë‹ˆë‹¤
 				carparkMarkers.push(marker);
 			}
 		}
 
-		// ÁÖÂ÷Àå ¸¶Ä¿µéÀÇ Áöµµ Ç¥½Ã ¿©ºÎ¸¦ ¼³Á¤ÇÏ´Â ÇÔ¼öÀÔ´Ï´Ù
+		// ì£¼ì°¨ì¥ ë§ˆì»¤ë“¤ì˜ ì§€ë„ í‘œì‹œ ì—¬ë¶€ë¥¼ ì„¤ì •í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤
 		function setCarparkMarkers(map) {
 			for (var i = 0; i < carparkMarkers.length; i++) {
 				carparkMarkers[i].setMap(map);
 			}
 		}
 
-		// Ä«Å×°í¸®¸¦ Å¬¸¯ÇßÀ» ¶§ type¿¡ µû¶ó Ä«Å×°í¸®ÀÇ ½ºÅ¸ÀÏ°ú Áöµµ¿¡ Ç¥½ÃµÇ´Â ¸¶Ä¿¸¦ º¯°æÇÕ´Ï´Ù
+		// ì¹´í…Œê³ ë¦¬ë¥¼ í´ë¦­í–ˆì„ ë•Œ typeì— ë”°ë¼ ì¹´í…Œê³ ë¦¬ì˜ ìŠ¤íƒ€ì¼ê³¼ ì§€ë„ì— í‘œì‹œë˜ëŠ” ë§ˆì»¤ë¥¼ ë³€ê²½í•©ë‹ˆë‹¤
 		function changeMarker(type) {
 
 			var coffeeMenu = document.getElementById('coffeeMenu');
 			var storeMenu = document.getElementById('storeMenu');
 			var carparkMenu = document.getElementById('carparkMenu');
 
-			// Ä¿ÇÇ¼ó Ä«Å×°í¸®°¡ Å¬¸¯µÆÀ» ¶§
+			// ì»¤í”¼ìˆ ì¹´í…Œê³ ë¦¬ê°€ í´ë¦­ëì„ ë•Œ
 			if (type === 'coffee') {
 
-				// Ä¿ÇÇ¼ó Ä«Å×°í¸®¸¦ ¼±ÅÃµÈ ½ºÅ¸ÀÏ·Î º¯°æÇÏ°í
+				// ì»¤í”¼ìˆ ì¹´í…Œê³ ë¦¬ë¥¼ ì„ íƒëœ ìŠ¤íƒ€ì¼ë¡œ ë³€ê²½í•˜ê³ 
 				coffeeMenu.className = 'menu_selected';
 
-				// ÆíÀÇÁ¡°ú ÁÖÂ÷Àå Ä«Å×°í¸®´Â ¼±ÅÃµÇÁö ¾ÊÀº ½ºÅ¸ÀÏ·Î ¹Ù²ß´Ï´Ù
+				// í¸ì˜ì ê³¼ ì£¼ì°¨ì¥ ì¹´í…Œê³ ë¦¬ëŠ” ì„ íƒë˜ì§€ ì•Šì€ ìŠ¤íƒ€ì¼ë¡œ ë°”ê¿‰ë‹ˆë‹¤
 				storeMenu.className = '';
 				carparkMenu.className = '';
 
-				// Ä¿ÇÇ¼ó ¸¶Ä¿µé¸¸ Áöµµ¿¡ Ç¥½ÃÇÏµµ·Ï ¼³Á¤ÇÕ´Ï´Ù
+				// ì»¤í”¼ìˆ ë§ˆì»¤ë“¤ë§Œ ì§€ë„ì— í‘œì‹œí•˜ë„ë¡ ì„¤ì •í•©ë‹ˆë‹¤
 				setCoffeeMarkers(map);
 				setStoreMarkers(null);
 				setCarparkMarkers(null);
 
-			} else if (type === 'store') { // ÆíÀÇÁ¡ Ä«Å×°í¸®°¡ Å¬¸¯µÆÀ» ¶§
+			} else if (type === 'store') { // í¸ì˜ì  ì¹´í…Œê³ ë¦¬ê°€ í´ë¦­ëì„ ë•Œ
 
-				// ÆíÀÇÁ¡ Ä«Å×°í¸®¸¦ ¼±ÅÃµÈ ½ºÅ¸ÀÏ·Î º¯°æÇÏ°í
+				// í¸ì˜ì  ì¹´í…Œê³ ë¦¬ë¥¼ ì„ íƒëœ ìŠ¤íƒ€ì¼ë¡œ ë³€ê²½í•˜ê³ 
 				coffeeMenu.className = '';
 				storeMenu.className = 'menu_selected';
 				carparkMenu.className = '';
 
-				// ÆíÀÇÁ¡ ¸¶Ä¿µé¸¸ Áöµµ¿¡ Ç¥½ÃÇÏµµ·Ï ¼³Á¤ÇÕ´Ï´Ù
+				// í¸ì˜ì  ë§ˆì»¤ë“¤ë§Œ ì§€ë„ì— í‘œì‹œí•˜ë„ë¡ ì„¤ì •í•©ë‹ˆë‹¤
 				setCoffeeMarkers(null);
 				setStoreMarkers(map);
 				setCarparkMarkers(null);
 
-			} else if (type === 'carpark') { // ÁÖÂ÷Àå Ä«Å×°í¸®°¡ Å¬¸¯µÆÀ» ¶§
+			} else if (type === 'carpark') { // ì£¼ì°¨ì¥ ì¹´í…Œê³ ë¦¬ê°€ í´ë¦­ëì„ ë•Œ
 
-				// ÁÖÂ÷Àå Ä«Å×°í¸®¸¦ ¼±ÅÃµÈ ½ºÅ¸ÀÏ·Î º¯°æÇÏ°í
+				// ì£¼ì°¨ì¥ ì¹´í…Œê³ ë¦¬ë¥¼ ì„ íƒëœ ìŠ¤íƒ€ì¼ë¡œ ë³€ê²½í•˜ê³ 
 				coffeeMenu.className = '';
 				storeMenu.className = '';
 				carparkMenu.className = 'menu_selected';
 
-				// ÁÖÂ÷Àå ¸¶Ä¿µé¸¸ Áöµµ¿¡ Ç¥½ÃÇÏµµ·Ï ¼³Á¤ÇÕ´Ï´Ù
+				// ì£¼ì°¨ì¥ ë§ˆì»¤ë“¤ë§Œ ì§€ë„ì— í‘œì‹œí•˜ë„ë¡ ì„¤ì •í•©ë‹ˆë‹¤
 				setCoffeeMarkers(null);
 				setStoreMarkers(null);
 				setCarparkMarkers(map);

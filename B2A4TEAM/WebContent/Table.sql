@@ -15,3 +15,5 @@ constraint mem_mail_pk primary key(mem_mail)
 select * from GAE_MEMBER;
 
 insert into GAE_MEMBER values('이지훈','jihoon','1234','gg','man','940715','010-8877-2725','대우');
+
+delete from GAE_MEMBER where mem_mail = 'jihoon2723@naver.com'

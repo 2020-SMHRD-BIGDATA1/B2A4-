@@ -9,11 +9,13 @@
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="Doc/js/jquery-3.5.1.min.js"></script>
 <link rel="stylesheet" type="text/css" href="Doc/css/join.css?ver=2">
+<link rel="shortcut icon" type="image/x-icon"
+	href="assets/img/gaelogo.ico">
 <body>
 	<div class="container">
 		<div class="join-cover">
 			<div class="joinHead">
-				<a class="navbar-brand" href="index.html"><img
+				<a class="navbar-brand" href="index.jsp"><img
 					src="Doc/img/mainLogo.png" style="width: 200px; height: auto;"></a>
 			</div>
 			<form action="JoinService" method="post" accept-charset="utf-8">

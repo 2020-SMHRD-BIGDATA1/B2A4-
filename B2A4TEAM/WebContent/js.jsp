@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
@@ -14,10 +14,10 @@
 	.controller("chatCtrl", function($scope, $timeout, $rootScope) {
 	  $scope.chats = [{
 	    id: 0,
-	    username: "¹®¿äÇÑ",
+	    username: "ë¬¸ìš”í•œ",
 	    avatar: "img/yohan.jpg",
 	    messages: [
-	      "ÇÏÀÌ ¾È³ç",
+	      "í•˜ì´ ì•ˆë…•",
 	      "Who am I making this out to? We'll go deliver this crate like professionals, and then we'll go home",
 	      "No! The cat shelter's on to me. I never loved you",
 	      "Oh Leela! You're the only person I could turn to",

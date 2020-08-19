@@ -1,6 +1,6 @@
 <%@page import="com.model.MemberDTO"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!doctype html>
 <html class="no-js" lang="zxx">
 <head>
@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="manifest" href="site.webmanifest">
 <link rel="shortcut icon" type="image/x-icon"
-	href="assets/img/favicon.ico">
+	href="assets/img/gaelogo.ico">
 
 <!-- CSS here -->
 <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -32,77 +32,7 @@
 
 </head>
 <body>
-	<% MemberDTO info = (MemberDTO) session.getAttribute("info"); %>
-	<!-- ? Preloader Start -->
-	<div id="preloader-active">
-		<div
-			class="preloader d-flex align-items-center justify-content-center">
-			<div class="preloader-inner position-relative">
-				<div class="preloader-circle"></div>
-				<div class="preloader-img pere-text">
-					<img src="assets/img/logo/loder.png" alt="">
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Preloader Start -->
-	<header>
-		<div class="header-area header-transparent">
-			<div class="main-header header-sticky">
-				<div class="container-fluid">
-					<div
-						class="menu-wrapper d-flex align-items-center justify-content-between">
-						<!-- Logo -->
-						<div class="logo">
-							<a href="index.jsp"><img src="img/yohan.jpg"
-								alt=""></a>
-						</div>
-						<!-- Main-menu -->
-						<div class="main-menu f-right d-none d-lg-block">
-							<nav>
-								<ul id="navigation">
-									<li class="active"><a href="index.html">Home</a></li>
-									<li><a href="about.html">Matching</a></li>
-									<li><a href="RealChat.jsp">Chat</a></li>
-									<li><a href="blog.html">Board</a>
-										<ul class="submenu">
-											<li><a href="blog.html">Free</a></li>
-											<li><a href="blog_details.html">ggulTip</a></li>
-											<li><a href="elements.html">Q&A</a></li>
-										</ul></li>
-									<li><a href="contact.html">Map</a></li>
-								</ul>
-							</nav>
-						</div>
-						<!-- Header-btn -->
-						<%
-							if (info == null) {
-						%>
-						<div class="header-info-right d-none d-lg-block">
-							<a href="loginForm.jsp" class="btn header-btn">Login <i class="ti-arrow-right"></i></a>
-						</div>
-						<%
-							} else {
-						%>
-						<div class="header-info-right d-none d-lg-block">
-							<a href="LogoutService" class="btn header-btn">Logout <i class="ti-arrow-right"></i></a>
-							<a href="update.jsp" class="btn header-btn">My Page <i class="ti-arrow-right"></i></a>
-						</div>
-						<%
-							}
-						%>
-						
-
-						<!-- Mobile Menu -->
-						<div class="col-12">
-							<div class="mobile_menu d-block d-lg-none"></div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- Header End -->
-	</header>
+<%@ include file="header.jsp"%>
 	<main>
 		<!--? Hero Area Start-->
 		<div class="slider-area">
@@ -113,10 +43,10 @@
 							<!-- Hero Caption -->
 							<div class="hero__caption">
 								<h1>GaeManda</h1>
-								<p>°³µµ ¾Æ¹«³ª ¸¸³ªÁö ¾Ê´Â´Ù</p>
+								<p>ê°œë„ ì•„ë¬´ë‚˜ ë§Œë‚˜ì§€ ì•ŠëŠ”ë‹¤</p>
 								<p class="cd-headline letters scale">
 									Head of design at <a href="#" class="cd-words-wrapper"> <b
-										class="is-visible">°³¸¸´Ù</b> <b>GaeManda</b> <b>Infix</b> <b>Directory</b>
+										class="is-visible">ê°œë§Œë‹¤</b> <b>GaeManda</b> <b>Infix</b> <b>Directory</b>
 									</a>
 								</p>
 							</div>
