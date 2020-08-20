@@ -287,7 +287,7 @@ main footer a {
 </style>
 </head>
 <%
-	MemberDTO info = (MemberDTO) session.getAttribute("info");
+	MemberDTO info = (MemberDTO) session.getAttribute("info"); //info에 이메일 비번 닉네임 있음
 %>
 <body>
 	<div id="container">
@@ -297,17 +297,27 @@ main footer a {
 			</header>
 			<ul>
 				<li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_01.jpg"
-					alt="">
-					<div> <!-- 상대방 닉 나와야 함 -->
-						<%=info.getMem_nick()%></h2>
+					alt=""><!-- 상대방 닉 나와야 함 -->
+					<div> 
+					
+						<%
+							ChatDAO dao = new ChatDAO();
+							
+						int chat_index = dao.chat_index(info.getMem_nick());
+						
+						
+						
+						%>
+						<%=chat_index%>
+						
+						
+						</h2>
 						<h3>
 							<span class="status orange"></span> offline
 						</h3>
 					</div></li>
 				
-				<li><img
-					src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_03.jpg"
-					alt="">
+				<li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_03.jpg" alt="">
 					<div>
 						<h2>Prénom Nom</h2>
 						<h3>
@@ -327,7 +337,7 @@ main footer a {
 					src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_05.jpg"
 					alt="">
 					<div>
-						<h2>Prénom Nom</h2>
+						<h2>이지훈</h2>
 						<h3>
 							<span class="status orange"></span> offline
 						</h3>
@@ -414,20 +424,20 @@ main footer a {
 				<li class="you">
 					<!-- <div class="triangle"></div> -->
 					<div class="message">
-					<%
-					ChatDAO dao = new ChatDAO();
-					
-					 ArrayList<ChatDTO> list = dao.selectAll();
-					
-					for(int i = 0; i < list.size(); i++){
-					%>
-					
-					<%=list.get(i).getWriter() %>
-					<%=list.get(i).getContent()%>
-					<%=list.get(i).getDate() %>
-					<br>
-					
-					<% }%>
+						<%
+						ChatDAO dao2 = new ChatDAO();
+						
+						 ArrayList<ChatDTO> list = dao2.selectAll();
+						
+						for(int i = 0; i < list.size(); i++){
+						%>
+						
+						<%=list.get(i).getWriter() %>
+						<%=list.get(i).getContent()%>
+						<%=list.get(i).getDate() %>
+						<br>
+						
+						<% }%>
 					</div>
 				</li> 
 				

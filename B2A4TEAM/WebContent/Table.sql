@@ -1,5 +1,5 @@
 drop table gae_member;
-
+-- 회원가입 테이블
 create table gae_member(
 mem_name varchar2(100) not null,
 mem_mail varchar2(100),
@@ -62,3 +62,24 @@ insert into CHAT_CONTENT values(3, '보리맘', '우리 같이 산책시켜요', sysdate);
 insert into CHAT_CONTENT values(3, '뭉치', '보리애긔 넘 귀엽네여', sysdate);
 
 select * from chat_content order by chat_time DESC
+
+--강아지 정보 테이블
+
+create table gae_info (
+mem_mail varchar2(100),
+gae_name varchar2(100),
+gae_age varchar2(100),
+gae_gender varchar2(100),
+gae_kind varchar2(100),
+gae_neu varchar2(100),
+gae_weight varchar2(100),
+gae_type varchar2(100),
+gae_img varchar2(500),
+constraint mail_fk foreign key(mem_mail)
+references gae_member(mem_mail) 
+);
+
+insert into gae_info values('jihoon', '보리', '2', '여자', '푸들', '함','5','소심활발','');
+insert into gae_info values('yohan', '루비', '2', '여자', '비숑', '함','5','소심활발','');
+
+select * from gae_info

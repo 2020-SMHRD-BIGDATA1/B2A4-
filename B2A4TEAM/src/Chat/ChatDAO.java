@@ -73,34 +73,6 @@ public class ChatDAO {
 		return list;
 	}
 	
-	public ArrayList<ChatDTO> selectOne() {
-		ArrayList<ChatDTO> list = new ArrayList<ChatDTO>();
-
-		getConn();
-
-		String sql = "select * from chat_content order by chat_time desc";
-		try {
-			psmt = conn.prepareStatement(sql);
-			rs = psmt.executeQuery();
-			while (rs.next()) {
-				
-				String writer = rs.getString(2);
-				String content = rs.getString(3);
-				String date = rs.getString(4);
-				
-				ChatDTO dto = new ChatDTO(writer, content, date);
-				list.add(dto);
-			}
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}finally {
-			close();
-		}
-
-		return list;
-	}
-	
 	public int input(ChatDTO dto) {
 	
 		getConn();
@@ -121,6 +93,36 @@ public class ChatDAO {
 
 		return cnt;
 	}
+	
+	public int chat_index (String mem_nick) {
+		int chat_index=0; 
+		getConn();
+		
+		try {
+			String sql = "select chat_index from chat_room where user1=? or user2=?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, mem_nick);
+			psmt.setString(2, mem_nick);
+			
+			rs = psmt.executeQuery();
+			
+			while (rs.next()) {
+				chat_index = rs.getInt(1);
+				
+
+			
+			}
+				
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		
+		return chat_index;
+	}
+	
+	
 		
 	}
 	

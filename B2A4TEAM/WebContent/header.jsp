@@ -60,7 +60,7 @@
 							<nav>
 								<ul id="navigation">
 									<li class="active"><a href="index.jsp">Home</a></li>
-									<li><a href="about.jsp">Matching</a></li>
+									<li><a href="matchingMade.jsp">Matching</a></li>
 									<li><a href="chatReset.jsp">Chat</a></li>
 									<li><a href="blog.jsp">Board</a>
 										<ul class="submenu">
