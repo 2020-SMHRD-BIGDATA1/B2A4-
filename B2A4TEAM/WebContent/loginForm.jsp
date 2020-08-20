@@ -21,7 +21,7 @@
 		<div class="login-cover">
 			<div class="loginHead">
 				<a class="navbar-brand" href="index.jsp"><img
-					src="Doc/img/mainLogo.png" style="width: 200px; height: auto;"></a>
+					src="assets/img/mainlogo.png" style="width: 200px; height: auto;"></a>
 			</div>
 			<form action="LoginService" method="post" accept-charset="utf-8">
 				<!-- 로그인을 누르면 Login.jsp파일로 post 방식으로 이동 -->
