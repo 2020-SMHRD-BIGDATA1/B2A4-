@@ -7,6 +7,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+<!-- CSS here -->
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+<link rel="stylesheet" href="assets/css/slicknav.css">
+<link rel="stylesheet" href="assets/css/flaticon.css">
+<link rel="stylesheet" href="assets/css/progressbar_barfiller.css">
+<link rel="stylesheet" href="assets/css/gijgo.css">
+<link rel="stylesheet" href="assets/css/animate.min.css">
+<link rel="stylesheet" href="assets/css/animated-headline.css">
+<link rel="stylesheet" href="assets/css/magnific-popup.css">
+<link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="assets/css/themify-icons.css">
+<link rel="stylesheet" href="assets/css/slick.css">
+<link rel="stylesheet" href="assets/css/nice-select.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 <meta charset="UTF-8">
 <title>채팅하기</title>
 
@@ -16,8 +32,9 @@
 }
 
 body {
-	background-color: #abd9e9;
+	background-color: #FFEFAE ;
 	font-family: Arial;
+	margin-top: 100px;
 }
 
 #container {
@@ -32,7 +49,7 @@ body {
 
 aside {
 	width: 260px;
-	height: 800px;
+	height: 1000px;
 	background-color: #3b3e49;
 	display: inline-block;
 	font-size: 15px;
@@ -286,10 +303,11 @@ main footer a {
 
 </style>
 </head>
-<%
+<%-- <%
 	MemberDTO info = (MemberDTO) session.getAttribute("info"); //info에 이메일 비번 닉네임 있음
-%>
+%>  --%>
 <body>
+	<%@ include file="header.jsp"%>	
 	<div id="container">
 		<aside>
 			<header>
@@ -299,19 +317,12 @@ main footer a {
 				<li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_01.jpg"
 					alt=""><!-- 상대방 닉 나와야 함 -->
 					<div> 
-					
 						<%
-							ChatDAO dao = new ChatDAO();
-							
-						int chat_index = dao.chat_index(info.getMem_nick());
-						
-						
-						
+							ChatDAO dao = new ChatDAO();				
+							int chat_index = dao.chat_index(info.getMem_nick());
 						%>
 						<%=chat_index%>
-						
-						
-						</h2>
+	
 						<h3>
 							<span class="status orange"></span> offline
 						</h3>
@@ -333,41 +344,21 @@ main footer a {
 							<span class="status green"></span> online
 						</h3>
 					</div></li>
-				<li><img
-					src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_05.jpg"
-					alt="">
+				<li>
+					<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_05.jpg" alt="">
 					<div>
 						<h2>이지훈</h2>
 						<h3>
 							<span class="status orange"></span> offline
 						</h3>
-					</div></li>
-				<li><img
-					src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_06.jpg"
-					alt="">
-					<div>
-						<h2>Prénom Nom</h2>
-						<h3>
-							<span class="status green"></span> online
-						</h3>
-					</div></li>
-				<li><img
-					src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_07.jpg"
-					alt="">
-					<div>
-						<h2>Prénom Nom</h2>
-						<h3>
-							<span class="status green"></span> online
-						</h3>
-					</div></li>
+					</div>
+				</li>
 				
 			</ul>
 		</aside>
 		<main>
 			<header>
-				<img
-					src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_01.jpg"
-					alt="">
+				<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_01.jpg" alt="">
 				<div>
 					<h2>
 						<%=info.getMem_nick()%>
@@ -376,9 +367,7 @@ main footer a {
 					</h2>
 					<h3>already 1902 messages</h3>
 				</div>
-				<img
-					src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/ico_star.png"
-					alt="">
+				<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/ico_star.png" alt="">
 			</header>
 			<ul id="chat">
 				<!-- <li class="you">
