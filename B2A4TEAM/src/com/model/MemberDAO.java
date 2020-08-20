@@ -6,6 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import Chat.ChatDTO;
+
 public class MemberDAO {
 	private PreparedStatement psmt = null;
 	private Connection conn = null;
@@ -60,8 +62,11 @@ public class MemberDAO {
 				// 로그인 성공시에만 들어올수 있음
 				String mail = rs.getString(2);
 				String pw = rs.getString(3);
-				info = new MemberDTO(mail, pw);
+				String mem_nick = rs.getString(4);
+				info = new MemberDTO(mail, pw, mem_nick);
+				
 				System.out.println("로그인 성공");
+			
 			} else {
 				System.out.println("로그인 실패");
 			}
@@ -72,6 +77,7 @@ public class MemberDAO {
 		}
 		return info;
 	}
+	
 
 	public int join(MemberDTO dto) {
 		int cnt = 0;

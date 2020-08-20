@@ -11,8 +11,6 @@
 <link rel="manifest" href="site.webmanifest">
 <link rel="shortcut icon" type="image/x-icon" href="img/gaelogo.ico">
 
-
-
 <!-- CSS here -->
 <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
@@ -23,12 +21,12 @@
 <link rel="stylesheet" href="assets/css/animate.min.css">
 <link rel="stylesheet" href="assets/css/animated-headline.css">
 <link rel="stylesheet" href="assets/css/magnific-popup.css">
-<link rel="stylesh
-	eet" href="assets/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
 <link rel="stylesheet" href="assets/css/themify-icons.css">
 <link rel="stylesheet" href="assets/css/slick.css">
 <link rel="stylesheet" href="assets/css/nice-select.css">
 <link rel="stylesheet" href="assets/css/style.css">
+
 
 </head>
 <body>
@@ -46,7 +44,7 @@
 								<p>개도 아무나 만나지 않는다</p>
 								<p class="cd-headline letters scale">
 									Head of design at <a href="#" class="cd-words-wrapper"> <b
-										class="is-visible">개만다</b> <b>GaeManda</b> <b>Infix</b> <b>Directory</b>
+										class="is-visible">반려견</b> <b>친구만들기</b> <b>개만다</b> <b>GaeManDa</b>
 									</a>
 								</p>
 							</div>

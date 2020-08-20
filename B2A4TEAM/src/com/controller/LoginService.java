@@ -20,6 +20,8 @@ public class LoginService extends HttpServlet {
 
 		String mail = request.getParameter("mail");
 		String pw = request.getParameter("pw");
+		//String mem_nick = request.getParameter("mem_nick");
+		
 		MemberDTO dto = new MemberDTO(mail, pw);
 		MemberDAO dao = new MemberDAO();
 		MemberDTO info = dao.login(dto);
