@@ -32,7 +32,7 @@
 
 </head>
 <body>
-<%@ include file="header.jsp"%>
+	<%@ include file="header.jsp"%>
 	<main>
 		<!--? Hero Area Start-->
 		<div class="slider-area">
