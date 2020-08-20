@@ -13,7 +13,6 @@
 <link rel="shortcut icon" type="image/x-icon" href="img/gaelogo.ico">
 
 
-
 <!-- CSS here -->
 <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
@@ -24,8 +23,7 @@
 <link rel="stylesheet" href="assets/css/animate.min.css">
 <link rel="stylesheet" href="assets/css/animated-headline.css">
 <link rel="stylesheet" href="assets/css/magnific-popup.css">
-<link rel="stylesh
-	eet" href="assets/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
 <link rel="stylesheet" href="assets/css/themify-icons.css">
 <link rel="stylesheet" href="assets/css/slick.css">
 <link rel="stylesheet" href="assets/css/nice-select.css">

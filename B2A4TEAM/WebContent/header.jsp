@@ -1,10 +1,8 @@
 <%@page import="com.model.MemberDTO"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
@@ -40,7 +38,7 @@
 								<ul id="navigation">
 									<li class="active"><a href="index.jsp">Home</a></li>
 									<li><a href="about.jsp">Matching</a></li>
-									<li><a href="RealChat.jsp">Chat</a></li>
+									<li><a href="chatReset.jsp">Chat</a></li>
 									<li><a href="blog.jsp">Board</a>
 										<ul class="submenu">
 											<li><a href="blog.jsp">Free</a></li>
