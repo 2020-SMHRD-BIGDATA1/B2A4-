@@ -11,7 +11,6 @@
 <link rel="manifest" href="site.webmanifest">
 <link rel="shortcut icon" type="image/x-icon" href="img/gaelogo.ico">
 
-
 <!-- CSS here -->
 <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
@@ -31,7 +30,7 @@
 
 </head>
 <body>
-<%@ include file="header.jsp"%>
+	<%@ include file="header.jsp"%>
 	<main>
 		<!--? Hero Area Start-->
 		<div class="slider-area">
@@ -44,8 +43,8 @@
 								<h1>GaeManda</h1>
 								<p>개도 아무나 만나지 않는다</p>
 								<p class="cd-headline letters scale">
-									Head of design at <a href="#" class="cd-words-wrapper"> 
-									<b class="is-visible">반려견</b> <b>친구만들기</b> <b>개만다</b> <b>GaeManDa</b>
+									Head of design at <a href="#" class="cd-words-wrapper"> <b
+										class="is-visible">반려견</b> <b>친구만들기</b> <b>개만다</b> <b>GaeManDa</b>
 									</a>
 								</p>
 							</div>

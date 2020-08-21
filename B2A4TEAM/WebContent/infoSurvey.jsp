@@ -20,7 +20,7 @@
 			</div>
 			<br> <br>
 
-			<form action="DogInfoService" method="post" accept-charset="utf-8">
+			<form action="JoinService" method="post" accept-charset="utf-8">
 				<!-- 로그인을 누르면 Login.jsp파일로 post 방식으로 이동 -->
 				<table>
 					<tr class="form-group">
@@ -159,7 +159,7 @@
 					</tr>
 				</table>
 				<div class="button-group">
-					<button type="submit" class="btn-1" value="info">다음 강아지 성향분석 설문으로 이동</button>
+					<button type="submit" class="btn-1" value="info" href="infoSurvey.jsp">다음 강아지 성향분석 설문으로 이동</button>
 				</div>
 			</form>
 		</div>

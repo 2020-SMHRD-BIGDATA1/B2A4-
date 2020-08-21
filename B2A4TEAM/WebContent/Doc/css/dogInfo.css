@@ -10,7 +10,7 @@
 	font-family: "Jua";
 }
 
-html,body {
+html, body {
 	overflow-x: hidden;
 	background-color: #FFEFAE;
 	margin: 0;
@@ -45,6 +45,15 @@ input[type="password"] {
 	resize: both;
 }
 
+select {
+	border: solid 1px #BF905E;
+	border-radius: 5px;
+	width: 300px;
+	height: 35px;
+	box-sizing: border-box;
+	resize: both;
+}
+
 .joinHead {
 	border: 0px solid;
 	width: 100%;
@@ -60,7 +69,7 @@ input[type="password"] {
 	margin: auto;
 	width: 700px;
 	border: solid 2px rgba(130, 119, 23, 0.5);
-	height: 820px;
+	height: 1200px;
 	border-radius: 3px;
 	background: none;
 }
@@ -71,7 +80,7 @@ input[type="password"] {
 
 .form-group {
 	text-align: center;
-	margin: 15px;
+	margin: 25px;
 	margin-left: 50px;
 }
 
@@ -105,6 +114,19 @@ input[type="password"] {
 	padding-right: 0;
 }
 
+.imgTag {
+	width: 180px;
+	padding-right: 0;
+}
+
+#image_container {
+	border: 1px solid;
+	width: 130px;
+	height: 130px;
+	margin-left: 48px;
+	overflow: hidden ;
+}
+
 button, button::after {
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
@@ -115,7 +137,7 @@ button, button::after {
 td {
 	width: 350px;
 	text-align: center;
-	padding-bottom: 25px;
+	padding-bottom: 40px;
 	padding-right: 10px;
 }
 
