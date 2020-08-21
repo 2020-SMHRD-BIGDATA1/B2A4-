@@ -23,16 +23,6 @@ ul a:visited {
 	text-decoration: none;
 }
 
-:root {
-	font-size: 16px;
-	font-family: "Jua"; -
-	-text-primary: #b6b6b6; -
-	-text-secondary: #ececec; -
-	-bg-primary: #23232e; -
-	-bg-secondary: #141418; -
-	-transition-speed: 600ms;
-}
-
 .logoImg {
 	margin: auto;
 	width: 150px;
@@ -93,9 +83,13 @@ ul a:visited {
 	#headCover {
 		display: none;
 	}
+	.logo {
+		position: relative;
+		overflow: hidden;
+	}
 	.logoImg {
-		float: none;
-		padding-left: 58px;
+		width: 40%;
+		height: auto;
 	}
 	.listBox {
 		display: none;
@@ -114,8 +108,13 @@ ul a:visited {
 	#headCover {
 		text-align: left;
 	}
+	.logo {
+		position: relative;
+		overflow: hidden;
+	}
 	.logoImg {
-		margin-left: 5rem;
+		width: 100%;
+		height: auto;
 	}
 	#headCover-m {
 		display: none;
@@ -124,4 +123,3 @@ ul a:visited {
 		display: none;
 	}
 }
-
