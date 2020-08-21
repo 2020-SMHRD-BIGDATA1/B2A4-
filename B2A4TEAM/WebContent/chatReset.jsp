@@ -1,3 +1,4 @@
+<%@page import="Chat.ChatroomDTO"%>
 <%@page import="Chat.ChatDAO"%>
 <%@page import="com.google.gson.Gson"%>
 <%@page import="Chat.ChatDTO"%>
@@ -303,11 +304,24 @@ main footer a {
 
 </style>
 </head>
-<%-- <%
+<%
+	// 내정보
 	MemberDTO info = (MemberDTO) session.getAttribute("info"); //info에 이메일 비번 닉네임 있음
-%>  --%>
+	// 상대방 메일
+	String mem_mail = request.getParameter("mem_mail");
+	
+	ChatDAO dao = new ChatDAO();
+	int cnt = dao.makeRoom(info.getMem_mail(), mem_mail);
+	if(cnt >0){
+		System.out.println("방생성 완료");
+	}else{
+		System.out.println("방생성 실패");
+	}
+	
+
+%> 
 <body>
-	<%@ include file="header.jsp"%>	
+	<%-- <%@ include file="header.jsp"%>	 --%>
 	<div id="container">
 		<aside>
 			<header>
@@ -315,14 +329,32 @@ main footer a {
 			</header>
 			<ul>
 				<li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_01.jpg"
-					alt=""><!-- 상대방 닉 나와야 함 -->
+					alt="">
 					<div> 
 						<%
-							ChatDAO dao = new ChatDAO();				
-							int chat_index = dao.chat_index(info.getMem_nick());
+							//int chat_index = dao.chat_index(info.getMem_nick());
+							//  chat_index 보내서 내 닉네임(유저)이 아닌 닉네임 출력하기
+							
+							int chat_index = 1;
+							
+							ChatroomDTO chatRoom_dto = dao.getOther(chat_index);
+							
+							String user1 = chatRoom_dto.getChat_user1();
+							String user2 = chatRoom_dto.getChat_user2();
+							
+							String printNick = "";
+							
+							if(!user1.equals(info.getMem_mail())){
+								printNick = user1;
+							} if(!user2.equals(info.getMem_mail())){
+								printNick = user2;
+							}
 						%>
-						<%=chat_index%>
-	
+						<% System.out.println(printNick);%>
+						
+						<h2>
+						<%=printNick %>
+						</h2>
 						<h3>
 							<span class="status orange"></span> offline
 						</h3>
@@ -410,7 +442,7 @@ main footer a {
 					<div class="message">Lorem ipsum dolor sit amet, consectetuer
 						adipiscing elit. Aenean commodo ligula eget dolor.</div>
 				</li> -->
-				<li class="you">
+				<!-- <li class="you"> -->
 					<!-- <div class="triangle"></div> -->
 					<div class="message">
 						<%
@@ -420,15 +452,16 @@ main footer a {
 						
 						for(int i = 0; i < list.size(); i++){
 						%>
-						
-						<%=list.get(i).getWriter() %>
+						<li>
+						<%=list.get(i).getWriter() %>:
 						<%=list.get(i).getContent()%>
-						<%=list.get(i).getDate() %>
+						<%=list.get(i).getDate().substring(0,16) %>
+						</li>
 						<br>
 						
 						<% }%>
 					</div>
-				</li> 
+			<!-- 	</li>  -->
 				
 				
 			</ul>

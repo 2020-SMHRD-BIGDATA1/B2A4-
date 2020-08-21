@@ -47,27 +47,25 @@ public class GaeDAO {
 		}
 	}
 
-	public ArrayList<GaeDTO> getGaeInfo(String email) {
-		ArrayList<GaeDTO> list = new ArrayList<GaeDTO>();
-
+	public GaeDTO getGaeInfo(String email) {
+		GaeDTO info = null;
 		getConn();
 		// 이메일 이름 나이 성별 품종 중성화여부 몸무게 성향 사진
 
-		String sql = "select * from gae_info where mem_mail=?"; 
+		String sql = "select * from gae_info where mem_mail != ?"; 
 		try {
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, email);
 			rs = psmt.executeQuery();
-			while (rs.next()) {
+			if (rs.next()) {
+				String mem_mail = rs.getString(1);
 				String name = rs.getString(2);
 				String age = rs.getString(3);
 				String gender = rs.getString(4);
 				String kind = rs.getString(5);
 				String neu = rs.getString(6);
 				String img = rs.getString(9);
-		
-				GaeDTO dto = new GaeDTO(name, age, gender, kind, neu, img);
-				list.add(dto);
+				info = new GaeDTO(mem_mail,name, age, gender, kind, neu, img);
 			}
 
 		} catch (SQLException e) {
@@ -76,6 +74,6 @@ public class GaeDAO {
 			close();
 		}
 
-		return list;
+		return info;
 	}
 }

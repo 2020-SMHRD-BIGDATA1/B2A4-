@@ -22,16 +22,22 @@ delete from GAE_MEMBER where mem_mail = 'jihoon2723@naver.com'
 
 -- chat_room
 
+drop sequence chat_index;
+
 create sequence chat_index
 increment by 1
-start with 1
+start with 1;
+
+drop table chat_room;
 
 create table chat_room(
-chat_index int ,
+chat_index int primary key,
 chat_user1 varchar2(100) not null,
 chat_user2 varchar2(100) not null,
 chat_time date
-)
+);
+
+select * from CHAT_ROOM;
 
 insert into chat_room values(chat_index.nextval, 'º¸¸®¸¾', '·çºñ¸¾', sysdate);
 insert into chat_room values(chat_index.nextval, 'º¸¸®¸¾', '¹¶Ä¡', sysdate);
