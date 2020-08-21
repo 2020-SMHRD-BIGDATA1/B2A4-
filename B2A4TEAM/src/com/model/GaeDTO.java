@@ -21,8 +21,8 @@ public class GaeDTO {
 		this.gae_img = gae_img;
 	}
 
-	public GaeDTO(String gae_name, String gae_age, String gae_gender, String gae_kind, String gae_neu, String gae_img) {
-		
+	public GaeDTO(String mem_mail, String gae_name, String gae_age, String gae_gender, String gae_kind, String gae_neu, String gae_img) {
+		this.mem_mail = mem_mail;
 		this.gae_name = gae_name;
 		this.gae_age = gae_age;
 		this.gae_gender = gae_gender;

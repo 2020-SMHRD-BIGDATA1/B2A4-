@@ -1,3 +1,4 @@
+<%@page import="Chat.ChatroomDTO"%>
 <%@page import="Chat.ChatDAO"%>
 <%@page import="com.google.gson.Gson"%>
 <%@page import="Chat.ChatDTO"%>
@@ -32,8 +33,23 @@
 
 </style>
 </head>
+
+
 <body>
 	<%@ include file="header.jsp"%>
+	<%
+		// 내정보 info(메일, 비번, nick)
+	// 상대방 메일
+	String mem_mail = request.getParameter("mem_mail");
+
+	ChatDAO dao = new ChatDAO();
+	int cnt = dao.makeRoom(info.getMem_mail(), mem_mail);
+	if (cnt > 0) {
+		System.out.println("방생성 완료");
+	} else {
+		System.out.println("방생성 실패");
+	}
+	%>
 	<div class="hero-area2 d-flex align-items-center">
 		<div class="container">
 			<div class="row ">
@@ -50,22 +66,44 @@
 			<header class="chathead">
 				<div id="container">
 					<input type="text" placeholder="search">
+				</div>
 			</header>
 			<ul>
-				<li><img
-					src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_01.jpg"
-					alt=""> <!-- 상대방 닉 나와야 함 -->
-					<h2></h2>
+				<li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_01.jpg" alt=""> <!-- 상대방 닉 나와야 함 -->
 					<div>
 						<%
-							ChatDAO dao = new ChatDAO();
-						int chat_index = dao.chat_index(info.getMem_nick());
+						//int chat_index = dao.chat_index(info.getMem_nick());
+						//  chat_index 보내서 내 닉네임(유저)이 아닌 닉네임 출력하기
+	
+						//int chat_index = dao.chat_index(info.getMem_nick());
+						int chat_index = 1;
+	
+						ChatroomDTO chatRoom_dto = dao.getOther(chat_index);
+	
+						String user1 = chatRoom_dto.getChat_user1();
+						String user2 = chatRoom_dto.getChat_user2();
+	
+						String printNick = "";
+	
+						if (!user1.equals(info.getMem_mail())) {
+							printNick = user1;
+						}
+						if (!user2.equals(info.getMem_mail())) {
+							printNick = user2;
+	
+						}
 						%>
-						<%=chat_index%>
+						<%
+							System.out.println(printNick);
+						%>
+						<h2>
+							<%=printNick%>
+						</h2>
 						<h3>
 							<span class="status orange"></span> offline
 						</h3>
-					</div></li>
+					</div>
+				</li>
 
 				<li><img
 					src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_03.jpg"
@@ -93,7 +131,7 @@
 						<h3>
 							<span class="status orange"></span> offline
 						</h3>
-						<<<<<<< HEAD
+
 					</div></li>
 				<li><img
 					src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_06.jpg"
@@ -117,10 +155,7 @@
 		</aside>
 		<main class="chatmain">
 			<header class="chathead">
-				<img
-					src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_01.jpg"
-					alt="">
-
+				<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_01.jpg" alt="">
 				<div>
 					<h2>
 						<%=info.getMem_nick()%>
@@ -174,27 +209,30 @@
 					<div class="message">Lorem ipsum dolor sit amet, consectetuer
 						adipiscing elit. Aenean commodo ligula eget dolor.</div>
 				</li> -->
-				<li class="you">
-					<!-- <div class="triangle"></div> -->
-					<div class="message1">
-						<%
-							ChatDAO dao2 = new ChatDAO();
+				<!-- <li class="you"> -->
+				<!-- <div class="triangle"></div> -->
+				<div class="message1">
+					<%
+						ChatDAO dao2 = new ChatDAO();
 
-						ArrayList<ChatDTO> list = dao2.selectAll();
+					ArrayList<ChatDTO> list = dao2.selectAll();
 
-						for (int i = 0; i < list.size(); i++) {
-						%>
+					for (int i = 0; i < list.size(); i++) {
+					%>
 
-						<%=list.get(i).getWriter()%>
-						<%=list.get(i).getContent()%>
-						<%=list.get(i).getDate()%>
-						<br>
+					<li><%=list.get(i).getWriter()%>: <%=list.get(i).getWriter()%>
+						<%=list.get(i).getContent()%> <%=list.get(i).getDate().substring(0, 16)%></li>
 
-						<%
-							}
-						%>
-					</div>
-				</li>
+					<%=list.get(i).getDate()%>
+					<br>
+
+					<%
+						}
+					%>
+				</div>
+				<!-- 	</li>  -->
+
+
 
 
 			</ul>

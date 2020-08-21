@@ -104,31 +104,28 @@
 				</div>
 
 				<div id="matching">
-					<form action="chatReset.jsp" method="post">
 						<div class="content left" align="center">
 							<p>
 								&lt 내 강아지와 비슷한 강아지 &gt <br> <br> <img
 									src="img/yohan.jpg"><br> <br>
 								<%
 									GaeDAO GaeDao = new GaeDAO();
+								
+									GaeDTO dto = GaeDao.getGaeInfo(info.getMem_mail());
 
-								ArrayList<GaeDTO> list = GaeDao.getGaeInfo(info.getMem_mail());
+								
 								%>
-								<%
-									for (int i = 0; i < list.size(); i++) {
-								%>
-
-								이름 :
-								<%=list.get(i).getGae_name()%><br> 나이 :
-								<%=list.get(i).getGae_age()%>세<br> 성별 :
-								<%=list.get(i).getGae_gender()%><br> 품종 :
-								<%=list.get(i).getGae_kind()%>
-
-
-								<%
-									}
-								%>
-								<br> <br> <input type="submit" value="채팅하기">
+								
+								메일 : <%= dto.getMem_mail() %><br>
+								이름 : <%=dto.getGae_name() %><br>
+								나이 : <%=dto.getGae_age() %>세<br>
+								성별 : <%=dto.getGae_gender() %><br>
+								품종 : <%=dto.getGae_kind() %>
+								
+								
+								<br><br> <a href="chatReset.jsp?mem_mail=<%=dto.getMem_mail() %>"><button>채팅하기</button></a>
+								
+								
 
 							</p>
 						</div>
@@ -156,7 +153,6 @@
 			       	 
 			       	 </div>-->
 
-					</form>
 				</div>
 			</div>
 		</section>
