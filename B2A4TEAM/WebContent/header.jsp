@@ -1,8 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@page import="com.model.MemberDTO"%>
 <!doctype html>
 <html class="no-js" lang="zxx">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <title>GaeManDa</title>
 <meta name="description" content="">
@@ -27,7 +29,23 @@
 <link rel="stylesheet" href="assets/css/slick.css">
 <link rel="stylesheet" href="assets/css/nice-select.css">
 <link rel="stylesheet" href="assets/css/style.css">
-
+<link rel="stylesheet" href="Doc/css/headStyle.css">
+<script>
+	window.onload = function() {
+		document.getElementById('logChkMat').onclick = function() {
+			alert('로그인을 해주세요.');
+		};
+		document.getElementById('logChkChat').onclick = function() {
+			alert('로그인을 해주세요.');
+		};
+		document.getElementById('logChkBoard').onclick = function() {
+			alert('로그인을 해주세요.');
+		};
+		document.getElementById('mapReady').onclick = function() {
+			alert('해당서비스는 준비중입니다.');
+		};
+	}
+</script>
 <body>
 	<header>
 		<%
@@ -53,22 +71,32 @@
 						class="menu-wrapper d-flex align-items-center justify-content-between">
 						<!-- Logo -->
 						<div class="logo">
-							<a href="index.jsp"><img src="assets/img/gaelogo1.png" alt=""></a>
+							<a href="index.jsp"><img class="logoImg"
+								src="assets/img/gaelogo1.png" alt=""></a>
 						</div>
 						<!-- Main-menu -->
 						<div class="main-menu f-right d-none d-lg-block">
 							<nav>
 								<ul id="navigation">
-									<li class="active"><a href="index.jsp">Home</a></li>
-									<li><a href="matchingMade.jsp">Matching</a></li>
-									<li><a href="chatReset.jsp">Chat</a></li>
-									<li><a href="blog.jsp">Board</a>
+									<li><a href="index.jsp">홈</a></li> <!--  class="active" <<밑줄 -->
+									<li><a <%if (info != null) {%> href="matchingMade.jsp"
+										<%} else {%> href="loginForm.jsp" id="logChkMat" <%}%>>매칭하기</a></li>
+									<li><a <%if (info != null) {%> href="chatReset.jsp"
+										<%} else {%> href="loginForm.jsp" id="logChkChat" <%}%>>채팅하기</a></li>
+									<li><a <%if (info != null) {%> href="blog.jsp"
+										<%} else {%> href="loginForm.jsp" id="logChkBoard" <%}%>>게시판</a>
+										<% if (info != null) {%>
 										<ul class="submenu">
-											<li><a href="blog.jsp">Free</a></li>
-											<li><a href="blog_details.jsp">ggulTip</a></li>
-											<li><a href="elements.jsp">Q&A</a></li>
-										</ul></li>
-									<li><a href="contact.jsp">Map</a></li>
+											<li><a href="blog.jsp">자유게시판</a></li>
+											<li><a href="blog_details.jsp">정보게시판</a></li>
+											<li><a href="elements.jsp">질문게시판</a></li>
+										</ul>
+										<%}else{
+											
+											}%>
+										
+										</li>
+									<li><a href="contact.jsp" id="mapReady">지도</a></li>
 								</ul>
 							</nav>
 						</div>
@@ -145,5 +173,3 @@
 	<!-- Jquery Plugins, main Jquery -->
 	<script src="./assets/js/plugins.js"></script>
 	<script src="./assets/js/main.js"></script>
-
-	

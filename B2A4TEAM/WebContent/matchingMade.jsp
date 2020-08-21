@@ -1,8 +1,8 @@
 <%@page import="com.model.GaeDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.model.GaeDAO"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -56,8 +56,7 @@
 	text-align: center;
 	color: #670000;
 	font-weight: bold;
-	font-size:200px
-	font-family: "Jua";
+	font-size: 200px font-family: "Jua";
 }
 
 .content p {
@@ -99,7 +98,7 @@
 				<div>
 					<br> <br>
 					<h1>
-						<img src="img/icon1.png"> ¸ÅÄªÇÏ±â
+						<img src="img/icon1.png"> ë§¤ì¹­í•˜ê¸°
 					</h1>
 					<br>
 				</div>
@@ -107,22 +106,27 @@
 				<div id="matching">
 						<div class="content left" align="center">
 							<p>
-								&lt ³» °­¾ÆÁö¿Í ºñ½ÁÇÑ °­¾ÆÁö &gt <br><br>
-								<img src="img/yohan.jpg"><br><br>
+								&lt ë‚´ ê°•ì•„ì§€ì™€ ë¹„ìŠ·í•œ ê°•ì•„ì§€ &gt <br> <br> <img
+									src="img/yohan.jpg"><br> <br>
 								<%
 									GaeDAO GaeDao = new GaeDAO();
 								
 									GaeDTO dto = GaeDao.getGaeInfo(info.getMem_mail());
+
+								
 								%>
-								¸ŞÀÏ : <%= dto.getMem_mail() %><br>
-								ÀÌ¸§ : <%=dto.getGae_name() %><br>
-								³ªÀÌ : <%=dto.getGae_age() %>¼¼<br>
-								¼ºº° : <%=dto.getGae_gender() %><br>
-								Ç°Á¾ : <%=dto.getGae_kind() %>
+								
+								ë©”ì¼ : <%= dto.getMem_mail() %><br>
+								ì´ë¦„ : <%=dto.getGae_name() %><br>
+								ë‚˜ì´ : <%=dto.getGae_age() %>ì„¸<br>
+								ì„±ë³„ : <%=dto.getGae_gender() %><br>
+								í’ˆì¢… : <%=dto.getGae_kind() %>
 								
 								
-								<br><br> <a href="chatReset.jsp?mem_mail=<%=dto.getMem_mail() %>"><button>Ã¤ÆÃÇÏ±â</button></a>
+								<br><br> <a href="chatReset.jsp?mem_mail=<%=dto.getMem_mail() %>"><button>ì±„íŒ…í•˜ê¸°</button></a>
 								
+								
+
 							</p>
 						</div>
 						<div class="vs">
@@ -130,14 +134,14 @@
 						</div>
 						<div class="content right" align="center">
 							<p>
-								&lt ³» °­¾ÆÁö¿Í ¾î¿ï¸± °Í °°Àº °­¾ÆÁö &gt <br><br>
-								<img src="img/yohan.jpg"><br>
-								<br> <input type="submit" value="Ã¤ÆÃÇÏ±â">
+								&lt ë‚´ ê°•ì•„ì§€ì™€ ì–´ìš¸ë¦´ ê²ƒ ê°™ì€ ê°•ì•„ì§€ &gt <br> <br> <img
+									src="img/yohan.jpg"><br> <br> <input
+									type="submit" value="ì±„íŒ…í•˜ê¸°">
 							</p>
 						</div>
 						<!-- Section Tittle -->
 
-						<p>Ä£¸ñÀ» ÀÀ¿øÇÕ´Ï´Ù</p>
+						<p>ì¹œëª©ì„ ì‘ì›í•©ë‹ˆë‹¤</p>
 
 
 
@@ -150,112 +154,10 @@
 			       	 </div>-->
 
 				</div>
+			</div>
 		</section>
 		<!-- About  End-->
 	</main>
-
-
-	<footer>
-		<div class="footer-wrappr">
-			<div class="footer-top">
-				<!-- Want To work -->
-				<section class="wantToWork-area ">
-					<div class="container">
-						<div class="wants-wrapper w-padding2">
-							<div class="row align-items-center justify-content-between">
-								<div class="col-xl-7 col-lg-9 col-md-8">
-									<div class="wantToWork-caption wantToWork-caption2">
-										<h2>Do you want to know more about me?</h2>
-									</div>
-								</div>
-								<div class="col-xl-2 col-lg-3 col-md-4">
-									<a href="#" class="btn white-btn f-right sm-left">Download
-										CV</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-				<!-- Want To work End -->
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-12">
-							<!-- contact-form -->
-							<div class="form-wrapper">
-								<div class="row ">
-									<div class="col-xl-12">
-										<div class="small-tittle mb-30">
-											<h4>Contact Me</h4>
-										</div>
-									</div>
-								</div>
-								<form id="contact-form" action="#" method="POST">
-									<div class="row">
-										<div class="col-lg-4 col-md-6">
-											<div class="form-box user-icon mb-25">
-												<input type="text" name="name" placeholder="Your name">
-											</div>
-										</div>
-										<div class="col-lg-4 col-md-6">
-											<div class="form-box email-icon mb-25">
-												<input type="text" name="email" placeholder="Email">
-											</div>
-										</div>
-										<div class="col-lg-4 col-md-6">
-											<div class="form-box email-icon mb-25">
-												<input type="text" name="email" placeholder="Subject">
-											</div>
-										</div>
-										<div class="col-lg-12">
-											<div class="form-box message-icon mb-25">
-												<textarea name="message" id="message" placeholder="Message"></textarea>
-											</div>
-											<div class="submit-info">
-												<button class="submit-btn2" type="submit">SendMessage</button>
-											</div>
-										</div>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- footer-bottom area -->
-			<div class="footer-bottom-area">
-				<div class="container">
-					<div class="footer-border">
-						<div class="row align-items-center">
-							<div class="col-xl-4 col-lg-4">
-								<div class="footer-social">
-									<a href="#"><i class="fab fa-twitter"></i></a> <a
-										href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
-									<a href="#"><i class="fab fa-pinterest-p"></i></a> <a href="#"><i
-										class="fas fa-globe"></i></a> <a href="#"><i
-										class="fab fa-instagram"></i></a>
-								</div>
-							</div>
-							<div class="col-xl-8 col-lg-8">
-								<div class="footer-copy-right f-right">
-									<p>
-										<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-										Copyright &copy;
-										<script>
-											document.write(new Date()
-													.getFullYear());
-										</script>
-										All rights reserved | This template is made with <i
-											class="fa fa-heart" aria-hidden="true"></i> by <a
-											href="https://colorlib.com" target="_blank">Colorlib</a>
-										<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
+	<%@ include file="footer.jsp"%>
 </body>
 </html>

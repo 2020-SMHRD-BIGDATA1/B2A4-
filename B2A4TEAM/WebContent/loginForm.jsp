@@ -11,12 +11,13 @@
 	href="assets/img/gaelogo.ico">
 <!-- CSS here -->
 <link rel="stylesheet" type="text/css" href="Doc/css/login.css?ver=3">
-<link rel="shortcut icon" type="image/x-icon" href="assets/img/gaelogo.ico">
+<link rel="shortcut icon" type="image/x-icon"
+	href="assets/img/gaelogo.ico">
 <body>
 	<%
 		MemberDTO info = (MemberDTO) session.getAttribute("info");
 	%>
-	
+
 	<div class="container">
 		<div class="login-cover">
 			<div class="loginHead">
@@ -35,7 +36,7 @@
 				</div>
 				<div class="button-group">
 					<form action="index.jsp">
-					<button type="submit" class="btn-1" value="login">로그인</button>
+						<button type="submit" class="btn-1" value="login">로그인</button>
 				</div>
 
 			</form>
