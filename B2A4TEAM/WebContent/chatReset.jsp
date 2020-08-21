@@ -8,13 +8,32 @@
 <!DOCTYPE html>
 <html>
 <head>
+<!-- CSS here -->
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+<link rel="stylesheet" href="assets/css/slicknav.css">
+<link rel="stylesheet" href="assets/css/flaticon.css">
+<link rel="stylesheet" href="assets/css/progressbar_barfiller.css">
+<link rel="stylesheet" href="assets/css/gijgo.css">
+<link rel="stylesheet" href="assets/css/animate.min.css">
+<link rel="stylesheet" href="assets/css/animated-headline.css">
+<link rel="stylesheet" href="assets/css/magnific-popup.css">
+<link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="assets/css/themify-icons.css">
+<link rel="stylesheet" href="assets/css/slick.css">
+<link rel="stylesheet" href="assets/css/nice-select.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
+	rel="stylesheet">
 <meta charset="UTF-8">
 <title>채팅하기</title>
 <!-- CSS here -->
 <link rel="stylesheet" href="Doc/css/chat.css">
+
+</style>
 </head>
 <body>
-<%@ include file="header.jsp" %>
+	<%@ include file="header.jsp"%>
 	<div class="hero-area2 d-flex align-items-center">
 		<div class="container">
 			<div class="row ">
@@ -25,26 +44,24 @@
 			</div>
 		</div>
 	</div>
-	<div id="container_chat" style="margin-top: 100px; margin-bottom: 100px;">
+	<div id="container_chat"
+		style="margin-top: 100px; margin-bottom: 100px;">
 		<aside class="aside">
 			<header class="chathead">
-				<input type="text" placeholder="search">
+				<div id="container">
+					<input type="text" placeholder="search">
 			</header>
 			<ul>
 				<li><img
 					src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_01.jpg"
 					alt=""> <!-- 상대방 닉 나와야 함 -->
+					<h2></h2>
 					<div>
-
 						<%
 							ChatDAO dao = new ChatDAO();
-
 						int chat_index = dao.chat_index(info.getMem_nick());
 						%>
 						<%=chat_index%>
-
-
-						</h2>
 						<h3>
 							<span class="status orange"></span> offline
 						</h3>
@@ -76,6 +93,7 @@
 						<h3>
 							<span class="status orange"></span> offline
 						</h3>
+						<<<<<<< HEAD
 					</div></li>
 				<li><img
 					src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_06.jpg"
@@ -95,14 +113,14 @@
 							<span class="status green"></span> online
 						</h3>
 					</div></li>
-
 			</ul>
 		</aside>
 		<main class="chatmain">
-			<header  class="chathead">
+			<header class="chathead">
 				<img
 					src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_01.jpg"
 					alt="">
+
 				<div>
 					<h2>
 						<%=info.getMem_nick()%>
