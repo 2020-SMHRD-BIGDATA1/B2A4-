@@ -19,8 +19,8 @@
 					src="assets/img/mainlogo.png" style="width: 200px; height: auto;"></a>
 			</div>
 			<br> <br>
-
-			<form action="DogInfoService" method="post" accept-charset="utf-8">
+			<form action="DogInfoService" method="post"
+				enctype="multipart/form-data" accept-charset="utf-8">
 				<!-- 로그인을 누르면 Login.jsp파일로 post 방식으로 이동 -->
 				<table>
 					<tr class="form-group">
@@ -29,8 +29,8 @@
 					</tr>
 					<tr class="form-group">
 						<td class="joinTag">강아지 사진</td>
-						<td><input type="file" id="image" accept="image/*"
-							onchange="setThumbnail(event);" value="올리기"/></td>
+						<td><input type="file" id="image" name="imgfile"
+							accept="image/*" onchange="setThumbnail(event);" value="올리기" /></td>
 					</tr>
 
 					<tr class="form-group">
@@ -94,14 +94,14 @@
 					</tr>
 					<tr class="form-group">
 						<td class="joinTag">강아지 중성화 여부</td>
-						<td><select name="dog_gender">
+						<td><select name="dog_nue">
 								<option value="1">했어요</option>
 								<option value="0">안했어요</option>
 						</select></td>
 					</tr>
 					<tr class="form-group">
 						<td class="joinTag">강아지 몸무게(kg)</td>
-						<td><input type="text" class="form-control" name="mem_nick"
+						<td><input type="text" class="form-control" name="dog_weight"
 							min="1" maxlength="3" placeholder="00kg"
 							onkeydown="fn_press_han(this);" onkeypress="inNumber();" required></td>
 					</tr>
@@ -129,7 +129,7 @@
 
 					<tr class="form-group">
 						<td class="joinTag">낯선 강아지에 대한 반응</td>
-						<td><select name="dog_walking">
+						<td><select name="dog_reaction">
 								<option value="1">1 (매우 적대적)</option>
 								<option value="2">2</option>
 								<option value="3">3</option>
@@ -144,7 +144,7 @@
 					</tr>
 					<tr class="form-group">
 						<td class="joinTag">낯선 사람에 대한 반응</td>
-						<td><select name="dog_walking">
+						<td><select name="human_reaction">
 								<option value="1">1 (매우 적대적)</option>
 								<option value="2">2</option>
 								<option value="3">3</option>
@@ -159,7 +159,8 @@
 					</tr>
 				</table>
 				<div class="button-group">
-					<button type="submit" class="btn-1" value="info">다음 강아지 성향분석 설문으로 이동</button>
+					<button type="submit" class="btn-1" value="info">다음 강아지
+						성향분석 설문으로 이동</button>
 				</div>
 			</form>
 		</div>

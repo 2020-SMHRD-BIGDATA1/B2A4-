@@ -1,10 +1,11 @@
-drop table gae_member;
+drop table gae_member ;
+drop table gae_info;
 -- 회원가입 테이블
 create table gae_member(
 mem_name varchar2(100) not null,
 mem_mail varchar2(100),
 mem_pw varchar2(100) not null,
-mem_nick varchar2(100),
+mem_nick varchar2(100) not null,
 mem_gender varchar2(50) not null,
 mem_birth varchar2(100) not null,
 mem_tel varchar2(200) not null,
@@ -75,11 +76,27 @@ gae_neu varchar2(100),
 gae_weight varchar2(100),
 gae_type varchar2(100),
 gae_img varchar2(500),
-constraint mail_fk foreign key(mem_mail)
-references gae_member(mem_mail) 
+gae_walking varchar2(10),
+gae_dog_react varchar2(10),
+gae_human_react varchar2(10),
+gae_test1 varchar2(10),
+gae_test2 varchar2(10),
+gae_test3 varchar2(10),
+gae_test4 varchar2(10),
+gae_test5 varchar2(10),
+gae_test6 varchar2(10),
+gae_test7 varchar2(10),
+gae_test8 varchar2(10)
 );
+alter table gae_info
+add constraint mail_fk foreign key(mem_mail)
+references gae_member(mem_mail)
+
 
 insert into gae_info values('jihoon', '보리', '2', '여자', '푸들', '함','5','소심활발','');
 insert into gae_info values('yohan', '루비', '2', '여자', '비숑', '함','5','소심활발','');
 
 select * from gae_info
+
+
+

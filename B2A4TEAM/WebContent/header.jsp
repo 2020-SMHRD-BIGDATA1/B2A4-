@@ -78,24 +78,26 @@
 						<div class="main-menu f-right d-none d-lg-block">
 							<nav>
 								<ul id="navigation">
-									<li><a href="index.jsp">홈</a></li> <!--  class="active" <<밑줄 -->
+									<li><a href="index.jsp">홈</a></li>
+									<!--  class="active" <<밑줄 -->
 									<li><a <%if (info != null) {%> href="matchingMade.jsp"
 										<%} else {%> href="loginForm.jsp" id="logChkMat" <%}%>>매칭하기</a></li>
 									<li><a <%if (info != null) {%> href="chatReset.jsp"
 										<%} else {%> href="loginForm.jsp" id="logChkChat" <%}%>>채팅하기</a></li>
 									<li><a <%if (info != null) {%> href="blog.jsp"
 										<%} else {%> href="loginForm.jsp" id="logChkBoard" <%}%>>게시판</a>
-										<% if (info != null) {%>
+										<%
+											if (info != null) {
+										%>
 										<ul class="submenu">
 											<li><a href="blog.jsp">자유게시판</a></li>
 											<li><a href="blog_details.jsp">정보게시판</a></li>
 											<li><a href="elements.jsp">질문게시판</a></li>
-										</ul>
-										<%}else{
-											
-											}%>
-										
-										</li>
+										</ul> <%
+ 	} else {
+
+ }
+ %></li>
 									<li><a href="contact.jsp" id="mapReady">지도</a></li>
 								</ul>
 							</nav>
