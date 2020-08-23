@@ -3,7 +3,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-<link rel="stylesheet" type="text/css" href="Doc/css/dogInfo.css?ver=1">
+<link rel="stylesheet" type="text/css"
+	href="Doc/css/infoSurvey.css?ver=1">
 <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
 	rel="stylesheet">
 <script src="http://code.jquery.com/jquery-latest.js"></script>
@@ -20,146 +21,180 @@
 			</div>
 			<br> <br>
 
-			<form action="JoinService" method="post" accept-charset="utf-8">
+			<form action="SurveyService" method="post" accept-charset="utf-8">
 				<!-- 로그인을 누르면 Login.jsp파일로 post 방식으로 이동 -->
-				<table>
+				<table style="width: 100%">
 					<tr class="form-group">
-						<td class="joinTag"></td>
-						<td class="imgTag"><div id="image_container"></div></td>
+						<td class="surveyCon"><h2>Test1</h2>반려견을 내려놓고 일정한 거리만큼 떨어진
+							곳에서 무릎을 꿇거나 가볍게 손뼉을 치며 불러주세요.</td>
 					</tr>
 					<tr class="form-group">
-						<td class="joinTag">강아지 사진</td>
-						<td><input type="file" id="image" accept="image/*"
-							onchange="setThumbnail(event);" value="올리기"/></td>
+						<td class="surveyCon"><img src="assets/img/test1.jpg"
+							style="width: 250px; height: 150px;">
 					</tr>
-
-					<tr class="form-group">
-						<td class="joinTag">강아지 이름</td>
-						<td><input type="text" class="form-control" name="dog_name"
-							placeholder="강아지 이름" required></td>
-					</tr>
-
-					<tr class="form-group">
-						<td class="joinTag">강아지 성별</td>
-						<td><select name="dog_gender">
-								<option value="1">암컷</option>
-								<option value="0">수컷</option>
-						</select></td>
+					<tr class="form-group" style="text-align: left">
+						<td><input type="radio" class="form-control" name="test1"
+							value="0" required> 1.꼬리를 들고 다가와 뛰어오르며 손을 깨문다.<br /> <input
+							type="radio" class="form-control" name="test1" value="1" required>
+							2.꼬리를 들고 다가와 손을 핥는다.<br /> <input type="radio"
+							class="form-control" name="test1" value="2" required>3.꼬리를
+							들고 다가온다.<br /> <input type="radio" class="form-control"
+							name="test1" value="3" required> 4.꼬리를 내리고 다가온다.<br /> <input
+							type="radio" class="form-control" name="test1" value="4" required>
+							5.꼬리를 내리고 다가오면서 약간 머뭇거린다.<br /> <input type="radio"
+							class="form-control" name="test1" value="5" required>6.오지
+							않는다.<br /></td>
 					</tr>
 					<tr class="form-group">
-						<td class="joinTag">강아지 나이</td>
-						<td><input type="text" class="form-control" name="dog_age"
-							min="0" max="3" placeholder="00살" onkeydown="fn_press_han(this);"
-							onkeypress="inNumber();" required></td>
+						<td class="surveyCon"><h2>Test2</h2>반려견을 내려놓고 일정한 거리만큼 떨어진
+							곳에서 무릎을 꿇거나 가볍게 손뼉을 치며 불러주세요.</td>
 					</tr>
 					<tr class="form-group">
-						<td class="joinTag">강아지 견종</td>
-						<td><select name="dog_species">
-								<option value="골든 리트리버">골든 리트리버</option>
-								<option value="그레이하운드">그레이하운드</option>
-								<option value="뉴펀들랜드">뉴펀들랜드</option>
-								<option value="닥스훈트">닥스훈트</option>
-								<option value="도베르만">도베르만</option>
-								<option value="레브라도 리트리버">레브라도 리트리버</option>
-								<option value="말라뮤트">말라뮤트</option>
-								<option value="말티즈">말티즈</option>
-								<option value="믹스견">믹스견</option>
-								<option value="보더콜리">보더콜리</option>
-								<option value="불독">불독</option>
-								<option value="비글">비글</option>
-								<option value="비숑프리제">비숑프리제</option>
-								<option value="빠삐용">빠삐용</option>
-								<option value="샤페이">샤페이</option>
-								<option value="슈나우저">슈나우저</option>
-								<option value="스피츠">스피츠</option>
-								<option value="시바견">시바견</option>
-								<option value="시츄">시츄</option>
-								<option value="아메리칸 불리">아메리칸 불리</option>
-								<option value="요크셔테리어">요크셔테리어</option>
-								<option value="웰시코기">웰시코기</option>
-								<option value="진돗개">진돗개</option>
-								<option value="치와와">치와와</option>
-								<option value="코카스파니엘">코카스파니엘</option>
-								<option value="테리어">테리어</option>
-								<option value="퍼그">퍼그</option>
-								<option value="페키니즈">페키니즈</option>
-								<option value="포메라니안">포메라니안</option>
-								<option value="푸들(미니어쳐)">푸들(미니어쳐)</option>
-								<option value="푸들(스탠다드)">푸들(스탠다드)</option>
-								<option value="푸들(토이)">푸들(토이)</option>
-								<option value="프렌치 불독">프렌치 불독</option>
-								<option value="허스키">허스키</option>
-								<option value="기타">기타</option>
-						</select></td>
+						<td class="surveyCon"><img src="assets/img/test2.jpg"
+							style="width: 250px; height: 150px;">
+					</tr>
+					<tr class="form-group" style="text-align: left">
+						<td><input type="radio" class="form-control" name="test2"
+							value="0" required> 1.꼬리를 들고 다가와 뛰어오르며 손을 깨문다.<br /> <input
+							type="radio" class="form-control" name="test2" value="1" required>
+							2.꼬리를 들고 다가와 손을 핥는다.<br /> <input type="radio"
+							class="form-control" name="test2" value="2" required>3.꼬리를
+							들고 다가온다.<br /> <input type="radio" class="form-control"
+							name="test2" value="3" required> 4.꼬리를 내리고 다가온다.<br /> <input
+							type="radio" class="form-control" name="test2" value="4" required>
+							5.꼬리를 내리고 다가오면서 약간 머뭇거린다.<br /> <input type="radio"
+							class="form-control" name="test2" value="5" required>6.오지
+							않는다.<br /></td>
 					</tr>
 					<tr class="form-group">
-						<td class="joinTag">강아지 중성화 여부</td>
-						<td><select name="dog_gender">
-								<option value="1">했어요</option>
-								<option value="0">안했어요</option>
-						</select></td>
+						<td class="surveyCon"><h2>Test3</h2>반려견의 옆쪽에 몸을 굽히고 앉아 반려견의
+							머리부터 발끝까지 부드럽게 쓸어내려주세요. 반려견이 눈에 띄는 행동을 할 때까지 반복해주세요.</td>
 					</tr>
 					<tr class="form-group">
-						<td class="joinTag">강아지 몸무게(kg)</td>
-						<td><input type="text" class="form-control" name="mem_nick"
-							min="1" maxlength="3" placeholder="00kg"
-							onkeydown="fn_press_han(this);" onkeypress="inNumber();" required></td>
+						<td class="surveyCon"><img src="assets/img/test3.jpg"
+							style="width: 250px; height: 150px;">
+					</tr>
+					<tr class="form-group" style="text-align: left">
+						<td><input type="radio" class="form-control" name="test3"
+							value="0" required>1.뛴다. 문다. 으르렁거린다. (두개 이상 해당하면 체크)<br />
+							<input type="radio" class="form-control" name="test3" value="1"
+							required> 2.뛴다.<br /> <input type="radio"
+							class="form-control" name="test3" value="2" required>
+							3.사람에게 안기며 얼굴을 핥으려 한다.<br /> <input type="radio"
+							class="form-control" name="test3" value="3" required>
+							4.몸을 숙이며 손을 핥는다.<br /> <input type="radio" class="form-control"
+							name="test3" value="4" required>5.바닥에 누워 손을 핥는다.<br /> <input
+							type="radio" class="form-control" name="test3" value="5" required>6.달아나서
+							거리를 둔다.<br /></td>
 					</tr>
 					<tr class="form-group">
-						<td class="joinTag">산책 횟수(1주일)</td>
-						<td><select name="dog_walking">
-								<option value="0">0 번</option>
-								<option value="1">1 번</option>
-								<option value="2">2 번</option>
-								<option value="3">3 번</option>
-								<option value="4">4 번</option>
-								<option value="5">5 번</option>
-								<option value="6">6 번</option>
-								<option value="7">7 번</option>
-								<option value="8">8 번</option>
-								<option value="9">9 번</option>
-								<option value="10">10 번</option>
-								<option value="11">11 번</option>
-								<option value="12">12 번</option>
-								<option value="13">13 번</option>
-								<option value="14">14 번</option>
-								<option value="20">그 이상</option>
-						</select></td>
+						<td class="surveyCon"><h2>Test4</h2>손바닥을 위로 가게 한 뒤 반려견의 복부에
+							손을 집어넣어 주세요. 그리고 지면에서 떨어질 정도로만 반려견을 들어올려 10초정도 유지합니다.</td>
+					</tr>
+					<tr class="form-group">
+						<td class="surveyCon"><img src="assets/img/test4.jpg"
+							style="width: 250px; height: 150px;">
+					</tr>
+					<tr class="form-group" style="text-align: left">
+						<td><input type="radio" class="form-control" name="test4"
+							value="0" required> 1.강하게 저항하고 물며 으르렁거린다.<br /> <input
+							type="radio" class="form-control" name="test4" value="1" required>
+							2.강하게 저항한다.<br /> <input type="radio" class="form-control"
+							name="test4" value="2" required> 3.저항하다가 순응하고 핥는다.<br />
+							<input type="radio" class="form-control" name="test4" value="3"
+							required> 4.저항하지 않고 편안하게 앉는다.<br /> <input type="radio"
+							class="form-control" name="test4" value="4" required>
+							5.저항하지 않고 손을 핥는다.<br /> <input type="radio" class="form-control"
+							name="test4" value="5" required>6.저항하지 않고 얼어 있다.<br /></td>
 					</tr>
 
 					<tr class="form-group">
-						<td class="joinTag">낯선 강아지에 대한 반응</td>
-						<td><select name="dog_walking">
-								<option value="1">1 (매우 적대적)</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5 (보통)</option>
-								<option value="6">6</option>
-								<option value="7">7</option>
-								<option value="8">8</option>
-								<option value="9">9</option>
-								<option value="10">10 (매우 호의적)</option>
-						</select></td>
+						<td class="surveyCon"><h2>Test5</h2>한쪽 앞발을 점점 강하게 눌러주세요. 10까지
+							세면서 누르다가 저항하거나 불편해하면 즉시 멈춰주세요.</td>
 					</tr>
 					<tr class="form-group">
-						<td class="joinTag">낯선 사람에 대한 반응</td>
-						<td><select name="dog_walking">
-								<option value="1">1 (매우 적대적)</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5 (보통)</option>
-								<option value="6">6</option>
-								<option value="7">7</option>
-								<option value="8">8</option>
-								<option value="9">9</option>
-								<option value="10">10 (매우 호의적)</option>
-						</select></td>
+						<td class="surveyCon"><img src="assets/img/test5.jpg"
+							style="width: 250px; height: 150px;">
 					</tr>
+					<tr class="form-group" style="text-align: left">
+						<td><input type="radio" class="form-control" name="test5"
+							value="0" required>1. 8~10초 사이에 반응<br /> <input
+							type="radio" class="form-control" name="test5" value="1" required>
+							2. 6~7초 사이에 반응<br /> <input type="radio" class="form-control"
+							name="test5" value="2" required> 3. 5~6초 사이에 반응<br /> <input
+							type="radio" class="form-control" name="test5" value="3" required>
+							4. 2~4초 사이에 반응<br /> <input type="radio" class="form-control"
+							name="test5" value="4" required> 5. 1~2초 사이에 반응<br /></td>
+					</tr>
+
+					<tr class="form-group">
+						<td class="surveyCon"><h2>Test6</h2>반려견과 몇 미터 떨어진 곳에서 금속 재질로
+							된 물건끼리 크게 부딪치는 날카로운 소리를 냈을 때.</td>
+					</tr>
+					<tr class="form-group">
+						<td class="surveyCon"><img src="assets/img/test6.jpg"
+							style="width: 250px; height: 150px;">
+					</tr>
+					<tr class="form-group" style="text-align: left">
+						<td><input type="radio" class="form-control" name="test6"
+							value="0" required> 1. 소리 나는 방향을 찾아 짖으며 다가간다.<br /> <input
+							type="radio" class="form-control" name="test6" value="1" required>
+							2. 소리 나는 방향을 향해 짖는다.<br /> <input type="radio"
+							class="form-control" name="test6" value="2" required> 3.
+							소리 나는 방향을 향해 호기심을 보이며 다가간다.<br /> <input type="radio"
+							class="form-control" name="test6" value="3" required> 4.
+							소리 나는 방향을 바라본다.<br /> <input type="radio" class="form-control"
+							name="test6" value="4" required>5. 놀라 뒤로 물러나 숨는다.<br />
+							<input type="radio" class="form-control" name="test6" value="5"
+							required> 6. 소리에 관심이 없다.<br /></td>
+					</tr>
+
+					<tr class="form-group">
+						<td class="surveyCon"><h2>Test7</h2>반려견을 장소 한 가운데 놓고 커다란 수건
+							등을 줄에 연결해 수건을 반려견 앞에서 이리저리 움직이며 유혹한다.</td>
+					</tr>
+					<tr class="form-group">
+						<td class="surveyCon"><img src="assets/img/test7.jpg"
+							style="width: 250px; height: 150px;">
+					</tr>
+					<tr class="form-group" style="text-align: left">
+						<td><input type="radio" class="form-control" name="test7"
+							value="0" required> 1. 8~10초 사이에 반응<br /> <input
+							type="radio" class="form-control" name="test7" value="1" required>
+							2. 쳐다보고 달려가 공격하듯이 문다.<br /> <input type="radio"
+							class="form-control" name="test7" value="2" required>3.
+							호기심을 가지고 쳐다보며 물체를 탐색한다.<br /> <input type="radio"
+							class="form-control" name="test7" value="3" required> 4.
+							쳐다보고 짖는다. 이때 꼬리를 감춘다. <br /> <input type="radio"
+							class="form-control" name="test7" value="4" required>5.
+							도망가 숨는다.<br /></td>
+					</tr>
+
+					<tr class="form-group">
+						<td class="surveyCon"><h2>Test8</h2>반려견을 물리적으로 옆으로 눕힌 뒤 10초
+							정도 몸을 눌러 움직임에 통제를 가하면?</td>
+					</tr>
+					<tr class="form-group">
+						<td class="surveyCon"><img src="assets/img/test8.jpg"
+							style="width: 250px; height: 150px;">
+					</tr>
+					<tr class="form-group" style="text-align: left">
+						<td><input type="radio" class="form-control" name="test8"
+							value="0" required> 1. 격렬하게 저항하고 손을 문다.<br /> <input
+							type="radio" class="form-control" name="test8" value="1" required>
+							2. 격렬하게 몸을 흔들며 저항한다.<br /> <input type="radio"
+							class="form-control" name="test8" value="2" required> 3.
+							저항과 순응을 반복한다.<br /> <input type="radio" class="form-control"
+							name="test8" value="3" required> 4. 저항하다 이내 순응한다.<br />
+							<input type="radio" class="form-control" name="test8" value="4"
+							required> 5. 저항하지 않고 손을 핥는다.<br /> <input type="radio"
+							class="form-control" name="test8" value="5" required> 6.
+							저항하지 않고 눈을 피한다.<br /></td>
+					</tr>
+
 				</table>
 				<div class="button-group">
-					<button type="submit" class="btn-1" value="info" href="infoSurvey.jsp">다음 강아지 성향분석 설문으로 이동</button>
+					<button type="submit" class="btn-1" value="info">최종 제출</button>
 				</div>
 			</form>
 		</div>
@@ -183,6 +218,7 @@
 				event.returnValue = false;
 			}
 		}
+
 		function fn_press_han(obj) {
 			//좌우 방향키, 백스페이스, 딜리트, 탭키에 대한 예외
 			if (event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 37
