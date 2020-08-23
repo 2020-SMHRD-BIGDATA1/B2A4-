@@ -243,7 +243,7 @@
 					alt=""> <img
 					src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/ico_file.png"
 					alt=""> <a href="#" id="input">Send</a>
-				<!-- <button id="input">Send</button>   -->
+				<!-- <button id="input">Send</button>  -->
 			</footer>
 		</main>
 	</div>
@@ -265,9 +265,9 @@
 								contentType : "application/x-www-form-urlencoded; charset=UTF-8",
 								success : function(res) {
 									/* 채팅방 글써지는 부분 */
-									$('#message').empty();
+									$('#message1').empty();
 									for (var i = 0; i < res.length; i++) {
-										$('#message').prepend(
+										$('#message1').prepend(
 												'<li>'
 														+ res[i].writer
 														+ ":"
@@ -276,8 +276,8 @@
 																.substring(0,
 																		16)
 														+ "</li>");
-										$('#message').scrollTop(
-												$('#message')[0].scrollHeight);
+										$('#message1').scrollTop(
+												$('#message1')[0].scrollHeight);
 									}
 								},
 								error : function(xhr) {
@@ -338,15 +338,10 @@
 						contentType : false, // 비동기 파일 업로드시 꼭 설정해줘야 하는 속성
 						type : 'POST',
 						success : function(res) {
-							$('#chat').empty();
+							$('#chat1').empty();
 							for (var i = 0; i < res.length; i++) {
-								$('#chat').prepend(
-										'<li>' + res[i].writer + " : "
-												+ res[i].content
-												+ res[i].date.substring(0, 16)
-												+ "</li>");
-								$('#chat')
-										.scrollTop($('#chat')[0].scrollHeight);
+								$('#chat1').prepend('<li>' + res[i].writer + " : "+ res[i].content+ res[i].date.substring(0, 16)+ "</li>");
+								$('#chat1').scrollTop($('#chat1')[0].scrollHeight);
 							}
 						},
 						error : function(xhr) {

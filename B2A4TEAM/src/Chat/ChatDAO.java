@@ -50,7 +50,7 @@ public class ChatDAO {
 
 		getConn();
 
-		String sql = "select * from chat_content where chat_index= 1 order by chat_time"; // 1번방 애들만 나옴
+		String sql = "select * from chat_content where chat_index= 1 order by chat_time desc"; // 1번방 애들만 나옴
 		try {
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();

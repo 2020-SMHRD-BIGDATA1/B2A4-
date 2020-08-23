@@ -29,7 +29,7 @@ create sequence chat_index
 increment by 1
 start with 1;
 
-drop table chat_room;
+drop table chat_room ;
 
 create table chat_room(
 chat_index int primary key,
