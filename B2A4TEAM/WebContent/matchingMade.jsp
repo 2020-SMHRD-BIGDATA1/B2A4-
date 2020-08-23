@@ -66,6 +66,10 @@
 	font-size: 25px;
 	font-family: "Jua";
 }
+a button{
+	border : solid 1px whilte;
+	background-color: #670000;
+}
 
 @font-face {
 	src: url("Doc/fonts/BMJUA_ttf.ttf");
@@ -98,7 +102,7 @@
 				<div>
 					<br> <br>
 					<h1>
-						<img src="img/icon1.png"> 매칭하기
+						<img src="img/matching.png"> 매칭하기
 					</h1>
 					<br>
 				</div>
@@ -106,8 +110,8 @@
 				<div id="matching">
 						<div class="content left" align="center">
 							<p>
-								&lt 내 강아지와 비슷한 강아지 &gt <br> <br> <img
-									src="img/yohan.jpg"><br> <br>
+								&lt 내 강아지와 비슷한 강아지 &gt <br> <br> 
+								<img src="img/yohan.jpg"><br> <br>
 								<%
 									GaeDAO GaeDao = new GaeDAO();
 								
@@ -116,14 +120,15 @@
 								
 								%>
 								
-								메일 : <%= dto.getMem_mail() %><br>
-								이름 : <%=dto.getGae_name() %><br>
-								나이 : <%=dto.getGae_age() %>세<br>
-								성별 : <%=dto.getGae_gender() %><br>
-								품종 : <%=dto.getGae_kind() %>
+								<!--메일 : <%=dto.getMem_mail() %><br>  -->
+								<img src="img/bone1.png">&nbsp;이름 : <%=dto.getGae_name() %><br>
+								<img src="img/bone1.png">&nbsp;나이 : <%=dto.getGae_age() %>세<br>
+								<img src="img/bone1.png">&nbsp;성별 : <%=dto.getGae_gender() %><br>
+								<img src="img/bone1.png">&nbsp;품종 : <%=dto.getGae_kind() %>
 								
 								
-								<br><br> <a href="chatReset.jsp?mem_mail=<%=dto.getMem_mail() %>"><button>채팅하기</button></a>
+								<br><br> <a href="chatReset.jsp?mem_mail=<%=dto.getMem_mail() %>">
+								<button>채팅하기</button></a>
 								
 								
 
@@ -135,8 +140,11 @@
 						<div class="content right" align="center">
 							<p>
 								&lt 내 강아지와 어울릴 것 같은 강아지 &gt <br> <br> <img
-									src="img/yohan.jpg"><br> <br> <input
-									type="submit" value="채팅하기">
+									src="img/yohan.jpg"><br> <br> 
+								<a href="chatReset.jsp?mem_mail=<%=dto.getMem_mail() %>">
+									<button>채팅하기</button>
+								</a>
+									
 							</p>
 						</div>
 						<!-- Section Tittle -->

@@ -10,8 +10,7 @@
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="manifest" href="site.webmanifest">
-<link rel="shortcut icon" type="image/x-icon"
-	href="assets/img/gaelogo.ico">
+<link rel="shortcut icon" type="image/x-icon" href="assets/img/gaelogo.ico">
 
 <!-- CSS here -->
 <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -23,13 +22,19 @@
 <link rel="stylesheet" href="assets/css/animate.min.css">
 <link rel="stylesheet" href="assets/css/animated-headline.css">
 <link rel="stylesheet" href="assets/css/magnific-popup.css">
-<link rel="stylesh
-	eet" href="assets/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
 <link rel="stylesheet" href="assets/css/themify-icons.css">
 <link rel="stylesheet" href="assets/css/slick.css">
 <link rel="stylesheet" href="assets/css/nice-select.css">
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="Doc/css/headStyle.css">
+<style type="text/css">	
+	.logoImg {
+		margin-top : 50px;
+		max-width: 180px;
+		max-height: 180px;
+	}
+</style>
 <script>
 	window.onload = function() {
 		document.getElementById('logChkMat').onclick = function() {
@@ -71,8 +76,7 @@
 						class="menu-wrapper d-flex align-items-center justify-content-between">
 						<!-- Logo -->
 						<div class="logo">
-							<a href="index.jsp"><img class="logoImg"
-								src="assets/img/gaelogo1.png" alt=""></a>
+							<a href="index.jsp"><img class="logoImg" src="img/dog.png" alt=""></a>
 						</div>
 						<!-- Main-menu -->
 						<div class="main-menu f-right d-none d-lg-block">

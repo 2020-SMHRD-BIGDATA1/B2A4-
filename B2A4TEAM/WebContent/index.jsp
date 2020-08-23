@@ -63,10 +63,10 @@
 							<div class="section-tittle mb-35">
 								<h2>Matching</h2>
 							</div>
-							<p>For more than 5 years now, design has been the central
-								piece of my world. On this fast and mind-blowing journey, I have
-								moved over the years from being a visual designer to a full-time
-								UX/UI thinker and designer.</p>
+							<p>
+								당신의 강아지의 성향을 분석해드립니다. <br>
+								그리고 강아지의 친구를 찾아드립니다.
+							</p>
 
 							<p>At the moment, this journey has brought me to Cloud
 								Academy in Mendrisio, Switzerland where I am a full-time Product
@@ -76,7 +76,7 @@
 					</div>
 					<div class="col-lg-6">
 						<div class="about-img">
-							<img src="assets/img/gallery/about1.png" alt="">
+							<img src="img/dogMain2.jpg" alt="">
 						</div>
 					</div>
 				</div>
