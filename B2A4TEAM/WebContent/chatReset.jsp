@@ -142,15 +142,6 @@
 							<span class="status green"></span> online
 						</h3>
 					</div></li>
-				<li><img
-					src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_07.jpg"
-					alt="">
-					<div>
-						<h2>Prénom Nom</h2>
-						<h3>
-							<span class="status green"></span> online
-						</h3>
-					</div></li>
 			</ul>
 		</aside>
 		<main class="chatmain">
@@ -213,9 +204,8 @@
 				<!-- <div class="triangle"></div> -->
 				<div class="message1">
 					<%
-						ChatDAO dao2 = new ChatDAO();
 
-					ArrayList<ChatDTO> list = dao2.selectAll();
+					ArrayList<ChatDTO> list = dao.selectAll();
 
 					for (int i = 0; i < list.size(); i++) {
 					%>
@@ -255,29 +245,19 @@
 		setInterval(
 				function() {
 					/* 채팅방 내용을 실시간으로 읽어오는 부분  */
-					$
-							.ajax({
-								url : "chatSelect", //컨트롤러 URL
-								dataType : 'json',
-								processData : false, // 비동기 파일 업로드시 꼭 설정해줘야 하는 속성
-								contentType : false, // 비동기 파일 업로드시 꼭 설정해줘야 하는 속성
-								type : 'POST',
-								contentType : "application/x-www-form-urlencoded; charset=UTF-8",
-								success : function(res) {
-									/* 채팅방 글써지는 부분 */
-									$('#message1').empty();
+					$.ajax({
+							url : "chatSelect", //컨트롤러 URL
+							dataType : 'json',
+							processData : false, // 비동기 파일 업로드시 꼭 설정해줘야 하는 속성
+							contentType : false, // 비동기 파일 업로드시 꼭 설정해줘야 하는 속성
+							type : 'POST',
+							contentType : "application/x-www-form-urlencoded; charset=UTF-8",
+							success : function(res) {
+								/* 채팅방 글써지는 부분 */
+								$('#message1').empty();
 									for (var i = 0; i < res.length; i++) {
-										$('#message1').prepend(
-												'<li>'
-														+ res[i].writer
-														+ ":"
-														+ res[i].content
-														+ res[i].date
-																.substring(0,
-																		16)
-														+ "</li>");
-										$('#message1').scrollTop(
-												$('#message1')[0].scrollHeight);
+								$('#message1').prepend('<li>'+ res[i].writer + res[i].content+res[i].date.substring(0,16)+ "</li>");
+								$('#message1').scrollTop($('#message1')[0].scrollHeight);
 									}
 								},
 								error : function(xhr) {
@@ -285,9 +265,7 @@
 							});
 				}, 500);
 
-		$("body").keydown(
-				function(key) {
-
+		$("body").keydown(function(key) {
 					if (key.keyCode == 13) {
 
 						//let writer = $('#writer').val();		 
@@ -303,17 +281,10 @@
 							contentType : false, // 비동기 파일 업로드시 꼭 설정해줘야 하는 속성
 							type : 'POST',
 							success : function(res) {
-								//$('#list').empty();
+								$('#chat1').empty();
 								for (var i = 0; i < res.length; i++) {
-									$('#list').prepend(
-											'<li>'
-													+ res[i].writer
-													+ " : "
-													+ res[i].content
-													+ res[i].date.substring(0,
-															16) + "</li>");
-									$('#list').scrollTop(
-											$('#list')[0].scrollHeight);
+									$('#chat1').prepend('<li>'+ res[i].writer+ " : "+ res[i].content+ res[i].date.substring(0,16) + "</li>");
+									$('#chat1').scrollTop($('#chat1')[0].scrollHeight);
 								}
 							},
 							error : function(xhr) {
@@ -322,10 +293,7 @@
 					}
 				});
 
-		$('#input').on(
-				'click',
-				function() {
-
+		$('#input').on('click',function() {
 					let content = $('#content').val();
 
 					//$('#writer').val(""); //비워줌

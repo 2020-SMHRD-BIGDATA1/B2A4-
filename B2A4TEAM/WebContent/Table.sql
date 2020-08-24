@@ -44,7 +44,7 @@ insert into chat_room values(chat_index.nextval, 'º¸¸®¸¾', '·çºñ¸¾', sysdate);
 insert into chat_room values(chat_index.nextval, 'º¸¸®¸¾', '¹¶Ä¡', sysdate);
 insert into chat_room values(chat_index.nextval, 'º¸¸®¸¾', 'ÈÞÁö', sysdate);
 
-select * from chat_room
+select * from chat_room order by chat_index;
 
 --chat_content
 
@@ -103,6 +103,7 @@ insert into gae_info values('jihoon', 'º¸¸®', '2', '¿©ÀÚ', 'Çªµé', 'ÇÔ','5','¼Ò½
 insert into gae_info values('yohan', '·çºñ', '2', '¿©ÀÚ', 'ºñ¼õ', 'ÇÔ','5','¼Ò½ÉÈ°¹ß','');
 
 select * from gae_info
-
+delete from chat_content where writer ='º¸¸®¸¾';
+delete from chat_content where writer ='·çºñ¸¾';
 
 

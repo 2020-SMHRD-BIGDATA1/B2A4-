@@ -22,10 +22,11 @@
 				<table>
 					<tr class="form-group">
 						<td class="joinTag">이메일</td>
-						<td><input type="text" class="form-control" name="mem_mail"
+						<td><input type="text" id ="in_id" class="form-control" name="mem_mail"
 							placeholder="이메일" required></td>
 						<td style="width: 50px;"><input type="button" class="btn-2"
-							value="중복확인"></td>
+							value="중복확인" onclick="idCheck()">
+							<p id="p1"></p></td>
 					</tr>
 					<tr class="form-group">
 						<td class="joinTag">비밀번호</td>
@@ -127,6 +128,33 @@
 			//obj.value = obj.value.replace(/[\a-zㄱ-ㅎㅏ-ㅣ가-힣]/g, '');
 			obj.value = obj.value.replace(/[\ㄱ-ㅎㅏ-ㅣ가-힣]/g, '');
 		}
+		
+		function idCheck() {
+			id = document.getElementById("in_id");
+			
+			$.ajax({
+		        type :"get" ,  //get or post방식
+		        //QueryString 방식으로 전송 : ?(시작) email(이름값) + email.value(실제 변수값)
+		        url : "idCheck?id=" + id.value,  //서버 페이지의 주소
+		        dataType : "text",  //주고받을 데이터의 유형
+		        success : function(data) {
+		       	 
+		       	 p1 = document.getElementById("p1");
+		       	 
+		       	 if (data=='true') {
+						p1.innerHTML = "사용할 수 없는 아이디입니다.";
+					}else {}
+						p1.innerHTML = "사용할 수 있는 아이디입니다.";
+					}
+		        
+
+		        },
+		        error : function() {
+					//서버와 통신이 실패했을 때 후 처리
+			         alert("호출실패");
+			     }
+		     });
+		} 
 	</script>
 </body>
 </html>

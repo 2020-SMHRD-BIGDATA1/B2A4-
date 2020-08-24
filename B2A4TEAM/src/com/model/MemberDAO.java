@@ -104,4 +104,31 @@ public class MemberDAO {
 		return cnt;
 	}
 
+	public boolean idCheck(String id) {
+		boolean check = false;
+		
+		getConnction();
+		try {
+			String sql = "select mem_mail from gae_member where mem_mail=?";
+			psmt = conn.prepareStatement(sql);
+			
+			psmt.setString(1, id);
+			
+			rs = psmt.executeQuery();
+			
+			if (rs.next()) {
+				check = true;
+			} else {
+				check = false;
+			}
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		
+		return check;
+	}
+
 }

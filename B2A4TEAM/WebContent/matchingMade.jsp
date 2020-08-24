@@ -126,7 +126,7 @@ a button{
 								<img src="img/bone1.png">&nbsp;성별 : <%=dto.getGae_gender() %><br>
 								<img src="img/bone1.png">&nbsp;품종 : <%=dto.getGae_kind() %>
 								
-								
+								<!-- mem_mail 채팅상대 구분하는 상대방 메일  -->
 								<br><br> <a href="chatReset.jsp?mem_mail=<%=dto.getMem_mail() %>">
 								<button>채팅하기</button></a>
 								
