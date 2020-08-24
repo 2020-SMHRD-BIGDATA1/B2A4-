@@ -74,15 +74,15 @@ select * from chat_content order by chat_time DESC
 
 create table gae_info (
 mem_mail varchar2(100),
-gae_name varchar2(100),
-gae_age varchar2(100),
-gae_gender varchar2(100),
-gae_kind varchar2(100),
-gae_neu varchar2(100),
-gae_weight varchar2(100),
-gae_type varchar2(100),
 gae_img varchar2(500),
+gae_name varchar2(100),
+gae_sex varchar2(100),
+gae_age varchar2(100),
+gae_species varchar2(100),
+gae_weight varchar2(100),
+gae_size varchar2(100),
 gae_walking varchar2(10),
+gae_cut varchar2(100),
 gae_dog_react varchar2(10),
 gae_human_react varchar2(10),
 gae_test1 varchar2(10),
@@ -107,3 +107,13 @@ delete from chat_content where writer ='보리맘';
 delete from chat_content where writer ='루비맘';
 
 
+--성향을 나눠주는 그룹 테이블 생성
+create table gae_group(
+mem_mail varchar2(100),
+gae_group varchar2(10)
+);
+alter table gae_group
+add constraint group_mail_fk foreign key(mem_mail)
+references gae_member(mem_mail)
+
+select * from GAE_GROUP

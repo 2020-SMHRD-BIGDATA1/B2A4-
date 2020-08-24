@@ -64,9 +64,9 @@ public class MemberDAO {
 				String pw = rs.getString(3);
 				String mem_nick = rs.getString(4);
 				info = new MemberDTO(mail, pw, mem_nick);
-				
+
 				System.out.println("로그인 성공");
-			
+
 			} else {
 				System.out.println("로그인 실패");
 			}
@@ -77,7 +77,6 @@ public class MemberDAO {
 		}
 		return info;
 	}
-	
 
 	public int join(MemberDTO dto) {
 		int cnt = 0;
@@ -106,28 +105,28 @@ public class MemberDAO {
 
 	public boolean idCheck(String id) {
 		boolean check = false;
-		
+
 		getConnction();
 		try {
 			String sql = "select mem_mail from gae_member where mem_mail=?";
 			psmt = conn.prepareStatement(sql);
-			
+
 			psmt.setString(1, id);
-			
+
 			rs = psmt.executeQuery();
-			
+
 			if (rs.next()) {
 				check = true;
 			} else {
 				check = false;
 			}
 		} catch (SQLException e) {
-			
+
 			e.printStackTrace();
 		} finally {
 			close();
 		}
-		
+
 		return check;
 	}
 

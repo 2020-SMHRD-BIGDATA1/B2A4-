@@ -32,6 +32,10 @@ public class MemberDTO {
 		this.mem_nick = mem_nick;
 	}
 
+	public MemberDTO(String mail) {
+		this.mem_mail=mail;
+	}
+
 	public String getMem_name() {
 		return mem_name;
 	}

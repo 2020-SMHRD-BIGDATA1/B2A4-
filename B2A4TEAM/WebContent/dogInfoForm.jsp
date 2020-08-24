@@ -41,7 +41,7 @@
 
 					<tr class="form-group">
 						<td class="joinTag">강아지 성별</td>
-						<td><select name="dog_gender">
+						<td><select name="dog_sex">
 								<option value="1">암컷</option>
 								<option value="0">수컷</option>
 						</select></td>
@@ -94,7 +94,7 @@
 					</tr>
 					<tr class="form-group">
 						<td class="joinTag">강아지 중성화 여부</td>
-						<td><select name="dog_nue">
+						<td><select name="dog_cut">
 								<option value="1">했어요</option>
 								<option value="0">안했어요</option>
 						</select></td>
