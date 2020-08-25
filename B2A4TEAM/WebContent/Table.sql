@@ -14,6 +14,7 @@ constraint mem_mail_pk primary key(mem_mail)
 )
 
 select * from GAE_MEMBER;
+delete from GAE_MEMBER where mem_nick= '¼öÁ¦ºñ'
 
 drop table gae_member;
 insert into GAE_MEMBER values('ÀÌÁöÈÆ','jihoon','1234','º¸¸®¸¾','man','940715','010-8877-2725','´ë¿ì');
@@ -44,8 +45,6 @@ insert into chat_room values(chat_index.nextval, 'º¸¸®¸¾', '·çºñ¸¾', sysdate);
 insert into chat_room values(chat_index.nextval, 'º¸¸®¸¾', '¹¶Ä¡', sysdate);
 insert into chat_room values(chat_index.nextval, 'º¸¸®¸¾', 'ÈÞÁö', sysdate);
 
-select * from chat_room order by chat_index;
-
 --chat_content
 
 drop table chat_content
@@ -68,7 +67,8 @@ insert into CHAT_CONTENT values(3, '¹¶Ä¡', 'º¸¸®µµ ³Ê¹« ±Í¿±±Í¿±', sysdate);
 insert into CHAT_CONTENT values(3, 'º¸¸®¸¾', '¿ì¸® °°ÀÌ »êÃ¥½ÃÄÑ¿ä', sysdate);
 insert into CHAT_CONTENT values(3, '¹¶Ä¡', 'º¸¸®¾Ö±á ³Ñ ±Í¿±³×¿©', sysdate);
 
-select * from chat_content order by chat_time DESC
+select * from chat_content order by chat_time DESC;
+select * from chat_room order by chat_index;
 
 --°­¾ÆÁö Á¤º¸ Å×ÀÌºí
 
@@ -106,4 +106,19 @@ select * from gae_info
 delete from chat_content where writer ='º¸¸®¸¾';
 delete from chat_content where writer ='·çºñ¸¾';
 
+delete from chat_room where chat_user1 ='jihoon';
+delete from chat_room where chat_user1 ='yohan';
+select * from CHAT_ROOM;
 
+
+create table TIP_BBS(
+   bbsID number,
+   bbsTitle varchar2(50),
+   mem_nick varchar2(100),
+   bbsDate date,
+   bbsContent varchar2(2048),
+   bbsAvailable number,
+   constraint tip_bbsid_pk primary key(bbsID),
+   constraint bbs_mail_fk foreign key(mem_mail)
+	references gae_member(mem_mail)
+)

@@ -115,9 +115,7 @@ a button{
 								<%
 									GaeDAO GaeDao = new GaeDAO();
 								
-									GaeDTO dto = GaeDao.getGaeInfo(info.getMem_mail());
-
-								
+									GaeDTO dto = GaeDao.getGaeInfo(info.getMem_mail());				
 								%>
 								
 								<!--메일 : <%=dto.getMem_mail() %><br>  -->
@@ -127,7 +125,7 @@ a button{
 								<img src="img/bone1.png">&nbsp;품종 : <%=dto.getGae_kind() %>
 								
 								<!-- mem_mail 채팅상대 구분하는 상대방 메일  -->
-								<br><br> <a href="chatReset.jsp?mem_mail=<%=dto.getMem_mail() %>">
+								<br><br> <a href="chatReset.jsp?mem_mail=<%=dto.getMem_mail()%>">
 								<button>채팅하기</button></a>
 								
 								
@@ -139,8 +137,16 @@ a button{
 						</div>
 						<div class="content right" align="center">
 							<p>
-								&lt 내 강아지와 어울릴 것 같은 강아지 &gt <br> <br> <img
-									src="img/yohan.jpg"><br> <br> 
+								&lt 내 강아지와 어울릴 것 같은 강아지 &gt <br> <br> 
+								<img src="img/siba.png"><br> <br> 
+								
+								<img src="img/bone1.png">&nbsp;이름 : <%=dto.getGae_name() %><br>
+								<img src="img/bone1.png">&nbsp;나이 : <%=dto.getGae_age() %>세<br>
+								<img src="img/bone1.png">&nbsp;성별 : <%=dto.getGae_gender() %><br>
+								<img src="img/bone1.png">&nbsp;품종 : <%=dto.getGae_kind() %>
+								
+								
+								
 								<a href="chatReset.jsp?mem_mail=<%=dto.getMem_mail() %>">
 									<button>채팅하기</button>
 								</a>

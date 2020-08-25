@@ -1,32 +1,34 @@
+<%@page import="com.model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-<link rel="stylesheet" type="text/css" href="css/join.css?ver=2">
+<link rel="stylesheet" type="text/css" href="Doc/css/join.css?ver=2">
 <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
 	rel="stylesheet">
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="Doc/js/jquery-3.5.1.min.js"></script>
 <link rel="stylesheet" type="text/css" href="Doc/css/join.css?ver=2">
-<link rel="shortcut icon" type="image/x-icon"
-	href="assets/img/gaelogo.ico">
+<link rel="shortcut icon" type="image/x-icon" href="assets/img/gaelogo.ico">
 <body>
+	<%
+		MemberDTO info = (MemberDTO) session.getAttribute("info");
+	%>
+
 	<div class="container">
 		<div class="join-cover">
 			<div class="joinHead">
 				<a class="navbar-brand" href="index.jsp"><img
-					src="Doc/img/mainLogo.png" style="width: 200px; height: auto;"></a>
+					src="assets/img/mainlogo.png" style="width: 200px; height: auto;"></a>
 			</div>
-			<form action="JoinService" method="post" accept-charset="utf-8">
+			<form action="updateService" method="post" accept-charset="utf-8">
 				<!-- 로그인을 누르면 Login.jsp파일로 post 방식으로 이동 -->
 				<table>
 					<tr class="form-group">
 						<td class="joinTag">이메일</td>
-						<td><input type="text" class="form-control" name="mem_mail"
-							placeholder="이메일" required></td>
-						<td style="width: 50px;"><input type="button" class="btn-2"
-							value="중복확인"></td>
+						<td><%=info.getMem_mail() %></td>
+						<td style="width: 50px;">
 					</tr>
 					<tr class="form-group">
 						<td class="joinTag">비밀번호</td>
@@ -49,12 +51,12 @@
 					</tr>
 					<tr class="form-group">
 						<td class="joinTag">이름</td>
-						<td><input type="text" class="form-control" name="mem_name"
+						<td><input type="text" class="form-control" name="mem_name" 
 							placeholder="이름" required></td>
 					</tr>
 					<tr class="form-group">
 						<td class="joinTag">닉네임</td>
-						<td><input type="text" class="form-control" name="mem_nick"
+						<td><input type="text" class="form-control" name="mem_nick" min="4" maxlength="16"
 							placeholder="닉네임" required></td>
 					</tr>
 
@@ -70,7 +72,7 @@
 					<tr class="form-group">
 						<td class="joinTag">생년월일</td>
 						<td><input type="text" title="생년월일" name="mem_birth"
-							class="form-control" placeholder="ex)940715" maxlength="6"
+							class="form-control" placeholder="ex)940715" maxlength="6" min="6"
 							onkeydown="fn_press_han(this);" onkeypress="inNumber();" required></td>
 					</tr>
 					<tr class="form-group">
@@ -86,7 +88,7 @@
 					</tr>
 				</table>
 				<div class="button-group">
-					<button type="submit" class="btn-1" value="join">회원정보수정</button>
+					<button type="submit" class="btn-1" value="join">회원정보 수정</button>
 				</div>
 			</form>
 		</div>
@@ -128,6 +130,8 @@
 			//obj.value = obj.value.replace(/[\a-zㄱ-ㅎㅏ-ㅣ가-힣]/g, '');
 			obj.value = obj.value.replace(/[\ㄱ-ㅎㅏ-ㅣ가-힣]/g, '');
 		}
+		
+		
 	</script>
 </body>
 </html>

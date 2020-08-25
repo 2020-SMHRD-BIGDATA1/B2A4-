@@ -7,6 +7,13 @@ public class ChatDTO {
 	private String content;
 	private String date;
 
+	public ChatDTO(int chat_index, String writer, String content) {
+		super();
+		this.chat_index = chat_index;
+		this.writer = writer;
+		this.content = content;
+	}
+
 	public ChatDTO(String writer, String content, String date) {
 
 		this.writer = writer;
