@@ -88,15 +88,15 @@
 										<%} else {%> href="loginForm.jsp" id="logChkMat" <%}%>>매칭하기</a></li>
 									<li><a <%if (info != null) {%> href="chatReset.jsp"
 										<%} else {%> href="loginForm.jsp" id="logChkChat" <%}%>>채팅하기</a></li>
-									<li><a <%if (info != null) {%> href="blog.jsp"
+									<li><a <%if (info != null) {%> href="board.jsp"
 										<%} else {%> href="loginForm.jsp" id="logChkBoard" <%}%>>게시판</a>
 										<%
 											if (info != null) {
 										%>
 										<ul class="submenu">
-											<li><a href="blog.jsp">자유게시판</a></li>
-											<li><a href="blog_details.jsp">정보게시판</a></li>
-											<li><a href="elements.jsp">질문게시판</a></li>
+											<li><a href="board.jsp">자유게시판</a></li>
+											<li><a href="board.jsp">정보게시판</a></li>
+											<li><a href="board.jsp">질문게시판</a></li>
 										</ul> <%
  	} else {
 

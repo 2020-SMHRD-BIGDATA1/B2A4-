@@ -1,6 +1,6 @@
 drop table gae_member ;
 drop table gae_info;
--- È¸¿ø°¡ÀÔ Å×ÀÌºí
+-- È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½
 create table gae_member(
 mem_name varchar2(100) not null,
 mem_mail varchar2(100),
@@ -16,8 +16,9 @@ constraint mem_mail_pk primary key(mem_mail)
 select * from GAE_MEMBER;
 select * from GAE_INFO;
 drop table gae_member;
-insert into GAE_MEMBER values('ÀÌÁöÈÆ','jihoon','1234','º¸¸®¸¾','man','940715','010-8877-2725','´ë¿ì');
-insert into GAE_MEMBER values('¹®¿äÇÑ','yohan','1234','·çºñ¸¾','man','940715','010-8877-2725','´ë¿ì');
+insert into GAE_MEMBER values('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','jihoon','1234','ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','man','940715','010-8877-2725','ï¿½ï¿½ï¿½');
+insert into GAE_MEMBER values('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','yohan','1234','ï¿½ï¿½ï¿½','man','940715','010-8877-2725','ï¿½ï¿½ï¿½');
+
 
 delete from GAE_MEMBER where mem_mail = 'ljh2725'
 delete from gae_info where mem_mail='ljh2725'
@@ -40,9 +41,9 @@ chat_time date
 
 select * from CHAT_ROOM;
 
-insert into chat_room values(chat_index.nextval, 'º¸¸®¸¾', '·çºñ¸¾', sysdate);
-insert into chat_room values(chat_index.nextval, 'º¸¸®¸¾', '¹¶Ä¡', sysdate);
-insert into chat_room values(chat_index.nextval, 'º¸¸®¸¾', 'ÈÞÁö', sysdate);
+insert into chat_room values(chat_index.nextval, 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½', 'ï¿½ï¿½ï¿½', sysdate);
+insert into chat_room values(chat_index.nextval, 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½', 'ï¿½ï¿½Ä¡', sysdate);
+insert into chat_room values(chat_index.nextval, 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½', 'ï¿½ï¿½ï¿½ï¿½', sysdate);
 
 select * from chat_room order by chat_index;
 
@@ -59,18 +60,18 @@ constraint index_fk foreign key(chat_index)
 references chat_room(chat_index) 
 )
 
-insert into CHAT_CONTENT values(chat, 'º¸¸®¸¾', '·çºñ¸¾ ¾È³çÇÏ¼¼¿ä', sysdate);
-insert into CHAT_CONTENT values(1, '·çºñ¸¾', 'º¸¸®¸¾ ¹Ý°¡¿ö¿ä', sysdate);
-insert into CHAT_CONTENT values(1, 'º¸¸®¸¾', '·çºñ¾Ö±á ³Ñ ±Í¿±³×¿©', sysdate);
+insert into CHAT_CONTENT values(chat, 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½', 'ï¿½ï¿½ï¿½ ï¿½È³ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½', sysdate);
+insert into CHAT_CONTENT values(1, 'ï¿½ï¿½ï¿½', 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ý°ï¿½ï¿½ï¿½ï¿½ï¿½', sysdate);
+insert into CHAT_CONTENT values(1, 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½', 'ï¿½ï¿½ï¿½Ö±ï¿½ ï¿½ï¿½ ï¿½Í¿ï¿½ï¿½×¿ï¿½', sysdate);
 
 
-insert into CHAT_CONTENT values(3, '¹¶Ä¡', 'º¸¸®µµ ³Ê¹« ±Í¿±±Í¿±', sysdate);
-insert into CHAT_CONTENT values(3, 'º¸¸®¸¾', '¿ì¸® °°ÀÌ »êÃ¥½ÃÄÑ¿ä', sysdate);
-insert into CHAT_CONTENT values(3, '¹¶Ä¡', 'º¸¸®¾Ö±á ³Ñ ±Í¿±³×¿©', sysdate);
+insert into CHAT_CONTENT values(3, 'ï¿½ï¿½Ä¡', 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¹ï¿½ ï¿½Í¿ï¿½ï¿½Í¿ï¿½', sysdate);
+insert into CHAT_CONTENT values(3, 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½', 'ï¿½ì¸® ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¥ï¿½ï¿½ï¿½Ñ¿ï¿½', sysdate);
+insert into CHAT_CONTENT values(3, 'ï¿½ï¿½Ä¡', 'ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ ï¿½ï¿½ ï¿½Í¿ï¿½ï¿½×¿ï¿½', sysdate);
 
 select * from chat_content order by chat_time DESC
 
---°­¾ÆÁö Á¤º¸ Å×ÀÌºí
+--ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½
 
 create table gae_info (
 mem_mail varchar2(100),
@@ -99,15 +100,15 @@ add constraint mail_fk foreign key(mem_mail)
 references gae_member(mem_mail)
 
 
-insert into gae_info values('jihoon', 'º¸¸®', '2', '¿©ÀÚ', 'Çªµé', 'ÇÔ','5','¼Ò½ÉÈ°¹ß','');
-insert into gae_info values('yohan', '·çºñ', '2', '¿©ÀÚ', 'ºñ¼õ', 'ÇÔ','5','¼Ò½ÉÈ°¹ß','');
+insert into gae_info values('jihoon', 'ï¿½ï¿½ï¿½ï¿½', '2', 'ï¿½ï¿½ï¿½ï¿½', 'Çªï¿½ï¿½', 'ï¿½ï¿½','5','ï¿½Ò½ï¿½È°ï¿½ï¿½','');
+insert into gae_info values('yohan', 'ï¿½ï¿½ï¿½', '2', 'ï¿½ï¿½ï¿½ï¿½', 'ï¿½ï¿½ï¿½', 'ï¿½ï¿½','5','ï¿½Ò½ï¿½È°ï¿½ï¿½','');
 
 select * from gae_info
-delete from chat_content where writer ='º¸¸®¸¾';
-delete from chat_content where writer ='·çºñ¸¾';
+delete from chat_content where writer ='ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½';
+delete from chat_content where writer ='ï¿½ï¿½ï¿½';
 
 
---¼ºÇâÀ» ³ª´²ÁÖ´Â ±×·ì Å×ÀÌºí »ý¼º
+--ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½×·ï¿½ ï¿½ï¿½ï¿½Ìºï¿½ ï¿½ï¿½ï¿½ï¿½
 create table gae_group(
 mem_mail varchar2(100),
 gae_group varchar2(10)
@@ -117,3 +118,14 @@ add constraint group_mail_fk foreign key(mem_mail)
 references gae_member(mem_mail)
 
 select * from GAE_GROUP
+
+create table BBS(
+	bbsID number,
+	bbsTitle varchar2(50),
+	mem_mail varchar2(100),
+	bbsDate date,
+	bbsContent varchar2(2048),
+	bbsAvailable number,
+	constraint bbsid_pk primary key(bbsID)
+)
+select * from bbs
