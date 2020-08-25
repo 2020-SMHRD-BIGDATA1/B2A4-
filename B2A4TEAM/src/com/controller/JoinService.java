@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.model.MemberDAO;
 import com.model.MemberDTO;
@@ -29,17 +30,19 @@ public class JoinService extends HttpServlet {
 		MemberDAO dao = new MemberDAO();
 		MemberDTO dto = new MemberDTO(name, mail, pw, nick, gender, birth, tel, addr);
 		int cnt = dao.join(dto);
-
+			
 		if (cnt > 0) {
 			System.out.println("회원가입 성공");
 			System.out.println(name);
 			
-			// main.jsp로 이동
-			response.sendRedirect("index.jsp");
+			HttpSession session = request.getSession();
+			session.setAttribute("join_mail", mail);
+			// 설문조사 폼으로 이동
+			response.sendRedirect("infoSurvey.jsp");
 		} else {
 			System.out.println("회원가입 실패");
 			// join.jsp로 이동
-			response.sendRedirect("index.jsp");
+			response.sendRedirect("joinForm.jsp");
 		}
 	}
 

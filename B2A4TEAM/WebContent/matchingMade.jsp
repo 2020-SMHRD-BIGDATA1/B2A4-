@@ -121,8 +121,8 @@ a button{
 								<!--메일 : <%=dto.getMem_mail() %><br>  -->
 								<img src="img/bone1.png">&nbsp;이름 : <%=dto.getGae_name() %><br>
 								<img src="img/bone1.png">&nbsp;나이 : <%=dto.getGae_age() %>세<br>
-								<img src="img/bone1.png">&nbsp;성별 : <%=dto.getGae_gender() %><br>
-								<img src="img/bone1.png">&nbsp;품종 : <%=dto.getGae_kind() %>
+								<img src="img/bone1.png">&nbsp;성별 : <%=dto.getGae_sex() %><br>
+								<img src="img/bone1.png">&nbsp;품종 : <%=dto.getGae_species() %>
 								
 								<!-- mem_mail 채팅상대 구분하는 상대방 메일  -->
 								<br><br> <a href="chatReset.jsp?mem_mail=<%=dto.getMem_mail()%>">
@@ -142,8 +142,8 @@ a button{
 								
 								<img src="img/bone1.png">&nbsp;이름 : <%=dto.getGae_name() %><br>
 								<img src="img/bone1.png">&nbsp;나이 : <%=dto.getGae_age() %>세<br>
-								<img src="img/bone1.png">&nbsp;성별 : <%=dto.getGae_gender() %><br>
-								<img src="img/bone1.png">&nbsp;품종 : <%=dto.getGae_kind() %>
+								<img src="img/bone1.png">&nbsp;성별 : <%=dto.getGae_sex() %><br>
+								<img src="img/bone1.png">&nbsp;품종 : <%=dto.getGae_species() %>
 								
 								
 								
