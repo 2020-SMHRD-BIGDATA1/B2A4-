@@ -20,8 +20,8 @@ public class SurveyService extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession();
-		MemberDTO join_mail = (MemberDTO) session.getAttribute("join_mail");
-		String mem_mail = join_mail.getMem_mail();
+		String join_mail = (String) session.getAttribute("join_mail");
+		String mem_mail = join_mail;
 		String test1 = request.getParameter("test1");
 		String test2 = request.getParameter("test2");
 		String test3 = request.getParameter("test3");

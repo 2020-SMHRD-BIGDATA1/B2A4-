@@ -7,6 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
 	rel="stylesheet">
 <script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="jquery-3.5.1.min.js"></script>
 <script src="Doc/js/jquery-3.5.1.min.js"></script>
 <link rel="shortcut icon" type="image/x-icon"
 	href="assets/img/gaelogo.ico">
@@ -159,8 +160,7 @@
 					</tr>
 				</table>
 				<div class="button-group">
-					<button type="submit" class="btn-1" value="info">다음 강아지
-						성향분석 설문으로 이동</button>
+					<button type="submit" class="btn-1" value="info">최종 제출</button>
 				</div>
 			</form>
 		</div>

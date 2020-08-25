@@ -194,7 +194,8 @@
 
 				</table>
 				<div class="button-group">
-					<button type="submit" class="btn-1" value="info">최종 제출</button>
+					<button type="submit" class="btn-1" value="info">다음 강아지
+						정보입력창으로 이동</button>
 				</div>
 			</form>
 		</div>

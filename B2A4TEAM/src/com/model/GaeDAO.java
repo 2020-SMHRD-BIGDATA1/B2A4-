@@ -79,29 +79,28 @@ public class GaeDAO {
 	public int uploadInfo(GaeDTO dto) {
 		int result = 0;
 		getConn();
-
 		try {
-			String sql = "UPDATE GAE_INFO SET(mem_mail=?,gae_img=?,gae_name=?,gae_sex=?,gae_age=?,gae_species=?,gae_weight=?,gae_size=?,gae_walking=?,gae_cut=?,gae_dog_react=?,gae_human_react=?)";
+			String sql = "UPDATE GAE_INFO SET gae_img=?,gae_name=?,gae_sex=?,gae_age=?,gae_species=?,gae_weight=?,gae_size=?,gae_walking=?,gae_cut=?,gae_dog_react=?,gae_human_react=? where mem_mail=?";
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, dto.getMem_mail());
-			psmt.setString(2, dto.getGae_img());
-			psmt.setString(3, dto.getGae_name());
-			psmt.setString(4, dto.getGae_sex());
-			psmt.setString(5, dto.getGae_age());
-			psmt.setString(6, dto.getGae_species());
-			psmt.setString(7, dto.getGae_weight());
-			psmt.setString(8, dto.getGae_size());
-			psmt.setString(9, dto.getGae_walking());
-			psmt.setString(10, dto.getGae_cut());
-			psmt.setString(11, dto.getGae_dog_react());
-			psmt.setString(12, dto.getGae_human_react());
-			cnt = psmt.executeUpdate();
+
+			psmt.setString(1, dto.getGae_img());
+			psmt.setString(2, dto.getGae_name());
+			psmt.setString(3, dto.getGae_sex());
+			psmt.setString(4, dto.getGae_age());
+			psmt.setString(5, dto.getGae_species());
+			psmt.setString(6, dto.getGae_weight());
+			psmt.setString(7, dto.getGae_size());
+			psmt.setString(8, dto.getGae_walking());
+			psmt.setString(9, dto.getGae_cut());
+			psmt.setString(10, dto.getGae_dog_react());
+			psmt.setString(11, dto.getGae_human_react());
+			psmt.setString(12, dto.getMem_mail());
+			result = psmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			close();
 		}
-
 		return result;
 	}
 
@@ -129,6 +128,6 @@ public class GaeDAO {
 		}
 
 		return cnt;
-		
+
 	}
 }

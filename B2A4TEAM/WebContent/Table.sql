@@ -14,13 +14,13 @@ constraint mem_mail_pk primary key(mem_mail)
 )
 
 select * from GAE_MEMBER;
-
+select * from GAE_INFO;
 drop table gae_member;
 insert into GAE_MEMBER values('이지훈','jihoon','1234','보리맘','man','940715','010-8877-2725','대우');
 insert into GAE_MEMBER values('문요한','yohan','1234','루비맘','man','940715','010-8877-2725','대우');
 
-delete from GAE_MEMBER where mem_mail = 'jihoon2723@naver.com'
-
+delete from GAE_MEMBER where mem_mail = 'ljh2725'
+delete from gae_info where mem_mail='ljh2725'
 -- chat_room
 
 drop sequence chat_index;

@@ -36,7 +36,7 @@ public class JoinService extends HttpServlet {
 			System.out.println(name);
 			
 			HttpSession session = request.getSession();
-			session.setAttribute("join_mail", dto.getMem_mail());
+			session.setAttribute("join_mail", mail);
 			// 설문조사 폼으로 이동
 			response.sendRedirect("infoSurvey.jsp");
 		} else {
