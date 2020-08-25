@@ -111,7 +111,10 @@
 					<%
 						}
 					%>
-					<div class="col-lg-8 mb-5 mb-lg-0">
+					</div>
+					</div>
+					</section>
+					<!--  <div class="col-lg-8 mb-5 mb-lg-0">
 						<div class="blog_left_sidebar">
 							<article class="blog_item">
 								<div class="blog_item_img">
