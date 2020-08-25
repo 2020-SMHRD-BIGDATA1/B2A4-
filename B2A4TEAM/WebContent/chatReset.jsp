@@ -42,7 +42,8 @@
 	<%
 	
 	int i = 0;
-		// 내정보 info(메일, 비번, nick)
+	
+	// 내정보 info(메일, 비번, nick)
 	// 상대방 메일
 	String mem_mail = request.getParameter("mem_mail");
 
@@ -73,6 +74,9 @@
 				</div>
 			</header>
 			<ul>
+					<%
+						for(int j = 0; j<5; j++){
+					%>
 				<li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_01.jpg" alt=""> <!-- 상대방 닉 나와야 함 -->
 					<div>
 						<%-- <%
@@ -100,17 +104,23 @@
 					<%-- 	<%
 							System.out.println(printNick);
 						%> --%>
-						<h2> <!-- mem_mail 에는 채팅 상대방 메일이 담겨 있습니다 -->
+						
+						 <!-- mem_mail 에는 채팅 상대방 메일이 담겨 있습니다 -->
 							<%
 							String otherNick = dao.getMemNick(mem_mail);				
 							%>
+
+						<h2>	
 		
 							<%=otherNick %>
 						</h2>
+							
+						
+						
 						
 					</div>
 				</li>
-
+					<%} %>
 				
 			</ul>
 		</aside>

@@ -248,5 +248,7 @@ public class ChatDAO {
 		
 		return otherNick;
 	};
+	
+	
 
 }

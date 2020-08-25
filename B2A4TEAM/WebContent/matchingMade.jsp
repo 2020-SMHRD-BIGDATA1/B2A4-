@@ -138,7 +138,7 @@ a button{
 						<div class="content right" align="center">
 							<p>
 								&lt 내 강아지와 어울릴 것 같은 강아지 &gt <br> <br> 
-								<img src="img/siba.png"><br> <br> 
+								<img src="img/yohan.jpg"><br> <br> 
 								
 								<img src="img/bone1.png">&nbsp;이름 : <%=dto.getGae_name() %><br>
 								<img src="img/bone1.png">&nbsp;나이 : <%=dto.getGae_age() %>세<br>
@@ -147,7 +147,7 @@ a button{
 								
 								
 								
-								<a href="chatReset.jsp?mem_mail=<%=dto.getMem_mail() %>">
+								<br><br><a href="chatReset.jsp?mem_mail=<%=dto.getMem_mail() %>">
 									<button>채팅하기</button>
 								</a>
 									

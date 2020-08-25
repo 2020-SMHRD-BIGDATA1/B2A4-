@@ -58,14 +58,14 @@ constraint index_fk foreign key(chat_index)
 references chat_room(chat_index) 
 )
 
-insert into CHAT_CONTENT values(chat, 'º¸¸®¸¾', '·çºñ¸¾ ¾È³çÇÏ¼¼¿ä', sysdate);
+insert into CHAT_CONTENT values(1, 'º¸¸®¸¾', '·çºñ¸¾ ¾È³çÇÏ¼¼¿ä', sysdate);
 insert into CHAT_CONTENT values(1, '·çºñ¸¾', 'º¸¸®¸¾ ¹Ý°¡¿ö¿ä', sysdate);
 insert into CHAT_CONTENT values(1, 'º¸¸®¸¾', '·çºñ¾Ö±á ³Ñ ±Í¿±³×¿©', sysdate);
 
 
-insert into CHAT_CONTENT values(3, '¹¶Ä¡', 'º¸¸®µµ ³Ê¹« ±Í¿±±Í¿±', sysdate);
-insert into CHAT_CONTENT values(3, 'º¸¸®¸¾', '¿ì¸® °°ÀÌ »êÃ¥½ÃÄÑ¿ä', sysdate);
-insert into CHAT_CONTENT values(3, '¹¶Ä¡', 'º¸¸®¾Ö±á ³Ñ ±Í¿±³×¿©', sysdate);
+insert into CHAT_CONTENT values(2, '¹¶Ä¡', 'º¸¸®µµ ³Ê¹« ±Í¿±±Í¿±', sysdate);
+insert into CHAT_CONTENT values(2, 'º¸¸®¸¾', '¿ì¸® °°ÀÌ »êÃ¥½ÃÄÑ¿ä', sysdate);
+insert into CHAT_CONTENT values(2, '¹¶Ä¡', 'º¸¸®¾Ö±á ³Ñ ±Í¿±³×¿©', sysdate);
 
 select * from chat_content order by chat_time DESC;
 select * from chat_room order by chat_index;
@@ -101,13 +101,14 @@ references gae_member(mem_mail)
 
 insert into gae_info values('jihoon', 'º¸¸®', '2', '¿©ÀÚ', 'Çªµé', 'ÇÔ','5','¼Ò½ÉÈ°¹ß','');
 insert into gae_info values('yohan', '·çºñ', '2', '¿©ÀÚ', 'ºñ¼õ', 'ÇÔ','5','¼Ò½ÉÈ°¹ß','');
+insert into gae_info values('gae', '¸¸¼ö', '2', '¿©ÀÚ', '°í¾Þ¾²', 'ÇÔ','5','¼Ò½ÉÈ°¹ß','');
 
 select * from gae_info
 delete from chat_content where writer ='º¸¸®¸¾';
 delete from chat_content where writer ='·çºñ¸¾';
 
-delete from chat_room where chat_user1 ='jihoon';
-delete from chat_room where chat_user1 ='yohan';
+delete from chat_room where chat_user2 ='jihoon';
+delete from chat_room where chat_user1 ='hihi';
 select * from CHAT_ROOM;
 
 
