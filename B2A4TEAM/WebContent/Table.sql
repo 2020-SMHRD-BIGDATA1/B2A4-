@@ -46,7 +46,7 @@ select * from CHAT_ROOM;
 
 --chat_content
 
-drop table chat_content
+drop table gae_info
 
 create table chat_content(
 chat_index int,
@@ -69,6 +69,7 @@ insert into CHAT_CONTENT values(2, '뭉치', '보리애긔 넘 귀엽네여', sysdate);
 select * from chat_content order by chat_time DESC;
 select * from chat_room order by chat_index;
 
+select * from gae_info
 
 create table gae_info (
 mem_mail varchar2(100),
@@ -90,11 +91,12 @@ gae_test4 varchar2(10),
 gae_test5 varchar2(10),
 gae_test6 varchar2(10),
 gae_test7 varchar2(10),
-gae_test8 varchar2(10)
-);
-alter table gae_info
-add constraint mail_fk foreign key(mem_mail)
+gae_test8 varchar2(10),
+constraint gaeinfo_fk foreign key(mem_mail)
 references gae_member(mem_mail)
+);
+
+
 
 insert into gae_info values('jihoon', '보리', '2', '여자', '푸들', '함','5','소심활발','');
 insert into gae_info values('yohan', '루비', '2', '여자', '비숑', '함','5','소심활발','');

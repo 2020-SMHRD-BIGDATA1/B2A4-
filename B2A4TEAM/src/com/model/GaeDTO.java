@@ -2,6 +2,21 @@ package com.model;
 
 public class GaeDTO {
 	private String mem_mail;
+	public GaeDTO(String mem_mail, String gae_img, String gae_name, String gae_sex, String gae_age, String gae_species,
+			String gae_weight, String gae_size, String gae_walking, String gae_cut) {
+		super();
+		this.mem_mail = mem_mail;
+		this.gae_img = gae_img;
+		this.gae_name = gae_name;
+		this.gae_sex = gae_sex;
+		this.gae_age = gae_age;
+		this.gae_species = gae_species;
+		this.gae_weight = gae_weight;
+		this.gae_size = gae_size;
+		this.gae_walking = gae_walking;
+		this.gae_cut = gae_cut;
+	}
+
 	private String gae_img;
 	private String gae_name;
 	private String gae_sex;

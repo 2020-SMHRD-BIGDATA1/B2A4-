@@ -70,6 +70,9 @@ a button{
 	border : solid 1px whilte;
 	background-color: #670000;
 }
+.container{
+	height: 900px;
+}
 
 @font-face {
 	src: url("Doc/fonts/BMJUA_ttf.ttf");
@@ -109,15 +112,16 @@ a button{
 
 				<div id="matching">
 						<div class="content left" align="center">
-							<p>
-								&lt 내 강아지와 비슷한 강아지 &gt <br> <br> 
-								<img src="img/yohan.jpg"><br> <br>
-								<%
+						<%
 									GaeDAO GaeDao = new GaeDAO();
 								
 									GaeDTO dto = GaeDao.getGaeInfo(info.getMem_mail());				
-								%>
+							%>
+							<p>
+								&lt 내 강아지와 비슷한 강아지 &gt <br> <br> 
+								<img src='imgFolder/<%=dto.getGae_img() %>'><br> <br>
 								
+								 
 								<!--메일 : <%=dto.getMem_mail() %><br>  -->
 								<img src="img/bone1.png">&nbsp;이름 : <%=dto.getGae_name() %><br>
 								<img src="img/bone1.png">&nbsp;나이 : <%=dto.getGae_age() %>세<br>
@@ -155,7 +159,7 @@ a button{
 						</div>
 						<!-- Section Tittle -->
 
-						<p>친목을 응원합니다</p>
+					
 
 
 
