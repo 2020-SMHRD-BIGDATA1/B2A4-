@@ -1,3 +1,4 @@
+<%@page import="java.util.Random"%>
 <%@page import="com.model.GaeDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.model.GaeDAO"%>
@@ -75,8 +76,8 @@ a button {
 .container {
 	height: 900px;
 }
-.content img{
 
+.content img {
 	max-height: 200px;
 	max-width: 200px;
 }
@@ -123,80 +124,81 @@ a button {
 							GaeDAO GaeDao = new GaeDAO();
 
 						GaeDTO dto = GaeDao.getGaeInfo(info.getMem_mail());
+						String mycharacter = GaeDao.getCharacter(info.getMem_mail()); //나의 성향을 db에서 가져옴
+						System.out.println("로그인 한 갱쥐의 성향"+mycharacter); // 잘 넘어옴
+
+						ArrayList<String> group_list1 = GaeDao.getGroup(mycharacter, info.getMem_mail()); //group_list 이메일리스트
+
+						System.out.println("실험삼아 그룹리스트에 첫번째 아이: "+ group_list1.get(0)); 
+
+						Random random = new Random();
+						int ran = random.nextInt(group_list1.size());
+						System.out.println("몇번 아이가 랜덤으로 걸렸을까?? :"+ran);
+
+						String random_group_mail = group_list1.get(ran);
+						System.out.println("랜덤으로 뽑힌 갱쥐의 메일 : "+random_group_mail);
+						GaeDTO otherdogInfo_dto = GaeDao.getGaeInfo(random_group_mail);
 						%>
 						<p>
-							&lt 내 강아지와 비슷한 강아지 &gt <br> <br> <img
-								src='imgFolder/<%=dto.getGae_img()%>'><br> <br>
 
-
+							&lt 내 강아지와 비슷한 강아지 &gt <br> <br> 
+							<img src='imgFolder/<%=otherdogInfo_dto.getGae_img()%>'><br><br>
 							<!--메일 :dto.getMem_mail()l() %><br>  -->
 							<img src="img/bone1.png">&nbsp;이름 :
-							<%=dto.getGae_name()%><br> <img src="img/bone1.png">&nbsp;나이
-							:
-							<%=dto.getGae_age()%>세<br> <img src="img/bone1.png">&nbsp;성별
-							:
-							<%=dto.getGae_sex()%><br> <img src="img/bone1.png">&nbsp;품종
-							:
-							<%=dto.getGae_species()%>
+							<%=otherdogInfo_dto.getGae_name()%><br> <img
+								src="img/bone1.png">&nbsp;나이 :
+							<%=otherdogInfo_dto.getGae_age()%>세<br> <img
+								src="img/bone1.png">&nbsp;성별 :
+							<%=otherdogInfo_dto.getGae_sex()%><br> <img
+								src="img/bone1.png">&nbsp;품종 :
+							<%=otherdogInfo_dto.getGae_species()%>
 
 							<!-- mem_mail 채팅상대 구분하는 상대방 메일  -->
-							<br> <br> <a
-								href="chatReset.jsp?mem_mail=<%=dto.getMem_mail()%>">
+							<br> <br> 
+							<a href="chatReset.jsp?mem_mail=<%=otherdogInfo_dto.getMem_mail()%>">
 								<button>채팅하기</button>
 							</a>
-
-
 						</p>
 					</div>
+					
 					<div class="vs">
 						<h1>VS</h1>
 					</div>
+					
 					<div class="content right" align="center">
 						<p>
-							&lt 내 강아지와 어울릴 것 같은 강아지 &gt <br> <br> <img
-								src="img/yohan.jpg"><br> <br> <img
-								src="img/bone1.png">&nbsp;이름 :
-							<%=dto.getGae_name()%><br> <img src="img/bone1.png">&nbsp;나이
-							:
-							<%=dto.getGae_age()%>세<br> <img src="img/bone1.png">&nbsp;성별
-							:
-							<%=dto.getGae_sex()%><br> <img src="img/bone1.png">&nbsp;품종
-							:
-							<%=dto.getGae_species()%>
+						
+						<%
+						ArrayList<String> group_list2 = GaeDao.getOtherGroup(mycharacter); // 로그인한 사람 성향 보내서  !=
+						
+						System.out.println("---------------------------"); //왼쪽 오른쪽 출력문 구분선
+						int other_ran = random.nextInt(group_list2.size());
+						System.out.println("몇번 아이가 랜덤으로 걸렸을까?? :"+other_ran);
 
+						String random_group_mail2 = group_list2.get(other_ran);
+						System.out.print("랜덤으로 뽑힌 갱쥐의 메일 : "+ random_group_mail2);
+						GaeDTO otherdogInfo_dto2 = GaeDao.getGaeInfo(random_group_mail2);
+						%>
+							&lt 내 강아지와 어울릴 것 같은 강아지 &gt <br> <br> <img src='imgFolder/<%=otherdogInfo_dto2.getGae_img()%>'><br><br>
+							<!--메일 :dto.getMem_mail()l() %><br>  -->
+							<img src="img/bone1.png">&nbsp;이름 :
+							<%=otherdogInfo_dto2.getGae_name()%><br> <img
+								src="img/bone1.png">&nbsp;나이 :
+							<%=otherdogInfo_dto2.getGae_age()%>세<br> <img
+								src="img/bone1.png">&nbsp;성별 :
+							<%=otherdogInfo_dto2.getGae_sex()%><br> <img
+								src="img/bone1.png">&nbsp;품종 :
+							<%=otherdogInfo_dto2.getGae_species()%>
 
-
-							<br> <br> <a
-								href="chatReset.jsp?mem_mail=<%=dto.getMem_mail()%>">
+							<!-- mem_mail 채팅상대 구분하는 상대방 메일  -->
+							<br> <br> 
+							<a href="chatReset.jsp?mem_mail=<%=otherdogInfo_dto.getMem_mail()%>">
 								<button>채팅하기</button>
 							</a>
-
 						</p>
-					</div>
-				
-
-					
-
-
-					
+					</div>		
 				</div>
-			
-				
-				<!-- Section Tittle -->
-
-		
-
-
-				<!--  <div class="col-lg-6">
-	                    <div class="about-img">
-	                        <img src="assets/img/gallery/about1.png" alt="">
-	                    </div>
-	                </div>
-			       	 
-			       	 </div>-->
-
-			</div>
-			</div>
+			</div>	
 		</section>
 		<!-- About  End-->
 	</main>
