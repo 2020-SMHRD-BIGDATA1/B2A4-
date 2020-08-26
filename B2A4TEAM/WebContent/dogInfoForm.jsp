@@ -160,7 +160,7 @@
 					</tr>
 				</table>
 				<div class="button-group">
-					<button type="submit" class="btn-1" value="info" onclick="test()">최종
+					<button type="submit" class="btn-1" value="info">최종
 						제출</button>
 				</div>
 			</form>
@@ -194,24 +194,7 @@
 			obj.value = obj.value.replace(/[\ㄱ-ㅎㅏ-ㅣ가-힣]/g, '');
 		}
 		
-		function test(){
-		   var text_data = sessionStorage.getItem("join_mail"); 
-		   $.ajax({
-               type : 'POST',                                  <!--GET / POST-->
-               url : 'http://localhost:9000/predict/predict',
-               data : {
-                       item_id:text_data                       <!--key : "value"-->
-               },
-               dataType : 'JSON',
-               success : function(result){
-                       alert("result = "+ result);
-                       $('#a').html(result);
-               },
-               error : function(xtr,status,error){
-                       alert(xtr +":"+status+":"+error);
-               }
-       });
-}
+
 	</script>
 </body>
 </html>

@@ -30,11 +30,6 @@
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="assets/css/responsive.css">
 <style type="text/css">
-	
-	a, a:hover {
-				color: #000000;
-				text-decoration: none;
-				}
 </style>
 </head>
 <body>
@@ -52,12 +47,12 @@
 	<main>
 		<!--? Hero Area Start-->
 		<div class="hero-area2 d-flex align-items-center">
-			<div class="container">
+			<div class="container" style="margin-top: 150px;">
 				<div class="row ">
 					<div class="col-xl-12">
 						<!-- Hero Caption -->
-						<div class="hero-cap pt-100">
-							<h2>QnA</h2>
+						<div class="hero-cap pt-100" style="text-align: center;">
+							<h1 style="color:black">자유게시판</h1>
 						</div>
 					</div>
 				</div>
@@ -82,14 +77,17 @@
 						<tbody>
 							<%
 								BbsDAO bbsDAO = new BbsDAO();
-								ArrayList<Bbs> list = bbsDAO.getList(pageNumber);
-								for (int i = 0; i < list.size(); i++) {
+							ArrayList<Bbs> list = bbsDAO.getList(pageNumber);
+							for (int i = 0; i < list.size(); i++) {
 							%>
 							<tr>
-								<td><%= list.get(i).getBbsID()%></td>
-								<td><a href="view.jsp?bbsID=<%=list.get(i).getBbsID()%>"><%= list.get(i).getBbsTitle().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %></a></td>
+								<td><%=list.get(i).getBbsID()%></td>
+								<td><a style="color: black"
+									href="view.jsp?bbsID=<%=list.get(i).getBbsID()%>"><%=list.get(i).getBbsTitle().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;")
+		.replaceAll("\n", "<br>")%></a></td>
 								<td><%=list.get(i).getMem_mail()%></td>
-								<td><%=list.get(i).getBbsDate().substring(0, 11) + list.get(i).getBbsDate().substring(11, 13) + "시 "+ list.get(i).getBbsDate().substring(14, 16) + "분 "%></td>
+								<td><%=list.get(i).getBbsDate().substring(0, 11) + list.get(i).getBbsDate().substring(11, 13) + "시 "
+		+ list.get(i).getBbsDate().substring(14, 16) + "분 "%></td>
 							</tr>
 							<%
 								}
@@ -99,20 +97,22 @@
 					<%
 						if (pageNumber != 1) {
 					%>
-						<a href="board.jsp?pageNumber=<%=pageNumber - 1%>" class="btn btn-success btn-arrow-left">이전</a>
+					<a href="board.jsp?pageNumber=<%=pageNumber - 1%>"
+						class="btn btn-success btn-arrow-left">이전</a>
 					<%
 						}
-						if (bbsDAO.nextPage(pageNumber + 1)) {
+					if (bbsDAO.nextPage(pageNumber + 1)) {
 					%>
-						<a href="board.jsp?pageNumber=<%=pageNumber + 1%>" class="btn btn-success btn-arrow-left">다음</a>
+					<a href="board.jsp?pageNumber=<%=pageNumber + 1%>"
+						class="btn btn-success btn-arrow-left">다음</a>
 					<%
 						}
 					%>
 					<a href="write.jsp" class="btn btn-primary pull-right">글쓰기</a>
+				</div>
 			</div>
-			</div>
-			</section>
-					<!--  <div class="col-lg-8 mb-5 mb-lg-0">
+		</section>
+		<!--  <div class="col-lg-8 mb-5 mb-lg-0">
 						<div class="blog_left_sidebar">
 							<article class="blog_item">
 								<div class="blog_item_img">
