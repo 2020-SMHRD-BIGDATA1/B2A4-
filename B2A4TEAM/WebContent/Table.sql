@@ -127,3 +127,4 @@ create table BBS(
 	ADD constraint bbs_mail_fk foreign key(mem_mail)
 	references gae_member(mem_mail)
 )
+select * from BBS
