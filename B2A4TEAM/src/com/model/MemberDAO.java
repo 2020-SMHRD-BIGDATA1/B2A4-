@@ -130,4 +130,33 @@ public class MemberDAO {
 		return check;
 	}
 
+	public int update(MemberDTO dto) {
+		
+		getConnction();
+		int cnt = 0;
+		try {
+			// 비번 이름 닉네임 성별 생일 번호 주소
+
+			String sql = "update gae_member set mem_pw = ?, mem_name = ?, mem_nick = ?, mem_gender=?, mem_birth=? ,mem_tel = ?, mem_addr=? where mem_mail = ?";
+			psmt = conn.prepareStatement(sql);
+
+			psmt.setString(1, dto.getMem_pw());
+			psmt.setString(2, dto.getMem_name());
+			psmt.setString(3, dto.getMem_nick());
+			psmt.setString(4, dto.getMem_gender());
+			psmt.setString(5, dto.getMem_birth());
+			psmt.setString(6, dto.getMem_tel());
+			psmt.setString(7, dto.getMem_addr());
+			psmt.setString(8, dto.getMem_mail());
+
+			cnt = psmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return cnt;
+	}
+
 }

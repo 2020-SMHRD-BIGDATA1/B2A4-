@@ -78,7 +78,7 @@ public class ChatDAO {
 		getConn();
 
 		try {
-			String sql = "insert into chat_content values(1,?,?,sysdate)";
+			String sql = "insert into chat_content values(?,?,?,sysdate)";
 			psmt = conn.prepareStatement(sql);
 
 			// psmt.setInt(1, dto.getChat_index());
@@ -147,24 +147,108 @@ public class ChatDAO {
 		getConn();
 
 		try {
-			String sql = "select chat_user1, chat_user2 from chat_room where chat_index=?";
+			String sql = "select * from chat_room where chat_index=?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1, chat_index);
 			rs = psmt.executeQuery();
 			
 			while (rs.next()) {
 
-				String user1 = rs.getString(1);
-				String user2 = rs.getString(2);
+				String user1 = rs.getString(2);
+				String user2 = rs.getString(3);
 
 				dto = new ChatroomDTO(user1, user2);
 			}
 		} catch (SQLException e) {
 
 			e.printStackTrace();
+		} finally {
+			close();
 		}
 
 		return dto;
 	};
+	
+	public ChatDTO getChatlist() {
+		ChatDTO dto = null;
+
+		getConn();
+
+		String sql = "select * from chat_content where chat_index= 1 order by chat_time desc"; // 1번방 애들만 나옴
+		try {
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			if(rs.next()) {
+
+				String writer = rs.getString(2);
+				String content = rs.getString(3);
+				String date = rs.getString(4);
+
+				dto = new ChatDTO(writer, content, date);
+			
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return dto;
+	}
+	
+	public ArrayList<ChatDTO> selectReverse() { //디비에 있는거 시간순서로 나오게 하기 selectAll 안되가지구 그냥 정렬순서만 바꾼 dao 하나 더 만듦
+		ArrayList<ChatDTO> list = new ArrayList<ChatDTO>();
+
+		getConn();
+
+		String sql = "select * from chat_content where chat_index= 1 order by chat_time"; // 1번방 애들만 나옴
+		try {
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			while (rs.next()) {
+
+				String writer = rs.getString(2);
+				String content = rs.getString(3);
+				String date = rs.getString(4);
+
+				ChatDTO dto = new ChatDTO(writer, content, date);
+				list.add(dto);
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return list;
+	}
+	
+	public String getMemNick(String mem_mail) {
+		String otherNick = null;
+		
+		getConn();
+		
+		try {
+			String sql = "select * from gae_member where mem_mail = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, mem_mail);
+			
+			rs = psmt.executeQuery();
+			
+			if (rs.next()) {
+				otherNick = rs.getString(4);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		
+		return otherNick;
+	};
+	
+	
 
 }

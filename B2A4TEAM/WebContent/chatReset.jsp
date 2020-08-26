@@ -1,3 +1,4 @@
+<%@page import="com.model.MemberDAO"%>
 <%@page import="Chat.ChatroomDTO"%>
 <%@page import="Chat.ChatDAO"%>
 <%@page import="com.google.gson.Gson"%>
@@ -24,8 +25,9 @@
 <link rel="stylesheet" href="assets/css/slick.css">
 <link rel="stylesheet" href="assets/css/nice-select.css">
 <link rel="stylesheet" href="assets/css/style.css">
-<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
-	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
 <meta charset="UTF-8">
 <title>채팅하기</title>
 <!-- CSS here -->
@@ -38,7 +40,10 @@
 <body>
 	<%@ include file="header.jsp"%>
 	<%
-		// 내정보 info(메일, 비번, nick)
+	
+	int i = 0;
+	
+	// 내정보 info(메일, 비번, nick)
 	// 상대방 메일
 	String mem_mail = request.getParameter("mem_mail");
 
@@ -69,9 +74,12 @@
 				</div>
 			</header>
 			<ul>
+					<%
+						for(int j = 0; j<5; j++){
+					%>
 				<li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_01.jpg" alt=""> <!-- 상대방 닉 나와야 함 -->
 					<div>
-						<%
+						<%-- <%
 						//int chat_index = dao.chat_index(info.getMem_nick());
 						//  chat_index 보내서 내 닉네임(유저)이 아닌 닉네임 출력하기
 	
@@ -92,56 +100,28 @@
 							printNick = user2;
 	
 						}
-						%>
-						<%
+						%> --%>
+					<%-- 	<%
 							System.out.println(printNick);
-						%>
-						<h2>
-							<%=printNick%>
+						%> --%>
+						
+						 <!-- mem_mail 에는 채팅 상대방 메일이 담겨 있습니다 -->
+							<%
+							String otherNick = dao.getMemNick(mem_mail);				
+							%>
+
+						<h2>	
+		
+							<%=otherNick %>
 						</h2>
-						<h3>
-							<span class="status orange"></span> offline
-						</h3>
+							
+						
+						
+						
 					</div>
 				</li>
-
-				<li><img
-					src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_03.jpg"
-					alt="">
-					<div>
-						<h2>박수진</h2>
-						<h3>
-							<span class="status orange"></span> offline
-						</h3>
-					</div></li>
-				<li><img
-					src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_04.jpg"
-					alt="">
-					<div>
-						<h2>민태윤</h2>
-						<h3>
-							<span class="status green"></span> online
-						</h3>
-					</div></li>
-				<li><img
-					src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_05.jpg"
-					alt="">
-					<div>
-						<h2>이지훈</h2>
-						<h3>
-							<span class="status orange"></span> offline
-						</h3>
-
-					</div></li>
-				<li><img
-					src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_06.jpg"
-					alt="">
-					<div>
-						<h2>박병관</h2>
-						<h3>
-							<span class="status green"></span> online
-						</h3>
-					</div></li>
+					<%} %>
+				
 			</ul>
 		</aside>
 		<main class="chatmain">
@@ -153,7 +133,7 @@
 					</h2>
 
 					</h2>
-					<h3>already 1902 messages</h3>
+					<h3>여기에 주소를 넣을까요?</h3>
 				</div>
 				<img
 					src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/ico_star.png"
@@ -205,15 +185,14 @@
 				<div class="message1">
 					<%
 
-					ArrayList<ChatDTO> list = dao.selectAll();
+					ArrayList<ChatDTO> list = dao.selectReverse();
 
-					for (int i = 0; i < list.size(); i++) {
+					for (i = 0; i < list.size(); i++) {
 					%>
 
-					<li><%=list.get(i).getWriter()%>: <%=list.get(i).getWriter()%>
-						<%=list.get(i).getContent()%> <%=list.get(i).getDate().substring(0, 16)%></li>
+					<li><%=list.get(i).getWriter()%> : <%=list.get(i).getContent()%> 
+					<%=list.get(i).getDate().substring(0, 16)%></li>
 
-					<%=list.get(i).getDate()%>
 					<br>
 
 					<%
@@ -242,11 +221,10 @@
 
 	<script type="text/javascript">
 		/* setInterval은 지정된 시간초 만큼 반복되는 */
-		setInterval(
-				function() {
+		setInterval(function() {
 					/* 채팅방 내용을 실시간으로 읽어오는 부분  */
 					$.ajax({
-							url : "chatSelect", //컨트롤러 URL
+							url : "Chat", //컨트롤러 URL
 							dataType : 'json',
 							processData : false, // 비동기 파일 업로드시 꼭 설정해줘야 하는 속성
 							contentType : false, // 비동기 파일 업로드시 꼭 설정해줘야 하는 속성
@@ -254,11 +232,11 @@
 							contentType : "application/x-www-form-urlencoded; charset=UTF-8",
 							success : function(res) {
 								/* 채팅방 글써지는 부분 */
-								$('#message1').empty();
-									for (var i = 0; i < res.length; i++) {
-								$('#message1').prepend('<li>'+ res[i].writer + res[i].content+res[i].date.substring(0,16)+ "</li>");
-								$('#message1').scrollTop($('#message1')[0].scrollHeight);
-									}
+								$('#chat1').empty();
+								for (var i = 0; i <res.length ; i++) {
+									$('#chat1').prepend('<li>'+ res[i].writer+ " : "+ res[i].content+ res[i].date.substring(0,16) + "</li>");
+									$('#chat1').scrollTop($('#chat1')[0].scrollHeight);
+								}
 								},
 								error : function(xhr) {
 								}
@@ -282,7 +260,7 @@
 							type : 'POST',
 							success : function(res) {
 								$('#chat1').empty();
-								for (var i = 0; i < res.length; i++) {
+								for (var i = 0; i <res.length ; i++) {
 									$('#chat1').prepend('<li>'+ res[i].writer+ " : "+ res[i].content+ res[i].date.substring(0,16) + "</li>");
 									$('#chat1').scrollTop($('#chat1')[0].scrollHeight);
 								}
@@ -307,9 +285,10 @@
 						type : 'POST',
 						success : function(res) {
 							$('#chat1').empty();
-							for (var i = 0; i < res.length; i++) {
+							for (var i =0; i  <res.length ; i++) {
 								$('#chat1').prepend('<li>' + res[i].writer + " : "+ res[i].content+ res[i].date.substring(0, 16)+ "</li>");
 								$('#chat1').scrollTop($('#chat1')[0].scrollHeight);
+								
 							}
 						},
 						error : function(xhr) {

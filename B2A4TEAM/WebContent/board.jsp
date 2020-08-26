@@ -30,10 +30,11 @@
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="assets/css/responsive.css">
 <style type="text/css">
-a, a:hover {
-	color: #000000;
-	text-decoration: none;
-}
+	
+	a, a:hover {
+				color: #000000;
+				text-decoration: none;
+				}
 </style>
 </head>
 <body>
@@ -108,7 +109,10 @@ a, a:hover {
 						}
 					%>
 					<a href="write.jsp" class="btn btn-primary pull-right">글쓰기</a>
-					<div class="col-lg-8 mb-5 mb-lg-0">
+			</div>
+			</div>
+			</section>
+					<!--  <div class="col-lg-8 mb-5 mb-lg-0">
 						<div class="blog_left_sidebar">
 							<article class="blog_item">
 								<div class="blog_item_img">

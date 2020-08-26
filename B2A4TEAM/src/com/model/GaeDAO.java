@@ -59,13 +59,16 @@ public class GaeDAO {
 			rs = psmt.executeQuery();
 			if (rs.next()) {
 				String mem_mail = rs.getString(1);
+				String img = rs.getString(2);
 				String name = rs.getString(3);
 				String sex = rs.getString(4);
 				String age = rs.getString(5);
 				String species = rs.getString(6);
+				String weight = rs.getString(7);
+				String size = rs.getString(8);
+				String walking = rs.getString(9);
 				String cut = rs.getString(10);
-				String img = rs.getString(2);
-				info = new GaeDTO(mem_mail, name, age, sex, species, cut, img);
+				info = new GaeDTO(mem_mail, img, name, sex, age, species, weight, size, walking, cut);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
