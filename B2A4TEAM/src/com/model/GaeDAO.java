@@ -133,4 +133,32 @@ public class GaeDAO {
 		return cnt;
 
 	}
+	
+	public String getmyImg(String email) {
+		
+		getConn();
+		
+		String img = null;
+		
+		
+		try {
+			String sql = "select * from gae_info where mem_mail = ?";
+			psmt = conn.prepareStatement(sql);
+			
+			psmt.setString(1, email);
+			rs = psmt.executeQuery();
+			
+			if (rs.next()) {
+				img = rs.getString(2); 
+			}
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		
+		return img;
+	}
 }

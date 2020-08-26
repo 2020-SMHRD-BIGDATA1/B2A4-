@@ -14,8 +14,8 @@ constraint mem_mail_pk primary key(mem_mail)
 )
 
 select * from GAE_MEMBER;
+select * from chat_room;
 
-delete from GAE_MEMBER where mem_nick= '������'
 
 
 select * from GAE_INFO;
@@ -44,6 +44,9 @@ chat_time date
 
 select * from CHAT_ROOM;
 
+
+select * from chat_room order by chat_index;
+
 --chat_content
 
 drop table gae_info
@@ -58,18 +61,18 @@ references chat_room(chat_index)
 )
 
 
-insert into CHAT_CONTENT values(1, '������', '��� �ȳ��ϼ���', sysdate);
-insert into CHAT_CONTENT values(1, '���', '������ �ݰ�����', sysdate);
-insert into CHAT_CONTENT values(1, '������', '���ֱ� �� �Ϳ��׿�', sysdate);
+select * from chat_content order by chat_time DESC
 
-insert into CHAT_CONTENT values(2, '��ġ', '������ �ʹ� �Ϳ��Ϳ�', sysdate);
-insert into CHAT_CONTENT values(2, '������', '�츮 ���� ��å���ѿ�', sysdate);
-insert into CHAT_CONTENT values(2, '��ġ', '�����ֱ� �� �Ϳ��׿�', sysdate);
+
 
 select * from chat_content order by chat_time DESC;
 select * from chat_room order by chat_index;
 
 select * from gae_info
+drop table gae_info;
+drop table chat_content;
+drop table chat_room;
+drop table gae_member;
 
 create table gae_info (
 mem_mail varchar2(100),
@@ -97,30 +100,9 @@ references gae_member(mem_mail)
 );
 
 
-
-insert into gae_info values('jihoon', '����', '2', '����', 'Ǫ��', '��','5','�ҽ�Ȱ��','');
-insert into gae_info values('yohan', '���', '2', '����', '���', '��','5','�ҽ�Ȱ��','');
-insert into gae_info values('gae', '����', '2', '����', '��޾�', '��','5','�ҽ�Ȱ��','');
-
-select * from gae_info
-
 delete from chat_room where chat_user2 ='jihoon';
 delete from chat_room where chat_user1 ='hihi';
 select * from CHAT_ROOM;
-
-
-create table TIP_BBS(
-   bbsID number,
-   bbsTitle varchar2(50),
-   mem_nick varchar2(100),
-   bbsDate date,
-   bbsContent varchar2(2048),
-   bbsAvailable number,
-   constraint tip_bbsid_pk primary key(bbsID),
-   constraint bbs_mail_fk foreign key(mem_mail)
-	references gae_member(mem_mail)
-)
-DROP TABLE TIP_BBS
 
 create table gae_group(
 mem_mail varchar2(100),
@@ -145,4 +127,3 @@ create table BBS(
 	ADD constraint bbs_mail_fk foreign key(mem_mail)
 	references gae_member(mem_mail)
 )
-select * from bbs

@@ -64,14 +64,11 @@
 								<h2>Matching</h2>
 							</div>
 							<p>
-								당신의 강아지의 성향을 분석해드립니다. <br>
-								그리고 강아지의 친구를 찾아드립니다.
+								당신의 반려견의 성향을 분석해드립니다. <br>
+								그리고 반려견의 친구를 찾아드립니다.
 							</p>
 
-							<p>At the moment, this journey has brought me to Cloud
-								Academy in Mendrisio, Switzerland where I am a full-time Product
-								Designer. In this position, as with freelance, I am working
-								remotely and I have been for approximately two years.</p>
+							<p></p>
 						</div>
 					</div>
 					<div class="col-lg-6">
@@ -339,7 +336,6 @@
 	<!-- Jquery Plugins, main Jquery -->
 	<script src="./assets/js/plugins.js"></script>
 	<script src="./assets/js/main.js"></script>
-
 
 
 </body>

@@ -56,41 +56,41 @@
 					<tr class="form-group">
 						<td class="joinTag">강아지 견종</td>
 						<td><select name="dog_species">
-								<option value="골든 리트리버">골든 리트리버</option>
-								<option value="그레이하운드">그레이하운드</option>
-								<option value="뉴펀들랜드">뉴펀들랜드</option>
-								<option value="닥스훈트">닥스훈트</option>
-								<option value="도베르만">도베르만</option>
-								<option value="레브라도 리트리버">레브라도 리트리버</option>
-								<option value="말라뮤트">말라뮤트</option>
-								<option value="말티즈">말티즈</option>
-								<option value="믹스견">믹스견</option>
-								<option value="보더콜리">보더콜리</option>
-								<option value="불독">불독</option>
-								<option value="비글">비글</option>
-								<option value="비숑프리제">비숑프리제</option>
-								<option value="빠삐용">빠삐용</option>
-								<option value="샤페이">샤페이</option>
-								<option value="슈나우저">슈나우저</option>
-								<option value="스피츠">스피츠</option>
-								<option value="시바견">시바견</option>
-								<option value="시츄">시츄</option>
-								<option value="아메리칸 불리">아메리칸 불리</option>
-								<option value="요크셔테리어">요크셔테리어</option>
-								<option value="웰시코기">웰시코기</option>
-								<option value="진돗개">진돗개</option>
-								<option value="치와와">치와와</option>
-								<option value="코카스파니엘">코카스파니엘</option>
-								<option value="테리어">테리어</option>
-								<option value="퍼그">퍼그</option>
-								<option value="페키니즈">페키니즈</option>
-								<option value="포메라니안">포메라니안</option>
-								<option value="푸들(미니어쳐)">푸들(미니어쳐)</option>
-								<option value="푸들(스탠다드)">푸들(스탠다드)</option>
-								<option value="푸들(토이)">푸들(토이)</option>
-								<option value="프렌치 불독">프렌치 불독</option>
-								<option value="허스키">허스키</option>
-								<option value="기타">기타</option>
+								<option value="1">골든 리트리버</option>
+								<option value="2">그레이하운드</option>
+								<option value="3">뉴펀들랜드</option>
+								<option value="3">닥스훈트</option>
+								<option value="4">도베르만</option>
+								<option value="5">레브라도 리트리버</option>
+								<option value="6">말라뮤트</option>
+								<option value="7">말티즈</option>
+								<option value="8">믹스견</option>
+								<option value="9">보더콜리</option>
+								<option value="10">불독</option>
+								<option value="11">비글</option>
+								<option value="12">비숑프리제</option>
+								<option value="13">빠삐용</option>
+								<option value="14">샤페이</option>
+								<option value="15">슈나우저</option>
+								<option value="16">스피츠</option>
+								<option value="17">시바견</option>
+								<option value="18">시츄</option>
+								<option value="19">아메리칸 불리</option>
+								<option value="20">요크셔테리어</option>
+								<option value="21">웰시코기</option>
+								<option value="22">진돗개</option>
+								<option value="23">치와와</option>
+								<option value="24">코카스파니엘</option>
+								<option value="25">테리어</option>
+								<option value="26">퍼그</option>
+								<option value="27">페키니즈</option>
+								<option value="28">포메라니안</option>
+								<option value="29">푸들(미니어쳐)</option>
+								<option value="30">푸들(스탠다드)</option>
+								<option value="31">푸들(토이)</option>
+								<option value="32">프렌치 불독</option>
+								<option value="33">허스키</option>
+								<option value="34">기타</option>
 						</select></td>
 					</tr>
 					<tr class="form-group">
@@ -160,7 +160,8 @@
 					</tr>
 				</table>
 				<div class="button-group">
-					<button type="submit" class="btn-1" value="info">최종 제출</button>
+					<button type="submit" class="btn-1" value="info" onclick="test()">최종
+						제출</button>
 				</div>
 			</form>
 		</div>
@@ -192,6 +193,25 @@
 			//obj.value = obj.value.replace(/[\a-zㄱ-ㅎㅏ-ㅣ가-힣]/g, '');
 			obj.value = obj.value.replace(/[\ㄱ-ㅎㅏ-ㅣ가-힣]/g, '');
 		}
+		
+		function test(){
+		   var text_data = sessionStorage.getItem("join_mail"); 
+		   $.ajax({
+               type : 'POST',                                  <!--GET / POST-->
+               url : 'http://localhost:9000/predict/predict',
+               data : {
+                       item_id:text_data                       <!--key : "value"-->
+               },
+               dataType : 'JSON',
+               success : function(result){
+                       alert("result = "+ result);
+                       $('#a').html(result);
+               },
+               error : function(xtr,status,error){
+                       alert(xtr +":"+status+":"+error);
+               }
+       });
+}
 	</script>
 </body>
 </html>
