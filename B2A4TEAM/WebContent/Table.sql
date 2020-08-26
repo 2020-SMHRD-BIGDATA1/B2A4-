@@ -15,7 +15,7 @@ constraint mem_mail_pk primary key(mem_mail)
 
 select * from GAE_MEMBER;
 
-delete from GAE_MEMBER where mem_nick= '¼öÁ¦ºñ'
+delete from GAE_MEMBER where mem_nick= 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½'
 
 
 select * from GAE_INFO;
@@ -58,13 +58,13 @@ references chat_room(chat_index)
 )
 
 
-insert into CHAT_CONTENT values(1, 'º¸¸®¸¾', '·çºñ¸¾ ¾È³çÇÏ¼¼¿ä', sysdate);
-insert into CHAT_CONTENT values(1, '·çºñ¸¾', 'º¸¸®¸¾ ¹Ý°¡¿ö¿ä', sysdate);
-insert into CHAT_CONTENT values(1, 'º¸¸®¸¾', '·çºñ¾Ö±á ³Ñ ±Í¿±³×¿©', sysdate);
+insert into CHAT_CONTENT values(1, 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½', 'ï¿½ï¿½ï¿½ ï¿½È³ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½', sysdate);
+insert into CHAT_CONTENT values(1, 'ï¿½ï¿½ï¿½', 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ý°ï¿½ï¿½ï¿½ï¿½ï¿½', sysdate);
+insert into CHAT_CONTENT values(1, 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½', 'ï¿½ï¿½ï¿½Ö±ï¿½ ï¿½ï¿½ ï¿½Í¿ï¿½ï¿½×¿ï¿½', sysdate);
 
-insert into CHAT_CONTENT values(2, '¹¶Ä¡', 'º¸¸®µµ ³Ê¹« ±Í¿±±Í¿±', sysdate);
-insert into CHAT_CONTENT values(2, 'º¸¸®¸¾', '¿ì¸® °°ÀÌ »êÃ¥½ÃÄÑ¿ä', sysdate);
-insert into CHAT_CONTENT values(2, '¹¶Ä¡', 'º¸¸®¾Ö±á ³Ñ ±Í¿±³×¿©', sysdate);
+insert into CHAT_CONTENT values(2, 'ï¿½ï¿½Ä¡', 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¹ï¿½ ï¿½Í¿ï¿½ï¿½Í¿ï¿½', sysdate);
+insert into CHAT_CONTENT values(2, 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½', 'ï¿½ì¸® ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¥ï¿½ï¿½ï¿½Ñ¿ï¿½', sysdate);
+insert into CHAT_CONTENT values(2, 'ï¿½ï¿½Ä¡', 'ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ ï¿½ï¿½ ï¿½Í¿ï¿½ï¿½×¿ï¿½', sysdate);
 
 select * from chat_content order by chat_time DESC;
 select * from chat_room order by chat_index;
@@ -98,16 +98,15 @@ references gae_member(mem_mail)
 
 
 
-insert into gae_info values('jihoon', 'º¸¸®', '2', '¿©ÀÚ', 'Çªµé', 'ÇÔ','5','¼Ò½ÉÈ°¹ß','');
-insert into gae_info values('yohan', '·çºñ', '2', '¿©ÀÚ', 'ºñ¼õ', 'ÇÔ','5','¼Ò½ÉÈ°¹ß','');
-insert into gae_info values('gae', '¸¸¼ö', '2', '¿©ÀÚ', '°í¾Þ¾²', 'ÇÔ','5','¼Ò½ÉÈ°¹ß','');
+insert into gae_info values('jihoon', 'ï¿½ï¿½ï¿½ï¿½', '2', 'ï¿½ï¿½ï¿½ï¿½', 'Çªï¿½ï¿½', 'ï¿½ï¿½','5','ï¿½Ò½ï¿½È°ï¿½ï¿½','');
+insert into gae_info values('yohan', 'ï¿½ï¿½ï¿½', '2', 'ï¿½ï¿½ï¿½ï¿½', 'ï¿½ï¿½ï¿½', 'ï¿½ï¿½','5','ï¿½Ò½ï¿½È°ï¿½ï¿½','');
+insert into gae_info values('gae', 'ï¿½ï¿½ï¿½ï¿½', '2', 'ï¿½ï¿½ï¿½ï¿½', 'ï¿½ï¿½Þ¾ï¿½', 'ï¿½ï¿½','5','ï¿½Ò½ï¿½È°ï¿½ï¿½','');
 
 select * from gae_info
 
 delete from chat_room where chat_user2 ='jihoon';
 delete from chat_room where chat_user1 ='hihi';
 select * from CHAT_ROOM;
-
 
 
 create table TIP_BBS(
@@ -121,6 +120,7 @@ create table TIP_BBS(
    constraint bbs_mail_fk foreign key(mem_mail)
 	references gae_member(mem_mail)
 )
+DROP TABLE TIP_BBS
 
 create table gae_group(
 mem_mail varchar2(100),
@@ -140,5 +140,9 @@ create table BBS(
 	bbsContent varchar2(2048),
 	bbsAvailable number,
 	constraint bbsid_pk primary key(bbsID)
+)
+	ALTER TABLE BBS
+	ADD constraint bbs_mail_fk foreign key(mem_mail)
+	references gae_member(mem_mail)
 )
 select * from bbs

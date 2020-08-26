@@ -230,6 +230,26 @@ public class BbsDAO {
 		   }
 		return -1;
 	  }
+	  
+	  public String getNick(String mem_mail) {
+		  String bbsNick = null;
+		  getConn();
+		  String sql = "SELECT * FROM GAE_MEMBER where mem_mail=?";
+		  try {
+			  PreparedStatement psmt = conn.prepareStatement(sql);
+			  psmt.setString(1, mem_mail);
+			  rs = psmt.executeQuery();
+			  if(rs.next()) {
+				  bbsNick = rs.getString(4);
+			  }
+			  
+		  }catch (Exception e) {
+			  e.printStackTrace();
+		  }finally {
+			  close();
+		  }
+		return bbsNick;
+	  }
 }
 
 		   
