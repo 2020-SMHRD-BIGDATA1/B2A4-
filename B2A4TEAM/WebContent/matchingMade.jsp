@@ -192,7 +192,7 @@ a button {
 
 							<!-- mem_mail 채팅상대 구분하는 상대방 메일  -->
 							<br> <br> 
-							<a href="chatReset.jsp?mem_mail=<%=otherdogInfo_dto.getMem_mail()%>">
+							<a href="chatReset.jsp?mem_mail=<%=otherdogInfo_dto2.getMem_mail()%>">
 								<button>채팅하기</button>
 							</a>
 						</p>
