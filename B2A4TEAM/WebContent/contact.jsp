@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>Personal | Teamplate</title>
+<title>GaeManDa</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" type="image/x-icon"
@@ -35,7 +35,7 @@
 					<div class="col-xl-12">
 						<!-- Hero Caption -->
 						<div class="hero-cap pt-100">
-							<h2>Contact Us</h2>
+							<h2>주변정보</h2>
 						</div>
 					</div>
 				</div>

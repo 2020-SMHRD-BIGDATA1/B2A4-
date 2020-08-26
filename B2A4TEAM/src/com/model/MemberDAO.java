@@ -63,7 +63,8 @@ public class MemberDAO {
 				String mail = rs.getString(2);
 				String pw = rs.getString(3);
 				String mem_nick = rs.getString(4);
-				info = new MemberDTO(mail, pw, mem_nick);
+				String addr = rs.getString(8);
+				info = new MemberDTO(mail, pw, mem_nick, addr);
 
 				System.out.println("로그인 성공");
 
@@ -148,6 +149,8 @@ public class MemberDAO {
 			psmt.setString(6, dto.getMem_tel());
 			psmt.setString(7, dto.getMem_addr());
 			psmt.setString(8, dto.getMem_mail());
+			
+			System.out.println( dto.getMem_mail()+"dao안에서의 mail");
 
 			cnt = psmt.executeUpdate();
 			

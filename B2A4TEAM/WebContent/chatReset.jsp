@@ -1,3 +1,4 @@
+<%@page import="com.model.GaeDAO"%>
 <%@page import="com.model.MemberDAO"%>
 <%@page import="Chat.ChatroomDTO"%>
 <%@page import="Chat.ChatDAO"%>
@@ -48,6 +49,8 @@
 	String mem_mail = request.getParameter("mem_mail");
 
 	ChatDAO dao = new ChatDAO();
+	GaeDAO gaeDao = new GaeDAO();
+	
 	int cnt = dao.makeRoom(info.getMem_mail(), mem_mail);
 	if (cnt > 0) {
 		System.out.println("방생성 완료");
@@ -74,10 +77,15 @@
 				</div>
 			</header>
 			<ul>
+			
+				<%-- <%
+					int roomCnt = dao.roomCnt(info.getMem_mail());
+				%> --%>
 					<%
 						for(int j = 0; j<5; j++){
 					%>
-				<li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_01.jpg" alt=""> <!-- 상대방 닉 나와야 함 -->
+					<%		String otherImg = gaeDao.getmyImg(mem_mail); %>
+				<li><img src="imgFolder/<%=otherImg %>" alt="">
 					<div>
 						<%-- <%
 						//int chat_index = dao.chat_index(info.getMem_nick());
@@ -126,14 +134,20 @@
 		</aside>
 		<main class="chatmain">
 			<header class="chathead">
-				<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_01.jpg" alt="">
+			
+			<%
+	
+				String myImg = gaeDao.getmyImg(info.getMem_mail());
+			
+			%>
+				<img src="imgFolder/<%=myImg %>" alt="">
 				<div>
 					<h2>
 						<%=info.getMem_nick()%>
 					</h2>
 
 					</h2>
-					<h3>여기에 주소를 넣을까요?</h3>
+					<h3><%=info.getMem_addr() %></h3>
 				</div>
 				<img
 					src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/ico_star.png"
@@ -224,7 +238,7 @@
 		setInterval(function() {
 					/* 채팅방 내용을 실시간으로 읽어오는 부분  */
 					$.ajax({
-							url : "Chat", //컨트롤러 URL
+							url : "chatSelect", //컨트롤러 URL
 							dataType : 'json',
 							processData : false, // 비동기 파일 업로드시 꼭 설정해줘야 하는 속성
 							contentType : false, // 비동기 파일 업로드시 꼭 설정해줘야 하는 속성

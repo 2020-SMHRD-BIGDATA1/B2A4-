@@ -73,6 +73,11 @@ a button{
 .container{
 	height: 900px;
 }
+.content img{
+
+	max-height: 200px;
+	max-width: 200px;
+}
 
 @font-face {
 	src: url("Doc/fonts/BMJUA_ttf.ttf");

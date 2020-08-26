@@ -78,7 +78,7 @@ public class ChatDAO {
 		getConn();
 
 		try {
-			String sql = "insert into chat_content values(?,?,?,sysdate)";
+			String sql = "insert into chat_content values(1,?,?,sysdate)";
 			psmt = conn.prepareStatement(sql);
 
 			// psmt.setInt(1, dto.getChat_index());
@@ -248,6 +248,14 @@ public class ChatDAO {
 		
 		return otherNick;
 	};
+	
+	public int roomCnt(String mail) {
+		
+		getConn();
+		
+		String sql = "select * from chat_room where chat_user1=? of chat_user2=?";
+		return 0;
+	}
 	
 	
 

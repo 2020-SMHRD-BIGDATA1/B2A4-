@@ -14,6 +14,7 @@ constraint mem_mail_pk primary key(mem_mail)
 )
 
 select * from GAE_MEMBER;
+select * from chat_room;
 
 delete from GAE_MEMBER where mem_nick= '¼öÁ¦ºñ'
 
@@ -70,6 +71,10 @@ select * from chat_content order by chat_time DESC;
 select * from chat_room order by chat_index;
 
 select * from gae_info
+drop table gae_info;
+drop table chat_content;
+drop table chat_room;
+drop table gae_member;
 
 create table gae_info (
 mem_mail varchar2(100),

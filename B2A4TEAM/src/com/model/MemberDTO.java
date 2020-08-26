@@ -47,6 +47,13 @@ public class MemberDTO {
 
 	}
 
+	public MemberDTO(String mail, String pw, String mem_nick, String addr) {
+		this.mem_mail=mail;
+		this.mem_pw=pw;
+		this.mem_nick=mem_nick;
+		this.mem_addr=addr;
+	}
+
 	public String getMem_name() {
 		return mem_name;
 	}
