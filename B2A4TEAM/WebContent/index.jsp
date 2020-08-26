@@ -253,7 +253,7 @@
 							<div class="gallery-img small-img "
 								style="background-image: url(assets/img/gallery/gallery2.png);"></div>
 							<div class="overlay">
-								<div class="overlay-content">
+							<div class="overlay-content">
 									<a href="assets/img/gallery/gallery2.png" class="img-pop-up"><i
 										class="ti-plus"></i></a>
 								</div>

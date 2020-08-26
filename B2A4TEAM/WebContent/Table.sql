@@ -13,7 +13,22 @@ mem_addr varchar2(200) not null,
 constraint mem_mail_pk primary key(mem_mail)
 )
 
+select * from GAE_INFO;
 
+drop table gae_member;
+
+
+delete from GAE_MEMBER where mem_name = '¹Úº´°ü';
+delete from gae_info where mem_mail='hodoo@naver.com'
+-- chat_room
+
+drop sequence chat_index;
+
+create sequence chat_index
+increment by 1
+start with 1;
+
+drop table chat_room ;
 
 create table chat_room(
 chat_index int primary key,
@@ -69,6 +84,8 @@ alter table gae_group
 add constraint group_mail_fk foreign key(mem_mail)
 references gae_member(mem_mail)
 
+select * from gae_group
+
 
 create table BBS(
 	bbsID number,
@@ -103,4 +120,17 @@ ALTER table GAE_MEMBER enable constraints mem_mail_pk;
 
 
 )
-select * from BBS
+
+insert into gae_group values('mint', '1');
+insert into gae_group values('hodoo@daum.net', '2');
+insert into gae_group values('gaemanda@naver.com', '1');
+insert into gae_group values('yohan@naver.com', '2');
+insert into gae_group values('manggo@naver.com', '3');
+
+delete from gae_member where mem_mail = 'hodoo@naver.com';
+select * from gae_Group;
+
+
+
+
+select * from gae_group where gae_group='1' and mem_mail != 'gaemanda@naver.com';

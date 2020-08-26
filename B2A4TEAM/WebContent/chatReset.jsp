@@ -82,7 +82,7 @@
 					int roomCnt = dao.roomCnt(info.getMem_mail());
 				%> --%>
 					<%
-						for(int j = 0; j<5; j++){
+						for(int j = 0; j<1; j++){
 					%>
 					<%		String otherImg = gaeDao.getmyImg(mem_mail); %>
 				<li><img src="imgFolder/<%=otherImg %>" alt="">
