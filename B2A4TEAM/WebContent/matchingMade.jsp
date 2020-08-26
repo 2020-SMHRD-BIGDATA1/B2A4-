@@ -175,31 +175,16 @@ a button {
 					</div>
 					<!-- Section Tittle -->
 
-					<!-- mem_mail 채팅상대 구분하는 상대방 메일  -->
-					<br> <br> <a
-						href="chatReset.jsp?mem_mail=<%=dto.getMem_mail()%>">
-						<button>채팅하기</button>
-					</a>
+				
 
 
 					</p>
 				</div>
-				<div class="vs">
-					<h1>VS</h1>
-				</div>
-				<div class="content right" align="center">
-					<p>
-						&lt 내 강아지와 어울릴 것 같은 강아지 &gt <br> <br> <img
-							src="img/yohan.jpg"><br> <br> <a
-							href="chatReset.jsp?mem_mail=<%=dto.getMem_mail()%>">
-							<button>채팅하기</button>
-						</a>
-
-					</p>
-				</div>
+			
+				
 				<!-- Section Tittle -->
 
-				<p>친목을 응원합니다</p>
+		
 
 
 				<!--  <div class="col-lg-6">
