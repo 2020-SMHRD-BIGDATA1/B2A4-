@@ -111,7 +111,6 @@ public class GaeDAO {
 	public int submitSurvey(GaeDTO dto) {
 		int cnt = 0;
 		getConn();
-
 		try {
 			String sql = "INSERT INTO GAE_INFO VALUES(?,1,1,1,1,1,1,1,1,1,1,1,?,?,?,?,?,?,?,?)";
 			psmt = conn.prepareStatement(sql);
@@ -136,11 +135,8 @@ public class GaeDAO {
 	}
 
 	public String getmyImg(String email) {
-
 		getConn();
-
 		String img = null;
-
 		try {
 			String sql = "select * from gae_info where mem_mail = ?";
 			psmt = conn.prepareStatement(sql);
@@ -157,16 +153,12 @@ public class GaeDAO {
 		} finally {
 			close();
 		}
-
 		return img;
 	}
 
 	public String getCharacter(String email) {
-
 		getConn();
-
 		String character = null;
-
 		try {
 			String sql = "select * from GAE_GROUP where mem_mail = ?";
 			psmt = conn.prepareStatement(sql);
@@ -188,52 +180,51 @@ public class GaeDAO {
 	}
 
 	public ArrayList<String> getGroup(String mycharacter, String mymail) {
+		ArrayList<String> group_list = new ArrayList<String>();
+		getConn();
+		try {
+			String sql = "select * from gae_group where gae_group=? and mem_mail != ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, mycharacter);
+			psmt.setString(2, mymail);
+			rs = psmt.executeQuery();
 
-		 ArrayList<String> group_list = new ArrayList<String>();  
-		  getConn();	 
-		  try {
-			  String sql = "select * from gae_group where gae_group=? and mem_mail != ?";
-			  psmt =  conn.prepareStatement(sql);
-			  psmt.setString(1, mycharacter);
-			  psmt.setString(2, mymail);
-			  rs = psmt.executeQuery();
-			 
-			 while(rs.next()) {
-				  String email = rs.getString(1);
-				  //GaeDTO dto = new GaeDTO(email);
-				  group_list.add(email);
-			   }	
-			  
+			while (rs.next()) {
+				String email = rs.getString(1);
+				// GaeDTO dto = new GaeDTO(email);
+				group_list.add(email);
+			}
+
 		} catch (SQLException e) {
-			
+
 		} finally {
 			close();
 		}
-		  return group_list;
-	  }
-	
+		return group_list;
+	}
+
 	public ArrayList<String> getOtherGroup(String mycharacter) {
 
-		 ArrayList<String> group_list = new ArrayList<String>();  
-		  getConn();	 
-		  try {
-			  String sql = "select * from gae_group where gae_group != ?";
-			  psmt =  conn.prepareStatement(sql);
-			  psmt.setString(1, mycharacter);
-			  rs = psmt.executeQuery();
-			 
-			 while(rs.next()) {
-				  String email = rs.getString(1);
-				  //GaeDTO dto = new GaeDTO(email);
-				  group_list.add(email);
-			   }	
-			  
+		ArrayList<String> group_list = new ArrayList<String>();
+		getConn();
+		try {
+			String sql = "select * from gae_group where gae_group != ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, mycharacter);
+			rs = psmt.executeQuery();
+
+			while (rs.next()) {
+				String email = rs.getString(1);
+				// GaeDTO dto = new GaeDTO(email);
+				group_list.add(email);
+			}
+
 		} catch (SQLException e) {
-			
+
 		} finally {
 			close();
 		}
-		  return group_list;
-	  }
+		return group_list;
+	}
 
 }
