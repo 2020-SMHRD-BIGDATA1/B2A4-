@@ -64,8 +64,7 @@
 								<h2>Matching</h2>
 							</div>
 							<p>
-								당신의 강아지의 성향을 분석해드립니다. <br>
-								그리고 강아지의 친구를 찾아드립니다.
+								당신의 강아지의 성향을 분석해드립니다. <br> 그리고 강아지의 친구를 찾아드립니다.
 							</p>
 
 							<p>At the moment, this journey has brought me to Cloud
@@ -339,7 +338,6 @@
 	<!-- Jquery Plugins, main Jquery -->
 	<script src="./assets/js/plugins.js"></script>
 	<script src="./assets/js/main.js"></script>
-
 
 
 </body>

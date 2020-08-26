@@ -16,8 +16,6 @@ constraint mem_mail_pk primary key(mem_mail)
 select * from GAE_MEMBER;
 select * from GAE_INFO;
 drop table gae_member;
-insert into GAE_MEMBER values('������','jihoon','1234','������','man','940715','010-8877-2725','���');
-insert into GAE_MEMBER values('������','yohan','1234','���','man','940715','010-8877-2725','���');
 
 
 delete from GAE_MEMBER where mem_mail = 'ljh2725'
@@ -41,9 +39,6 @@ chat_time date
 
 select * from CHAT_ROOM;
 
-insert into chat_room values(chat_index.nextval, '������', '���', sysdate);
-insert into chat_room values(chat_index.nextval, '������', '��ġ', sysdate);
-insert into chat_room values(chat_index.nextval, '������', '����', sysdate);
 
 select * from chat_room order by chat_index;
 
@@ -60,18 +55,9 @@ constraint index_fk foreign key(chat_index)
 references chat_room(chat_index) 
 )
 
-insert into CHAT_CONTENT values(chat, '������', '��� �ȳ��ϼ���', sysdate);
-insert into CHAT_CONTENT values(1, '���', '������ �ݰ�����', sysdate);
-insert into CHAT_CONTENT values(1, '������', '���ֱ� �� �Ϳ��׿�', sysdate);
-
-
-insert into CHAT_CONTENT values(3, '��ġ', '������ �ʹ� �Ϳ��Ϳ�', sysdate);
-insert into CHAT_CONTENT values(3, '������', '�츮 ���� ��å���ѿ�', sysdate);
-insert into CHAT_CONTENT values(3, '��ġ', '�����ֱ� �� �Ϳ��׿�', sysdate);
 
 select * from chat_content order by chat_time DESC
 
---������ ���� ���̺�
 
 create table gae_info (
 mem_mail varchar2(100),
@@ -100,15 +86,7 @@ add constraint mail_fk foreign key(mem_mail)
 references gae_member(mem_mail)
 
 
-insert into gae_info values('jihoon', '����', '2', '����', 'Ǫ��', '��','5','�ҽ�Ȱ��','');
-insert into gae_info values('yohan', '���', '2', '����', '���', '��','5','�ҽ�Ȱ��','');
 
-select * from gae_info
-delete from chat_content where writer ='������';
-delete from chat_content where writer ='���';
-
-
---������ �����ִ� �׷� ���̺� ����
 create table gae_group(
 mem_mail varchar2(100),
 gae_group varchar2(10)
