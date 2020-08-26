@@ -173,12 +173,12 @@ a button {
 
 						</p>
 					</div>
-					<!-- Section Tittle -->
-
 				
 
+					
 
-					</p>
+
+					
 				</div>
 			
 				

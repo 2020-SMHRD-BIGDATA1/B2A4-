@@ -23,8 +23,8 @@ select * from GAE_INFO;
 drop table gae_member;
 
 
-delete from GAE_MEMBER where mem_mail = 'ljh2725'
-delete from gae_info where mem_mail='ljh2725'
+delete from GAE_MEMBER where mem_name = '¹Úº´°ü';
+delete from gae_info where mem_mail='hodoo@naver.com'
 -- chat_room
 
 drop sequence chat_index;
