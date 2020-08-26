@@ -48,8 +48,8 @@
         <section class="blog_area section-padding">
             <div class="container">
                 <div class="row">
-                <form method = "post" action = "writeAction.jsp">
-                	<table class = "table table-striped" style = "text-align: center; border: 1px solid #dddddd" >
+                <form method = "post" action = "writeAction.jsp" style="width : 100%">
+                	<table class = "table table-striped" style = "text-align: center; border: 1px solid #dddddd; width:100%;" >
                 		<thead>
                 			<tr>
                 				<th colspan= "2" style = "background-color: #eeeeee; text-align: center;">게시판 글쓰기 양식</th>
@@ -67,7 +67,10 @@
                 	</table>
                 		<input type = "submit" class = "btn btn-primary pull-right" value="글쓰기">
                 </form>
-                    <div class="col-lg-8 mb-5 mb-lg-0">
+                </div>
+           </div>
+     	</section>
+                    <!--  <div class="col-lg-8 mb-5 mb-lg-0">
                         <div class="blog_left_sidebar">
                             <article class="blog_item">
                                 <div class="blog_item_img">

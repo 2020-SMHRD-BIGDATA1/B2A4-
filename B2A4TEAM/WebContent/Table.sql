@@ -45,6 +45,9 @@ chat_time date
 
 select * from CHAT_ROOM;
 
+
+select * from chat_room order by chat_index;
+
 --chat_content
 
 drop table gae_info
@@ -57,6 +60,9 @@ chat_time date,
 constraint index_fk foreign key(chat_index)
 references chat_room(chat_index) 
 )
+
+
+select * from chat_content order by chat_time DESC
 
 
 insert into CHAT_CONTENT values(1, '보리맘', '루비맘 안녕하세요', sysdate);
@@ -106,7 +112,6 @@ references gae_member(mem_mail)
 insert into gae_info values('jihoon', '보리', '2', '여자', '푸들', '함','5','소심활발','');
 insert into gae_info values('yohan', '루비', '2', '여자', '비숑', '함','5','소심활발','');
 insert into gae_info values('gae', '만수', '2', '여자', '고앵쓰', '함','5','소심활발','');
-
 select * from gae_info
 
 delete from chat_room where chat_user2 ='jihoon';

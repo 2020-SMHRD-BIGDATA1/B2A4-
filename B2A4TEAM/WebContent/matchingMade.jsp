@@ -66,11 +66,13 @@
 	font-size: 25px;
 	font-family: "Jua";
 }
-a button{
-	border : solid 1px whilte;
+
+a button {
+	border: solid 1px whilte;
 	background-color: #670000;
 }
-.container{
+
+.container {
 	height: 900px;
 }
 .content img{
@@ -116,59 +118,91 @@ a button{
 				</div>
 
 				<div id="matching">
-						<div class="content left" align="center">
+					<div class="content left" align="center">
 						<%
-									GaeDAO GaeDao = new GaeDAO();
-								
-									GaeDTO dto = GaeDao.getGaeInfo(info.getMem_mail());				
-							%>
-							<p>
-								&lt 내 강아지와 비슷한 강아지 &gt <br> <br> 
-								<img src='imgFolder/<%=dto.getGae_img() %>'><br> <br>
-								
-								 
-								<!--메일 : <%=dto.getMem_mail() %><br>  -->
-								<img src="img/bone1.png">&nbsp;이름 : <%=dto.getGae_name() %><br>
-								<img src="img/bone1.png">&nbsp;나이 : <%=dto.getGae_age() %>세<br>
-								<img src="img/bone1.png">&nbsp;성별 : <%=dto.getGae_sex() %><br>
-								<img src="img/bone1.png">&nbsp;품종 : <%=dto.getGae_species() %>
-								
-								<!-- mem_mail 채팅상대 구분하는 상대방 메일  -->
-								<br><br> <a href="chatReset.jsp?mem_mail=<%=dto.getMem_mail()%>">
-								<button>채팅하기</button></a>
-								
-								
+							GaeDAO GaeDao = new GaeDAO();
 
-							</p>
-						</div>
-						<div class="vs">
-							<h1>VS</h1>
-						</div>
-						<div class="content right" align="center">
-							<p>
-								&lt 내 강아지와 어울릴 것 같은 강아지 &gt <br> <br> 
-								<img src="img/yohan.jpg"><br> <br> 
-								
-								<img src="img/bone1.png">&nbsp;이름 : <%=dto.getGae_name() %><br>
-								<img src="img/bone1.png">&nbsp;나이 : <%=dto.getGae_age() %>세<br>
-								<img src="img/bone1.png">&nbsp;성별 : <%=dto.getGae_sex() %><br>
-								<img src="img/bone1.png">&nbsp;품종 : <%=dto.getGae_species() %>
-								
-								
-								
-								<br><br><a href="chatReset.jsp?mem_mail=<%=dto.getMem_mail() %>">
-									<button>채팅하기</button>
-								</a>
-									
-							</p>
-						</div>
-						<!-- Section Tittle -->
+						GaeDTO dto = GaeDao.getGaeInfo(info.getMem_mail());
+						%>
+						<p>
+							&lt 내 강아지와 비슷한 강아지 &gt <br> <br> <img
+								src='imgFolder/<%=dto.getGae_img()%>'><br> <br>
 
-					
+
+							<!--메일 :dto.getMem_mail()l() %><br>  -->
+							<img src="img/bone1.png">&nbsp;이름 :
+							<%=dto.getGae_name()%><br> <img src="img/bone1.png">&nbsp;나이
+							:
+							<%=dto.getGae_age()%>세<br> <img src="img/bone1.png">&nbsp;성별
+							:
+							<%=dto.getGae_sex()%><br> <img src="img/bone1.png">&nbsp;품종
+							:
+							<%=dto.getGae_species()%>
+
+							<!-- mem_mail 채팅상대 구분하는 상대방 메일  -->
+							<br> <br> <a
+								href="chatReset.jsp?mem_mail=<%=dto.getMem_mail()%>">
+								<button>채팅하기</button>
+							</a>
+
+
+						</p>
+					</div>
+					<div class="vs">
+						<h1>VS</h1>
+					</div>
+					<div class="content right" align="center">
+						<p>
+							&lt 내 강아지와 어울릴 것 같은 강아지 &gt <br> <br> <img
+								src="img/yohan.jpg"><br> <br> <img
+								src="img/bone1.png">&nbsp;이름 :
+							<%=dto.getGae_name()%><br> <img src="img/bone1.png">&nbsp;나이
+							:
+							<%=dto.getGae_age()%>세<br> <img src="img/bone1.png">&nbsp;성별
+							:
+							<%=dto.getGae_sex()%><br> <img src="img/bone1.png">&nbsp;품종
+							:
+							<%=dto.getGae_species()%>
 
 
 
-						<!--  <div class="col-lg-6">
+							<br> <br> <a
+								href="chatReset.jsp?mem_mail=<%=dto.getMem_mail()%>">
+								<button>채팅하기</button>
+							</a>
+
+						</p>
+					</div>
+					<!-- Section Tittle -->
+
+					<!-- mem_mail 채팅상대 구분하는 상대방 메일  -->
+					<br> <br> <a
+						href="chatReset.jsp?mem_mail=<%=dto.getMem_mail()%>">
+						<button>채팅하기</button>
+					</a>
+
+
+					</p>
+				</div>
+				<div class="vs">
+					<h1>VS</h1>
+				</div>
+				<div class="content right" align="center">
+					<p>
+						&lt 내 강아지와 어울릴 것 같은 강아지 &gt <br> <br> <img
+							src="img/yohan.jpg"><br> <br> <a
+							href="chatReset.jsp?mem_mail=<%=dto.getMem_mail()%>">
+							<button>채팅하기</button>
+						</a>
+
+					</p>
+				</div>
+				<!-- Section Tittle -->
+
+				<p>친목을 응원합니다</p>
+
+
+				<!--  <div class="col-lg-6">
 	                    <div class="about-img">
 	                        <img src="assets/img/gallery/about1.png" alt="">
 	                    </div>
@@ -176,7 +210,7 @@ a button{
 			       	 
 			       	 </div>-->
 
-				</div>
+			</div>
 			</div>
 		</section>
 		<!-- About  End-->
