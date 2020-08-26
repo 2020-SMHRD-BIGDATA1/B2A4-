@@ -1,3 +1,4 @@
+<%@page import="java.util.Random"%>
 <%@page import="com.model.GaeDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.model.GaeDAO"%>
@@ -75,8 +76,8 @@ a button {
 .container {
 	height: 900px;
 }
-.content img{
 
+.content img {
 	max-height: 200px;
 	max-width: 200px;
 }
@@ -123,25 +124,39 @@ a button {
 							GaeDAO GaeDao = new GaeDAO();
 
 						GaeDTO dto = GaeDao.getGaeInfo(info.getMem_mail());
+						String mycharacter = GaeDao.getCharacter(info.getMem_mail());
+						//System.out.println(mycharacter);
+
+						ArrayList<GaeDTO> group_list = GaeDao.getGroup(mycharacter);
+
+						System.out.println(group_list.get(1));
+
+						Random random = new Random();
+						int ran = random.nextInt(group_list.size());
+						System.out.println(ran);
+
+						GaeDTO random_group_mail = group_list.get(ran);
+						System.out.print(random_group_mail);
+						GaeDTO otherdogInfo_dto = GaeDao.getGaeInfo(random_group_mail);
 						%>
 						<p>
 							&lt 내 강아지와 비슷한 강아지 &gt <br> <br> <img
-								src='imgFolder/<%=dto.getGae_img()%>'><br> <br>
-
+								src='imgFolder/<%=otherdogInfo_dto.getGae_img()%>'><br>
+							<br>
 
 							<!--메일 :dto.getMem_mail()l() %><br>  -->
 							<img src="img/bone1.png">&nbsp;이름 :
-							<%=dto.getGae_name()%><br> <img src="img/bone1.png">&nbsp;나이
-							:
-							<%=dto.getGae_age()%>세<br> <img src="img/bone1.png">&nbsp;성별
-							:
-							<%=dto.getGae_sex()%><br> <img src="img/bone1.png">&nbsp;품종
-							:
-							<%=dto.getGae_species()%>
+							<%=otherdogInfo_dto.getGae_name()%><br> <img
+								src="img/bone1.png">&nbsp;나이 :
+							<%=otherdogInfo_dto.getGae_age()%>세<br> <img
+								src="img/bone1.png">&nbsp;성별 :
+							<%=otherdogInfo_dto.getGae_sex()%><br> <img
+								src="img/bone1.png">&nbsp;품종 :
+							<%=otherdogInfo_dto.getGae_species()%>
 
 							<!-- mem_mail 채팅상대 구분하는 상대방 메일  -->
 							<br> <br> <a
-								href="chatReset.jsp?mem_mail=<%=dto.getMem_mail()%>">
+								href="chatReset.jsp?mem_mail=<%=otherdogInfo_dto.getMem_mail()%>">
 								<button>채팅하기</button>
 							</a>
 
@@ -175,16 +190,16 @@ a button {
 					</div>
 					<!-- Section Tittle -->
 
-				
+
 
 
 					</p>
 				</div>
-			
-				
+
+
 				<!-- Section Tittle -->
 
-		
+
 
 
 				<!--  <div class="col-lg-6">

@@ -2,6 +2,7 @@ package com.model;
 
 public class GaeDTO {
 	private String mem_mail;
+
 	public GaeDTO(String mem_mail, String gae_img, String gae_name, String gae_sex, String gae_age, String gae_species,
 			String gae_weight, String gae_size, String gae_walking, String gae_cut) {
 		super();
@@ -26,6 +27,21 @@ public class GaeDTO {
 	private String gae_size;
 	private String gae_walking;
 	private String gae_cut;
+
+	public GaeDTO(String mem_mail, String gae_group) {
+		super();
+		this.mem_mail = mem_mail;
+		this.gae_group = gae_group;
+	}
+
+	public String getGae_group() {
+		return gae_group;
+	}
+
+	public void setGae_group(String gae_group) {
+		this.gae_group = gae_group;
+	}
+
 	private String gae_dog_react;
 	private String gae_human_react;
 	private String test1;
@@ -36,6 +52,7 @@ public class GaeDTO {
 	private String test6;
 	private String test7;
 	private String test8;
+	private String gae_group;
 
 	public GaeDTO(String mem_mail, String gae_img, String gae_name, String gae_sex, String gae_age, String gae_species,
 			String gae_weight, String gae_size, String gae_walking, String gae_cut, String gae_dog_react,
@@ -115,6 +132,10 @@ public class GaeDTO {
 		this.test6 = test6;
 		this.test7 = test7;
 		this.test8 = test8;
+	}
+
+	public GaeDTO(String email) {
+		this.mem_mail = email;
 	}
 
 	public String getGae_sex() {

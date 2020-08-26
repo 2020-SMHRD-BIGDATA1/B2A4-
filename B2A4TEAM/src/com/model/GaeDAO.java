@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import Chat.ChatDTO;
+import bbs.bbsDTO;
 
 public class GaeDAO {
 
@@ -48,7 +49,7 @@ public class GaeDAO {
 	}
 
 	public GaeDTO getGaeInfo(String email) {
-		GaeDTO info = null;
+		GaeDTO matchingDog_info = null;
 		getConn();
 		// 이메일 이름 나이 성별 품종 중성화여부 몸무게 성향 사진
 
@@ -68,7 +69,7 @@ public class GaeDAO {
 				String size = rs.getString(8);
 				String walking = rs.getString(9);
 				String cut = rs.getString(10);
-				info = new GaeDTO(mem_mail, img, name, sex, age, species, weight, size, walking, cut);
+				matchingDog_info = new GaeDTO(mem_mail, img, name, sex, age, species, weight, size, walking, cut);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -76,7 +77,7 @@ public class GaeDAO {
 			close();
 		}
 
-		return info;
+		return matchingDog_info;
 	}
 
 	public int uploadInfo(GaeDTO dto) {
@@ -133,32 +134,81 @@ public class GaeDAO {
 		return cnt;
 
 	}
-	
-	public String getmyImg(String email) {
-		
+
+//	public String getmyImg(String email) {
+//
+//		getConn();
+//
+//		String img = null;
+//
+//		try {
+//			String sql = "select * from gae_info where mem_mail = ?";
+//			psmt = conn.prepareStatement(sql);
+//
+//			psmt.setString(1, email);
+//			rs = psmt.executeQuery();
+//
+//			if (rs.next()) {
+//				img = rs.getString(2);
+//			}
+//
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		} finally {
+//			close();
+//		}
+//
+//		return img;
+//	}
+
+	public String getCharacter(String email) {
+
 		getConn();
-		
-		String img = null;
-		
-		
+
+		String character = null;
+
 		try {
-			String sql = "select * from gae_info where mem_mail = ?";
+			String sql = "select * from GAE_GROUP where mem_mail = ?";
 			psmt = conn.prepareStatement(sql);
-			
+
 			psmt.setString(1, email);
 			rs = psmt.executeQuery();
-			
+
 			if (rs.next()) {
-				img = rs.getString(2); 
+				character = rs.getString(2);
 			}
-			
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			close();
 		}
-		
-		return img;
+
+		return character;
 	}
+
+	public ArrayList<GaeDTO> getGroup(String character) {
+
+		 ArrayList<GaeDTO> group_list = null;  
+		  getConn();	 
+		  try {
+			  String sql = "select * from gae_group where gae_group=?";
+			  conn.prepareCall(sql);
+			  psmt.setString(1, character);
+			  rs = psmt.executeQuery();
+			 
+			  if (rs.next()) {
+				  String email = rs.getString(1);
+				  GaeDTO dto = new GaeDTO(email);
+				  group_list.add(dto);
+			   }	
+			  
+		} catch (SQLException e) {
+			
+		} finally {
+			close();
+		}
+		  return group_list;
+	  }
+
 }

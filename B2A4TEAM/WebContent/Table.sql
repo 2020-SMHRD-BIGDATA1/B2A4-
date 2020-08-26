@@ -97,8 +97,6 @@ TRUNCATE TABLE chat_content;
 TRUNCATE TABLE chat_index;
 
 delete from CHAT_ROOM where chat_index = 9
-delete from gae_info where mem_mail='im'
-delete from GAE_GROUP where mem_mail='sfesfsef'
 -- chat_room
 ALTER table GAE_MEMBER disable constraints mem_mail_pk cascade ;
 ALTER table GAE_MEMBER enable constraints mem_mail_pk;
