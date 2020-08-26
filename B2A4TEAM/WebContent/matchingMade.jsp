@@ -144,6 +144,90 @@ a button {
 						System.out.println("다른개 메일:" + otherdogInfo_dto.getGae_name());
 						%>
 						<p>
+							<%!String dog_sex = null;%>
+							<%!String dog_species = null;%>
+							<%
+								if (otherdogInfo_dto.getGae_sex().equals("1")) {
+								dog_sex = "여아";
+							} else {
+								dog_sex = "남아";
+							}
+							%>
+							<%
+								if (otherdogInfo_dto.getGae_species().equals("1")) {
+								dog_species = "골든 리트리버";
+							} else if (otherdogInfo_dto.getGae_species().equals("2")) {
+								dog_species = "그레이하운드";
+							} else if (otherdogInfo_dto.getGae_species().equals("3")) {
+								dog_species = "뉴펀들랜드";
+							} else if (otherdogInfo_dto.getGae_species().equals("4")) {
+								dog_species = "닥스훈트";
+							} else if (otherdogInfo_dto.getGae_species().equals("5")) {
+								dog_species = "도베르만";
+							} else if (otherdogInfo_dto.getGae_species().equals("6")) {
+								dog_species = "레브라도 리트리버";
+							} else if (otherdogInfo_dto.getGae_species().equals("7")) {
+								dog_species = "말라뮤트";
+							} else if (otherdogInfo_dto.getGae_species().equals("8")) {
+								dog_species = "말티즈";
+							} else if (otherdogInfo_dto.getGae_species().equals("9")) {
+								dog_species = "믹스";
+							} else if (otherdogInfo_dto.getGae_species().equals("10")) {
+								dog_species = "보더콜리";
+							} else if (otherdogInfo_dto.getGae_species().equals("11")) {
+								dog_species = "불독";
+							} else if (otherdogInfo_dto.getGae_species().equals("12")) {
+								dog_species = "비글";
+							} else if (otherdogInfo_dto.getGae_species().equals("13")) {
+								dog_species = "비숑프리제";
+							} else if (otherdogInfo_dto.getGae_species().equals("14")) {
+								dog_species = "빠삐용";
+							} else if (otherdogInfo_dto.getGae_species().equals("15")) {
+								dog_species = "샤페이";
+							} else if (otherdogInfo_dto.getGae_species().equals("16")) {
+								dog_species = "슈나우저";
+							} else if (otherdogInfo_dto.getGae_species().equals("17")) {
+								dog_species = "스피츠";
+							} else if (otherdogInfo_dto.getGae_species().equals("18")) {
+								dog_species = "시바견";
+							} else if (otherdogInfo_dto.getGae_species().equals("19")) {
+								dog_species = "시츄";
+							} else if (otherdogInfo_dto.getGae_species().equals("20")) {
+								dog_species = "아메리칸 불리";
+							} else if (otherdogInfo_dto.getGae_species().equals("21")) {
+								dog_species = "요크셔테리어";
+							} else if (otherdogInfo_dto.getGae_species().equals("22")) {
+								dog_species = "웰시코기";
+							} else if (otherdogInfo_dto.getGae_species().equals("23")) {
+								dog_species = "진돗개";
+							} else if (otherdogInfo_dto.getGae_species().equals("24")) {
+								dog_species = "치와와";
+							} else if (otherdogInfo_dto.getGae_species().equals("25")) {
+								dog_species = "코카스파니엘";
+							} else if (otherdogInfo_dto.getGae_species().equals("26")) {
+								dog_species = "테리어";
+							} else if (otherdogInfo_dto.getGae_species().equals("27")) {
+								dog_species = "퍼그";
+							} else if (otherdogInfo_dto.getGae_species().equals("28")) {
+								dog_species = "페키니즈";
+							} else if (otherdogInfo_dto.getGae_species().equals("29")) {
+								dog_species = "포메라니안";
+							} else if (otherdogInfo_dto.getGae_species().equals("30")) {
+								dog_species = "미니어쳐 푸들";
+							} else if (otherdogInfo_dto.getGae_species().equals("31")) {
+								dog_species = "스탠다드 푸들";
+							} else if (otherdogInfo_dto.getGae_species().equals("32")) {
+								dog_species = "토이 푸들";
+							} else if (otherdogInfo_dto.getGae_species().equals("33")) {
+								dog_species = "프렌치 불독";
+							} else if (otherdogInfo_dto.getGae_species().equals("34")) {
+								dog_species = "허스키";
+							} else if (otherdogInfo_dto.getGae_species().equals("35")) {
+								dog_species = "기타";
+							}
+							%>
+
+
 
 							&lt 내 강아지와 비슷한 강아지 &gt <br> <br> <img
 								src='imgFolder/<%=otherdogInfo_dto.getGae_img()%>'><br>
@@ -154,9 +238,8 @@ a button {
 								src="img/bone1.png">&nbsp;나이 :
 							<%=otherdogInfo_dto.getGae_age()%>세<br> <img
 								src="img/bone1.png">&nbsp;성별 :
-							<%=otherdogInfo_dto.getGae_sex()%><br> <img
-								src="img/bone1.png">&nbsp;품종 :
-							<%=otherdogInfo_dto.getGae_species()%>
+							<%=dog_sex%><br> <img src="img/bone1.png">&nbsp;품종 :
+							<%=dog_species%>
 
 							<!-- mem_mail 채팅상대 구분하는 상대방 메일  -->
 							<br> <br> <a
@@ -184,6 +267,92 @@ a button {
 							System.out.print("랜덤으로 뽑힌 갱쥐의 메일 : " + random_group_mail2);
 							GaeDTO otherdogInfo_dto2 = GaeDao.getGaeInfo(random_group_mail2);
 							%>
+							<%!String dog_sex2 = null;%>
+							<%!String dog_species2 = null;%>
+							<%
+								if (otherdogInfo_dto2.getGae_sex().equals("1")) {
+								dog_sex2 = "여아";
+							} else {
+								dog_sex2 = "남아";
+							}
+							%>
+							<%
+								if (otherdogInfo_dto2.getGae_species().equals("1")) {
+								dog_species2 = "골든 리트리버";
+							} else if (otherdogInfo_dto2.getGae_species().equals("2")) {
+								dog_species2 = "그레이하운드";
+							} else if (otherdogInfo_dto2.getGae_species().equals("3")) {
+								dog_species2 = "뉴펀들랜드";
+							} else if (otherdogInfo_dto2.getGae_species().equals("4")) {
+								dog_species2 = "닥스훈트";
+							} else if (otherdogInfo_dto2.getGae_species().equals("5")) {
+								dog_species2 = "도베르만";
+							} else if (otherdogInfo_dto2.getGae_species().equals("6")) {
+								dog_species2 = "레브라도 리트리버";
+							} else if (otherdogInfo_dto2.getGae_species().equals("7")) {
+								dog_species2 = "말라뮤트";
+							} else if (otherdogInfo_dto2.getGae_species().equals("8")) {
+								dog_species2 = "말티즈";
+							} else if (otherdogInfo_dto2.getGae_species().equals("9")) {
+								dog_species2 = "믹스";
+							} else if (otherdogInfo_dto2.getGae_species().equals("10")) {
+								dog_species2 = "보더콜리";
+							} else if (otherdogInfo_dto2.getGae_species().equals("11")) {
+								dog_species2 = "불독";
+							} else if (otherdogInfo_dto2.getGae_species().equals("12")) {
+								dog_species2 = "비글";
+							} else if (otherdogInfo_dto2.getGae_species().equals("13")) {
+								dog_species2 = "비숑프리제";
+							} else if (otherdogInfo_dto2.getGae_species().equals("14")) {
+								dog_species2 = "빠삐용";
+							} else if (otherdogInfo_dto2.getGae_species().equals("15")) {
+								dog_species2 = "샤페이";
+							} else if (otherdogInfo_dto2.getGae_species().equals("16")) {
+								dog_species2 = "슈나우저";
+							} else if (otherdogInfo_dto2.getGae_species().equals("17")) {
+								dog_species2 = "스피츠";
+							} else if (otherdogInfo_dto2.getGae_species().equals("18")) {
+								dog_species2 = "시바견";
+							} else if (otherdogInfo_dto2.getGae_species().equals("19")) {
+								dog_species2 = "시츄";
+							} else if (otherdogInfo_dto2.getGae_species().equals("20")) {
+								dog_species2 = "아메리칸 불리";
+							} else if (otherdogInfo_dto2.getGae_species().equals("21")) {
+								dog_species2 = "요크셔테리어";
+							} else if (otherdogInfo_dto2.getGae_species().equals("22")) {
+								dog_species2 = "웰시코기";
+							} else if (otherdogInfo_dto2.getGae_species().equals("23")) {
+								dog_species2 = "진돗개";
+							} else if (otherdogInfo_dto2.getGae_species().equals("24")) {
+								dog_species2 = "치와와";
+							} else if (otherdogInfo_dto2.getGae_species().equals("25")) {
+								dog_species2 = "코카스파니엘";
+							} else if (otherdogInfo_dto2.getGae_species().equals("26")) {
+								dog_species2 = "테리어";
+							} else if (otherdogInfo_dto2.getGae_species().equals("27")) {
+								dog_species2 = "퍼그";
+							} else if (otherdogInfo_dto2.getGae_species().equals("28")) {
+								dog_species2 = "페키니즈";
+							} else if (otherdogInfo_dto2.getGae_species().equals("29")) {
+								dog_species2 = "포메라니안";
+							} else if (otherdogInfo_dto2.getGae_species().equals("30")) {
+								dog_species2 = "미니어쳐 푸들";
+							} else if (otherdogInfo_dto2.getGae_species().equals("31")) {
+								dog_species2 = "스탠다드 푸들";
+							} else if (otherdogInfo_dto2.getGae_species().equals("32")) {
+								dog_species2 = "토이 푸들";
+							} else if (otherdogInfo_dto2.getGae_species().equals("33")) {
+								dog_species2 = "프렌치 불독";
+							} else if (otherdogInfo_dto2.getGae_species().equals("34")) {
+								dog_species2 = "허스키";
+							} else if (otherdogInfo_dto2.getGae_species().equals("35")) {
+								dog_species2 = "기타";
+							}
+							%>
+
+
+
+
 							&lt 내 강아지와 어울릴 것 같은 강아지 &gt <br> <br> <img
 								src='imgFolder/<%=otherdogInfo_dto2.getGae_img()%>'><br>
 							<br>
@@ -193,13 +362,12 @@ a button {
 								src="img/bone1.png">&nbsp;나이 :
 							<%=otherdogInfo_dto2.getGae_age()%>세<br> <img
 								src="img/bone1.png">&nbsp;성별 :
-							<%=otherdogInfo_dto2.getGae_sex()%><br> <img
-								src="img/bone1.png">&nbsp;품종 :
-							<%=otherdogInfo_dto2.getGae_species()%>
+							<%=dog_sex2%><br> <img src="img/bone1.png">&nbsp;품종 :
+							<%=dog_species2%>
 
 							<!-- mem_mail 채팅상대 구분하는 상대방 메일  -->
 							<br> <br> <a
-								href="chatReset.jsp?mem_mail=<%=otherdogInfo_dto.getMem_mail()%>">
+								href="chatReset.jsp?mem_mail=<%=otherdogInfo_dto2.getMem_mail()%>">
 								<button>채팅하기</button>
 							</a>
 						</p>
