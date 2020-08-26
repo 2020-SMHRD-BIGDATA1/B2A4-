@@ -13,6 +13,8 @@ mem_addr varchar2(200) not null,
 constraint mem_mail_pk primary key(mem_mail)
 )
 
+
+
 create table chat_room(
 chat_index int primary key,
 chat_user1 varchar2(100) not null,
@@ -31,6 +33,7 @@ references chat_room(chat_index)
 create sequence chat_index
 increment by 1
 start with 1;
+
 
 create table gae_info (
 mem_mail varchar2(100),
@@ -57,6 +60,7 @@ constraint gaeinfo_fk foreign key(mem_mail)
 references gae_member(mem_mail)
 );
 
+
 create table gae_group(
 mem_mail varchar2(100),
 gae_group varchar2(10)
@@ -75,8 +79,9 @@ create table BBS(
 	bbsAvailable number,
 	constraint bbsid_pk primary key(bbsID)
 )
-
-
+ALTER TABLE BBS
+ADD constraint bbs_mail_fk foreign key(mem_mail)
+references gae_member(mem_mail)
 
 select * from bbs;
 select * from GAE_MEMBER;
@@ -97,3 +102,7 @@ delete from GAE_GROUP where mem_mail='sfesfsef'
 -- chat_room
 ALTER table GAE_MEMBER disable constraints mem_mail_pk cascade ;
 ALTER table GAE_MEMBER enable constraints mem_mail_pk;
+
+
+)
+select * from BBS

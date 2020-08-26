@@ -77,17 +77,15 @@
 						<tbody>
 							<%
 								BbsDAO bbsDAO = new BbsDAO();
-							ArrayList<Bbs> list = bbsDAO.getList(pageNumber);
-							for (int i = 0; i < list.size(); i++) {
+								ArrayList<Bbs> list = bbsDAO.getList(pageNumber);
+								for (int i = 0; i < list.size(); i++) {
+									
 							%>
 							<tr>
-								<td><%=list.get(i).getBbsID()%></td>
-								<td><a style="color: black"
-									href="view.jsp?bbsID=<%=list.get(i).getBbsID()%>"><%=list.get(i).getBbsTitle().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;")
-		.replaceAll("\n", "<br>")%></a></td>
-								<td><%=list.get(i).getMem_mail()%></td>
-								<td><%=list.get(i).getBbsDate().substring(0, 11) + list.get(i).getBbsDate().substring(11, 13) + "시 "
-		+ list.get(i).getBbsDate().substring(14, 16) + "분 "%></td>
+								<td><%= list.get(i).getBbsID()%></td>
+								<td><a style="color: black;" href="view.jsp?bbsID=<%=list.get(i).getBbsID()%>"><%= list.get(i).getBbsTitle().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %></a></td>
+								<td><%=bbsDAO.getNick(list.get(i).getMem_mail()) %></td>
+								<td><%=list.get(i).getBbsDate().substring(0, 11) + list.get(i).getBbsDate().substring(11, 13) + "시 "+ list.get(i).getBbsDate().substring(14, 16) + "분 "%></td>
 							</tr>
 							<%
 								}

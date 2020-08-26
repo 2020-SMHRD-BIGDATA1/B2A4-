@@ -52,6 +52,7 @@
 			script.println("</script>");
 		}
 		Bbs bbs = new BbsDAO().getBbs(bbsID);
+		BbsDAO bbsDAO = new BbsDAO();
 	%>
 
 
@@ -89,7 +90,7 @@
 							</tr>
 							<tr>
 								<td>작성자</td>
-								<td colspan="2"><%= bbs.getMem_mail() %></td>
+								<td colspan="2"><%= bbsDAO.getNick(bbs.getMem_mail())%></td>
 							</tr>
 							<tr>
 								<td>작성일자</td>
