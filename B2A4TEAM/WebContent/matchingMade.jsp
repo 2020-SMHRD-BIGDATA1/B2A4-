@@ -33,7 +33,7 @@
 <link rel="stylesheet" href="assets/css/style.css">
 <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
 	rel="stylesheet">
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
 .section h1 {
@@ -94,6 +94,7 @@ a button {
 </head>
 <body>
 	<%@ include file="header.jsp"%>
+
 	<main>
 		<!--? Hero Area Start-->
 		<div class="hero-area2 d-flex align-items-center">
@@ -127,17 +128,16 @@ a button {
 						String mycharacter = GaeDao.getCharacter(info.getMem_mail());
 						//System.out.println(mycharacter);
 
-						ArrayList<GaeDTO> group_list = GaeDao.getGroup(mycharacter);
-
-						System.out.println(group_list.get(1));
-
+						ArrayList<String> group_list = GaeDao.getGroup(mycharacter,info.getMem_mail());
+						System.out.println(group_list.get(0));
 						Random random = new Random();
 						int ran = random.nextInt(group_list.size());
-						System.out.println(ran);
-
-						GaeDTO random_group_mail = group_list.get(ran);
-						System.out.print(random_group_mail);
+						System.out.println("랜덤숫자:"+ran);
+						String random_group_mail = group_list.get(ran);
+						System.out.println("랜덤으로 뽑은 메일:"+random_group_mail);
 						GaeDTO otherdogInfo_dto = GaeDao.getGaeInfo(random_group_mail);
+						System.out.println("다른개 메일:"+otherdogInfo_dto.getGae_name());
+						
 						%>
 						<p>
 							&lt 내 강아지와 비슷한 강아지 &gt <br> <br> <img
@@ -193,7 +193,6 @@ a button {
 
 
 
-					</p>
 				</div>
 
 
@@ -210,7 +209,6 @@ a button {
 			       	 
 			       	 </div>-->
 
-			</div>
 			</div>
 		</section>
 		<!-- About  End-->

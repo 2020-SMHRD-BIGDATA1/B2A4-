@@ -53,7 +53,7 @@ public class GaeDAO {
 		getConn();
 		// 이메일 이름 나이 성별 품종 중성화여부 몸무게 성향 사진
 
-		String sql = "select * from gae_info where mem_mail != ?";
+		String sql = "select * from gae_info where mem_mail = ?";
 		try {
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, email);
@@ -187,28 +187,29 @@ public class GaeDAO {
 		return character;
 	}
 
-	public ArrayList<GaeDTO> getGroup(String character) {
+	public ArrayList<String> getGroup(String mycharacter, String mymail) {
 
-		 ArrayList<GaeDTO> group_list = null;  
-		  getConn();	 
-		  try {
-			  String sql = "select * from gae_group where gae_group=?";
-			  conn.prepareCall(sql);
-			  psmt.setString(1, character);
-			  rs = psmt.executeQuery();
-			 
-			  if (rs.next()) {
-				  String email = rs.getString(1);
-				  GaeDTO dto = new GaeDTO(email);
-				  group_list.add(dto);
-			   }	
-			  
-		} catch (SQLException e) {
-			
-		} finally {
-			close();
-		}
-		  return group_list;
-	  }
+	       ArrayList<String> group_list = new ArrayList<String>();  
+	        getConn();    
+	        try {
+	           String sql = "select * from gae_group where gae_group=? and mem_mail != ?";
+	           psmt =  conn.prepareStatement(sql);
+	           psmt.setString(1, mycharacter);
+	           psmt.setString(2, mymail);
+	           rs = psmt.executeQuery();
+	          
+	          while(rs.next()) {
+	              String email = rs.getString(1);
+	              //GaeDTO dto = new GaeDTO(email);
+	              group_list.add(email);
+	            }   
+	           
+	      } catch (SQLException e) {
+	         
+	      } finally {
+	         close();
+	      }
+	        return group_list;
+	     }
 
 }
