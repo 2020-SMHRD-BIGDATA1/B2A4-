@@ -44,9 +44,7 @@
 								<h2>
 								<br>
 								<em>
-									개도 <br>
-									아무나 만나지 <br>
-									않는다
+									<img src="img/manda.png">
 								</em>
 								</h2>
 								<br>
