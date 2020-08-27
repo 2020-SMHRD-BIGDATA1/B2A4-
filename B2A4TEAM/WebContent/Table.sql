@@ -105,6 +105,7 @@ select * from GAE_MEMBER;
 select * from GAE_INFO;
 select * from CHAT_ROOM;
 select * from GAE_GROUP;
+select * from chat_content;
 
 TRUNCATE TABLE GAE_INFO;
 TRUNCATE TABLE GAE_MEMBER;

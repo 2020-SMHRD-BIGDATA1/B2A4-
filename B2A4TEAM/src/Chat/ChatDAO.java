@@ -73,7 +73,7 @@ public class ChatDAO {
 		return list;
 	}
 
-	public int input(ChatDTO dto) {
+	public int input(ChatDTO dto) {// dto = writer, content
 
 		getConn();
 
@@ -92,32 +92,6 @@ public class ChatDAO {
 		}
 
 		return cnt;
-	}
-
-	public int chat_index(String mem_nick) {
-		int chat_index = 0;
-		getConn();
-
-		try {
-			String sql = "select chat_index from chat_room where chat_user1=? or chat_user2=?";
-			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, mem_nick);
-			psmt.setString(2, mem_nick);
-
-			rs = psmt.executeQuery();
-
-			while (rs.next()) {
-				chat_index = rs.getInt(1);
-
-			}
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close();
-		}
-
-		return chat_index;
 	}
 
 	public int makeRoom(String my_mail, String your_mail) {
@@ -225,7 +199,7 @@ public class ChatDAO {
 		return list;
 	}
 	
-	public String getMemNick(String mem_mail) {
+	public String otherNick(String mem_mail) {
 		String otherNick = null;
 		
 		getConn();
@@ -249,12 +223,30 @@ public class ChatDAO {
 		return otherNick;
 	};
 	
-	public int roomCnt(String mail) {
+	public ArrayList<Integer> roomCnt(String mail) {
 		
+		ArrayList<Integer> roomCnt = new ArrayList<Integer>();
 		getConn();
 		
-		String sql = "select * from chat_room where chat_user1=? of chat_user2=?";
-		return 0;
+		try {
+			
+			String sql = "select * from chat_room where chat_user1=? or chat_user2=?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, mail);
+			psmt.setString(2, mail);
+			
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				int chat_index = rs.getInt(1);
+				roomCnt.add(chat_index);	
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return roomCnt;
 	}
 	
 	

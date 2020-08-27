@@ -26,13 +26,10 @@ public class chatInput extends HttpServlet {
 		HttpSession session = request.getSession();
 		MemberDTO dto  = (MemberDTO)session.getAttribute("info"); //mail, pw, nick
 		
-
-		int index = 1;
+		
 		String writer = dto.getMem_nick();
 		String content = request.getParameter("content");
 		
-
-
 		ChatDTO chatdto = new ChatDTO(writer, content);
 		ChatDAO dao = new ChatDAO();
 		int cnt = dao.input(chatdto);

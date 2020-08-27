@@ -82,47 +82,20 @@
 					int roomCnt = dao.roomCnt(info.getMem_mail());
 				%> --%>
 					<%
-						for(int j = 0; j<1; j++){
+						ArrayList<Integer> roomCnt = dao.roomCnt(info.getMem_mail()); //채팅방 개수만큼 
+						for(int j = 0; j < roomCnt.size(); j++){
 					%>
-					<%		String otherImg = gaeDao.getmyImg(mem_mail); %>
+					<%		String otherImg = gaeDao.getmyImg(mem_mail); //mem_mail은 채팅상대 이미지 %>
 				<li><img src="imgFolder/<%=otherImg %>" alt="">
 					<div>
-						<%-- <%
-						//int chat_index = dao.chat_index(info.getMem_nick());
-						//  chat_index 보내서 내 닉네임(유저)이 아닌 닉네임 출력하기
-	
-						//int chat_index = dao.chat_index(info.getMem_nick());
-						int chat_index = 1;
-	
-						ChatroomDTO chatRoom_dto = dao.getOther(chat_index);
-	
-						String user1 = chatRoom_dto.getChat_user1();
-						String user2 = chatRoom_dto.getChat_user2();
-	
-						String printNick = "";
-	
-						if (!user1.equals(info.getMem_mail())) {
-							printNick = user1;
-						}
-						if (!user2.equals(info.getMem_mail())) {
-							printNick = user2;
-	
-						}
-						%> --%>
-					<%-- 	<%
-							System.out.println(printNick);
-						%> --%>
 						
 						 <!-- mem_mail 에는 채팅 상대방 메일이 담겨 있습니다 -->
 							<%
-							String otherNick = dao.getMemNick(mem_mail);				
+							String otherNick = dao.otherNick(mem_mail);				
 							%>
 
 						<h2>	
-		
-							<%=otherNick %>
-							
-							
+							<%=otherNick %>			
 						</h2>
 							
 						
