@@ -27,12 +27,7 @@
 <link rel="stylesheet" href="assets/css/slick.css">
 <link rel="stylesheet" href="assets/css/nice-select.css">
 <link rel="stylesheet" href="assets/css/style.css?ver=3">
-<style type="text/css">
-	.about-img img{
-		max-height: 800px;
-		max-width: 100%;
-	}
-</style>
+
 </head>
 <body>
 	<%@ include file="header.jsp"%>
@@ -47,7 +42,8 @@
 							<!-- Hero Caption -->
 							<div class="hero__caption">
 								<h2>
-								<em class="gaemanda" font-size=1000px;>
+								<br>
+								<em>
 									개도 <br>
 									아무나 만나지 <br>
 									않는다

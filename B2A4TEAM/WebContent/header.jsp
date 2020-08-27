@@ -36,29 +36,10 @@
    max-height: 180px;
 }
 </style>
-<script>
-   window.onload = function() {
-      document.getElementById('logChkMat').onclick = function() {
-         alert('로그인을 해주세요.');
-      };
-      document.getElementById('logChkChat').onclick = function() {
-         alert('로그인을 해주세요.');
-      };
-      document.getElementById('logChkBoard').onclick = function() {
-         alert('로그인을 해주세요.');
-      };
-      document.getElementById('mapReady').onclick = function() {
-         alert('해당서비스는 준비중입니다.');
-      };
-
-      document.getElementById('matchingchk').onclick = function() {
-         alert('오늘 매칭 회수를 모두 소진하였습니다.');
-      };
-   }
-</script>
+</head>
 <body>
    <header>
-     <%!int matchingcnt = 0;%>
+      <%!int matchingcnt = 0;%>
       <%
          MemberDTO info = (MemberDTO) session.getAttribute("info");
       if (info != null) {
@@ -67,7 +48,7 @@
          matchingcnt = 0;
       }
       %>
-   
+
       <!-- ? Preloader Start -->
       <div id="preloader-active">
          <div
@@ -196,3 +177,23 @@
    <!-- Jquery Plugins, main Jquery -->
    <script src="./assets/js/plugins.js"></script>
    <script src="./assets/js/main.js"></script>
+   <script>
+      window.onload = function() {
+         document.getElementById('logChkMat').onclick = function() {
+            alert('로그인을 해주세요.');
+         };
+         document.getElementById('logChkChat').onclick = function() {
+            alert('로그인을 해주세요.');
+         };
+         document.getElementById('logChkBoard').onclick = function() {
+            alert('로그인을 해주세요.');
+         };
+         document.getElementById('mapReady').onclick = function() {
+            alert('해당서비스는 준비중입니다.');
+         };
+
+         document.getElementById('matchingchk').onclick = function() {
+            alert('오늘 매칭 회수를 모두 소진하였습니다.');
+         };
+      }
+   </script>
