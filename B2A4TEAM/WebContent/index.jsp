@@ -27,7 +27,12 @@
 <link rel="stylesheet" href="assets/css/slick.css">
 <link rel="stylesheet" href="assets/css/nice-select.css">
 <link rel="stylesheet" href="assets/css/style.css?ver=3">
-
+<style type="text/css">
+	.about-img img{
+		max-height: 800px;
+		max-width: 100%;
+	}
+</style>
 </head>
 <body>
 	<%@ include file="header.jsp"%>
@@ -42,7 +47,7 @@
 							<!-- Hero Caption -->
 							<div class="hero__caption">
 								<h2>
-								<em>
+								<em class="gaemanda" font-size=1000px;>
 									개도 <br>
 									아무나 만나지 <br>
 									않는다
@@ -53,8 +58,8 @@
 								<p>
 								<h4>소중한 반려견을 위한 친구 만들기 서비스</h4>
 								<p class="cd-headline letters scale">
-									Designed by B2A4 <a href="#" class="cd-words-wrapper"> <b
-										class="is-visible">반려견</b> <b>친구만들기</b> <b>개만다</b> <b>GaeManDa</b>
+									Designed by B2A4 <a href="#" class="cd-words-wrapper"> 
+									<b class="is-visible">반려견</b> <b>친구만들기</b> <b>개만다</b> <b>GaeManDa</b>
 									</a>
 								</p>
 							</div>
