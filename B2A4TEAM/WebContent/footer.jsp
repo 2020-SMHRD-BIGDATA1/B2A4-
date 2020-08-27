@@ -69,11 +69,11 @@
 										<div class="form-box message-icon mb-25">
 											<textarea name="message" id="message" placeholder="Message"></textarea>
 										</div>
-										
+
 										<script>
 											document.getElementById('send').onclick = function() {
 												alert('소중한 의견 감사합니다.');
-										};
+											};
 										</script>
 										<div class="submit-info">
 											<button id="send" class="submit-btn2" type="submit">SendMessage</button>
@@ -100,7 +100,22 @@
 									class="fab fa-instagram"></i></a>
 							</div>
 						</div>
-						
+						<div class="col-xl-8 col-lg-8">
+							<div class="footer-copy-right f-right">
+								<p>
+									<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+									Copyright &copy;
+									<script>
+										document
+												.write(new Date().getFullYear());
+									</script>
+									<i class="fa fa-heart" aria-hidden="true"></i> by <a
+										href="https://colorlib.com" target="_blank">B2A4</a>
+									<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+								</p>
+							</div>
+						</div>
+
 					</div>
 				</div>
 			</div>

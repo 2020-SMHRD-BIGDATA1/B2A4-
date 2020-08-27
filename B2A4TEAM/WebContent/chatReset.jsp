@@ -42,8 +42,6 @@
 }
 </style>
 </head>
-
-
 <body>
 	<%@ include file="header.jsp"%>
 	<%!String mem_mail = null;%>
@@ -182,8 +180,8 @@
 				<!-- <div class="triangle"></div> -->
 				<div class="message1">
 					<%
-						request.getParameter("roomnumber");
-					ArrayList<ChatDTO> list = dao.selectReverse(0);
+						String roomnum = request.getParameter("roomnumber");
+					ArrayList<ChatDTO> list = dao.selectReverse(Integer.parseInt(roomnum));
 
 					for (i = 0; i < list.size(); i++) {
 					%>
