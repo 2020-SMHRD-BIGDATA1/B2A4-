@@ -4010,12 +4010,14 @@ transition
 }
 
 /* line 76, C:/Users/HP/Desktop/jun-2020/283.Personal/assets/scss/_h1-hero.scss */
-.slider-area .hero__caption h1 {
-	font-size: 280px;
+.slider-area .hero__caption h2 {
+	font-size: 140px;
 	font-weight: 300;
 	text-transform: uppercase;
 	color: #670000;
 	line-height: 1;
+	margin-top: 39px;
+	margin-top: 39px;
 	margin-bottom: 39px;
 	margin-bottom: 39px;
 }
@@ -4187,7 +4189,7 @@ transition
 	width: 100%;
 	height: 27%;
 	background: #FFEFAE;
-	right: -100px;
+	right: 0px;
 	z-index: -1;
 	top: 0;
 }

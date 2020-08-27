@@ -30,7 +30,7 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 
 <meta charset="UTF-8">
-<title>채팅하기</title>
+<title>GaeManDa</title>
 <!-- CSS here -->
 <link rel="stylesheet" href="Doc/css/chat.css">
 

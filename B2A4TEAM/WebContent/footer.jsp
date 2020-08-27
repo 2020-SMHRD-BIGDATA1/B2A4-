@@ -28,8 +28,8 @@
 								</div>
 							</div>
 							<div class="col-xl-2 col-lg-3 col-md-4">
-								<a href="#" class="btn white-btn f-right sm-left">Download
-									CV</a>
+								<!--  <a href="#" class="btn white-btn f-right sm-left">Download
+									CV</a>-->
 							</div>
 						</div>
 					</div>
@@ -69,8 +69,14 @@
 										<div class="form-box message-icon mb-25">
 											<textarea name="message" id="message" placeholder="Message"></textarea>
 										</div>
+										
+										<script>
+											document.getElementById('send').onclick = function() {
+												alert('소중한 의견 감사합니다.');
+										};
+										</script>
 										<div class="submit-info">
-											<button class="submit-btn2" type="submit">SendMessage</button>
+											<button id="send" class="submit-btn2" type="submit">SendMessage</button>
 										</div>
 									</div>
 								</div>
