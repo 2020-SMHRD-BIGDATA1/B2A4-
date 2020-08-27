@@ -60,12 +60,7 @@
 								</p>
 							</div>
 							<p>
-								<%
-									if (info != null) {
-								%>오늘의 매칭가능 횟수 :<%=matchingcnt%>
-								<%
-									}
-								%>
+								
 							</p>
 						</div>
 					</div>

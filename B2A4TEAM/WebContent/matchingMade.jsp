@@ -251,7 +251,36 @@ a button {
 							<%=otherdogInfo_dto.getGae_age()%>세<br> <img
 								src="img/bone1.png">&nbsp;성별 :
 							<%=dog_sex%><br> <img src="img/bone1.png">&nbsp;품종 :
-							<%=dog_species%>
+							<%=dog_species%><br>
+							
+							<% String myGroupNum = GaeDao.getGroupNum(info.getMem_mail());
+							
+							String myCharacter = "";
+							
+							if(myGroupNum.equals("0")){
+								myCharacter = "지배적";
+							} else if(myGroupNum.equals("1")){
+								myCharacter = "강함";
+							} else if(myGroupNum.equals("2")){
+								myCharacter = "견고함";
+							} else if(myGroupNum.equals("3")){
+								myCharacter = "부드럽고 활발";
+							} else if(myGroupNum.equals("4")){
+								myCharacter = "부드럽고 소심";
+							} else if(myGroupNum.equals("5")){
+								myCharacter = "예민함";
+							} else if(myGroupNum.equals("6")){
+								myCharacter = "독립적";
+							} else if(myGroupNum.equals("7")){
+								myCharacter = "호기심 많음";
+							}
+								
+							%>
+							
+							<img
+								src="img/bone1.png">&nbsp;성격 :
+							<%=myCharacter%>
+							
 
 							<!-- mem_mail 채팅상대 구분하는 상대방 메일  -->
 							<br> <br> <a
@@ -264,8 +293,15 @@ a button {
 					<div class="vs">
 					
 						<h1>VS</h1>
-						<h4>오늘 남은 매칭 횟수</h4>
-						<h4></h4>
+						<h4>
+						<%
+									if (info != null) {
+								%>오늘의 매칭가능 횟수 <br><%=matchingcnt%>회
+								<%
+									}
+								%>
+						</h4>
+						
 						
 					</div>
 
@@ -379,7 +415,47 @@ a button {
 							<%=otherdogInfo_dto2.getGae_age()%>세<br> <img
 								src="img/bone1.png">&nbsp;성별 :
 							<%=dog_sex2%><br> <img src="img/bone1.png">&nbsp;품종 :
-							<%=dog_species2%>
+							<%=dog_species2%><br>
+							<%
+							//0- 지배적
+							//1- 강함
+							//2- 견고함
+							//3- 부드럽고 활발
+							//4-부드럽고 소심
+							//5- 예민
+							//6- 독립적
+							//7- 호기심많은
+							
+							 String groupNum = GaeDao.getGroupNum(random_group_mail2);
+							
+							String characterName = "";
+							
+							if(groupNum.equals("0")){
+								characterName = "지배적";
+							} else if(groupNum.equals("1")){
+								characterName = "강함";
+							} else if(groupNum.equals("2")){
+								characterName = "견고함";
+							} else if(groupNum.equals("3")){
+								characterName = "부드럽고 활발";
+							} else if(groupNum.equals("4")){
+								characterName = "부드럽고 소심";
+							} else if(groupNum.equals("5")){
+								characterName = "예민함";
+							} else if(groupNum.equals("6")){
+								characterName = "독립적";
+							} else if(groupNum.equals("7")){
+								characterName = "호기심 많음";
+							}
+								
+							%>
+							
+							<img
+								src="img/bone1.png">&nbsp;성격 :
+							<%=characterName%>
+							
+							
+							
 
 							<!-- mem_mail 채팅상대 구분하는 상대방 메일  -->
 
