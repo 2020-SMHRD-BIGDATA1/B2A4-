@@ -83,7 +83,7 @@ public class DogInfoService extends HttpServlet {
 
 		if (result > 0) {
 			System.out.println("저장완료");
-			response.sendRedirect("index.jsp");
+			response.sendRedirect("http://localhost:9000/predict/predict?item_id="+mem_mail);
 		} else {
 			System.out.println("저장실패");
 			response.sendRedirect("dogInfoForm.jsp");

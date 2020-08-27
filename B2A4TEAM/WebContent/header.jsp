@@ -8,9 +8,10 @@
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <title>GaeManDa</title>
 <meta name="description" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=2">
 <link rel="manifest" href="site.webmanifest">
-<link rel="shortcut icon" type="image/x-icon" href="assets/img/gaelogo.ico">
+<link rel="shortcut icon" type="image/x-icon"
+	href="assets/img/gaelogo.ico">
 
 <!-- CSS here -->
 <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -28,12 +29,12 @@
 <link rel="stylesheet" href="assets/css/nice-select.css">
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="Doc/css/headStyle.css">
-<style type="text/css">	
-	.logoImg {
-		margin-top : 50px;
-		max-width: 180px;
-		max-height: 180px;
-	}
+<style type="text/css">
+.logoImg {
+	margin-top: 50px;
+	max-width: 180px;
+	max-height: 180px;
+}
 </style>
 <script>
 	window.onload = function() {
@@ -49,6 +50,7 @@
 		document.getElementById('mapReady').onclick = function() {
 			alert('해당서비스는 준비중입니다.');
 		};
+
 	}
 </script>
 <body>
@@ -76,7 +78,8 @@
 						class="menu-wrapper d-flex align-items-center justify-content-between">
 						<!-- Logo -->
 						<div class="logo">
-							<a href="index.jsp"><img class="logoImg" src="img/dog.png" alt=""></a>
+							<a href="index.jsp"><img class="logoImg" src="img/dog.png"
+								alt=""></a>
 						</div>
 						<!-- Main-menu -->
 						<div class="main-menu f-right d-none d-lg-block">

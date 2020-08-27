@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import Chat.ChatDTO;
+import bbs.bbsDTO;
 
 public class GaeDAO {
 
@@ -48,11 +49,11 @@ public class GaeDAO {
 	}
 
 	public GaeDTO getGaeInfo(String email) {
-		GaeDTO info = null;
+		GaeDTO matchingDog_info = null;
 		getConn();
 		// 이메일 이름 나이 성별 품종 중성화여부 몸무게 성향 사진
 
-		String sql = "select * from gae_info where mem_mail != ?";
+		String sql = "select * from gae_info where mem_mail = ?";
 		try {
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, email);
@@ -68,7 +69,7 @@ public class GaeDAO {
 				String size = rs.getString(8);
 				String walking = rs.getString(9);
 				String cut = rs.getString(10);
-				info = new GaeDTO(mem_mail, img, name, sex, age, species, weight, size, walking, cut);
+				matchingDog_info = new GaeDTO(mem_mail, img, name, sex, age, species, weight, size, walking, cut);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -76,7 +77,7 @@ public class GaeDAO {
 			close();
 		}
 
-		return info;
+		return matchingDog_info;
 	}
 
 	public int uploadInfo(GaeDTO dto) {
@@ -110,7 +111,6 @@ public class GaeDAO {
 	public int submitSurvey(GaeDTO dto) {
 		int cnt = 0;
 		getConn();
-
 		try {
 			String sql = "INSERT INTO GAE_INFO VALUES(?,1,1,1,1,1,1,1,1,1,1,1,?,?,?,?,?,?,?,?)";
 			psmt = conn.prepareStatement(sql);
@@ -133,32 +133,98 @@ public class GaeDAO {
 		return cnt;
 
 	}
-	
+
 	public String getmyImg(String email) {
-		
 		getConn();
-		
 		String img = null;
-		
-		
 		try {
 			String sql = "select * from gae_info where mem_mail = ?";
 			psmt = conn.prepareStatement(sql);
-			
+
 			psmt.setString(1, email);
 			rs = psmt.executeQuery();
-			
+
 			if (rs.next()) {
-				img = rs.getString(2); 
+				img = rs.getString(2);
 			}
-			
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			close();
 		}
-		
 		return img;
 	}
+
+	public String getCharacter(String email) {
+		getConn();
+		String character = null;
+		try {
+			String sql = "select * from GAE_GROUP where mem_mail = ?";
+			psmt = conn.prepareStatement(sql);
+
+			psmt.setString(1, email);
+			rs = psmt.executeQuery();
+
+			if (rs.next()) {
+				character = rs.getString(2);
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return character;
+	}
+
+	public ArrayList<String> getGroup(String mycharacter, String mymail) {
+		ArrayList<String> group_list = new ArrayList<String>();
+		getConn();
+		try {
+			String sql = "select * from gae_group where gae_group=? and mem_mail != ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, mycharacter);
+			psmt.setString(2, mymail);
+			rs = psmt.executeQuery();
+
+			while (rs.next()) {
+				String email = rs.getString(1);
+				// GaeDTO dto = new GaeDTO(email);
+				group_list.add(email);
+			}
+
+		} catch (SQLException e) {
+
+		} finally {
+			close();
+		}
+		return group_list;
+	}
+
+	public ArrayList<String> getOtherGroup(String mycharacter) {
+
+		ArrayList<String> group_list = new ArrayList<String>();
+		getConn();
+		try {
+			String sql = "select * from gae_group where gae_group != ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, mycharacter);
+			rs = psmt.executeQuery();
+
+			while (rs.next()) {
+				String email = rs.getString(1);
+				// GaeDTO dto = new GaeDTO(email);
+				group_list.add(email);
+			}
+
+		} catch (SQLException e) {
+
+		} finally {
+			close();
+		}
+		return group_list;
+	}
+
 }
