@@ -1,3 +1,5 @@
+<%@page import="java.util.Collections"%>
+<%@page import="java.util.Collection"%>
 <%@page import="java.util.Random"%>
 <%@page import="com.model.GaeDTO"%>
 <%@page import="java.util.ArrayList"%>
@@ -131,9 +133,8 @@ a button {
 						ArrayList<String> group_list1 = GaeDao.getGroup(mycharacter, info.getMem_mail()); //group_list 이메일리스트
 
 						System.out.println("실험삼아 그룹리스트에 첫번째 아이: " + group_list1.get(0));
-
+						
 						Random random = new Random();
-
 						int ran = random.nextInt(group_list1.size());
 						System.out.println("몇번 아이가 랜덤으로 걸렸을까?? :" + ran);
 
