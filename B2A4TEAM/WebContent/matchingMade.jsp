@@ -251,7 +251,36 @@ a button {
 							<%=otherdogInfo_dto.getGae_age()%>세<br> <img
 								src="img/bone1.png">&nbsp;성별 :
 							<%=dog_sex%><br> <img src="img/bone1.png">&nbsp;품종 :
-							<%=dog_species%>
+							<%=dog_species%><br>
+							
+							<% String myGroupNum = GaeDao.getGroupNum(info.getMem_mail());
+							
+							String myCharacter = "";
+							
+							if(myGroupNum.equals("0")){
+								myCharacter = "지배적";
+							} else if(myGroupNum.equals("1")){
+								myCharacter = "강함";
+							} else if(myGroupNum.equals("2")){
+								myCharacter = "견고함";
+							} else if(myGroupNum.equals("3")){
+								myCharacter = "부드럽고 활발";
+							} else if(myGroupNum.equals("4")){
+								myCharacter = "부드럽고 소심";
+							} else if(myGroupNum.equals("5")){
+								myCharacter = "예민함";
+							} else if(myGroupNum.equals("6")){
+								myCharacter = "독립적";
+							} else if(myGroupNum.equals("7")){
+								myCharacter = "호기심 많음";
+							}
+								
+							%>
+							
+							<img
+								src="img/bone1.png">&nbsp;성격 :
+							<%=myCharacter%>
+							
 
 							<!-- mem_mail 채팅상대 구분하는 상대방 메일  -->
 							<br> <br> <a
