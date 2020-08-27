@@ -51,13 +51,18 @@
 			alert('해당서비스는 준비중입니다.');
 		};
 
+		document.getElementById('matchingchk').onclick = function() {
+			alert('오늘 매칭 회수를 모두 소진하였습니다.');
+		};
 	}
 </script>
 <body>
 	<header>
 		<%
 			MemberDTO info = (MemberDTO) session.getAttribute("info");
+			int matchingcnt = (Integer)session.getAttribute("matchingcnt");
 		%>
+	
 		<!-- ? Preloader Start -->
 		<div id="preloader-active">
 			<div
@@ -87,10 +92,14 @@
 								<ul id="navigation">
 									<li><a href="index.jsp">홈</a></li>
 									<!--  class="active" <<밑줄 -->
-									<li><a <%if (info != null) {%> href="matchingMade.jsp"
-										<%} else {%> href="loginForm.jsp" id="logChkMat" <%}%>>매칭하기</a></li>
+
+									<li><a <%if (info != null) {%> <%if (matchingcnt != 0) {%>
+										href="matchingMade.jsp" <%} else {%> href="index.jsp"
+										id="matchingchk" <%}%> <%} else {%> href="loginForm.jsp"
+										id="logChkMat" <%}%>>매칭하기</a></li>
 									<li><a <%if (info != null) {%> href="chatReset.jsp"
 										<%} else {%> href="loginForm.jsp" id="logChkChat" <%}%>>채팅하기</a></li>
+
 									<li><a <%if (info != null) {%> href="board.jsp"
 										<%} else {%> href="loginForm.jsp" id="logChkBoard" <%}%>>게시판</a>
 										<%

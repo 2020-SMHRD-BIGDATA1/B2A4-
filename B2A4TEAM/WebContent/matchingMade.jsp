@@ -1,3 +1,5 @@
+<%@page import="java.util.Collections"%>
+<%@page import="java.util.Collection"%>
 <%@page import="java.util.Random"%>
 <%@page import="com.model.GaeDTO"%>
 <%@page import="java.util.ArrayList"%>
@@ -48,16 +50,27 @@
 	width: 33%;
 	height: 500px;
 	font-family: "Jua";
+	text-align: center;
+	
 }
 
 .vs h1 {
 	position: relative;
-	top: 50px;
-	line-height: 400px;
+	top: 180px;
 	text-align: center;
 	color: #670000;
 	font-weight: bold;
 	font-size: 200px font-family: "Jua";
+	vertical-align:middle;
+}
+.vs h4 {
+	position: relative;
+	top: 180px;
+	text-align: center;
+	color: #670000;
+	font-weight: bold;
+	font-size: 200px font-family: "Jua";
+	vertical-align:middle;
 }
 
 .content p {
@@ -133,7 +146,6 @@ a button {
 						System.out.println("실험삼아 그룹리스트에 첫번째 아이: " + group_list1.get(0));
 
 						Random random = new Random();
-
 						int ran = random.nextInt(group_list1.size());
 						System.out.println("몇번 아이가 랜덤으로 걸렸을까?? :" + ran);
 
@@ -229,7 +241,7 @@ a button {
 
 
 
-							&lt 내 강아지와 비슷한 강아지 &gt <br> <br> <img
+							&lt 나와 비슷한 강아지 &gt <br> <br> <img
 								src='imgFolder/<%=otherdogInfo_dto.getGae_img()%>'><br>
 							<br>
 							<!--메일 :dto.getMem_mail()l() %><br>  -->
@@ -243,14 +255,18 @@ a button {
 
 							<!-- mem_mail 채팅상대 구분하는 상대방 메일  -->
 							<br> <br> <a
-								href="chatReset.jsp?mem_mail=<%=otherdogInfo_dto.getMem_mail()%>">
+								href="matchingcnt?email=<%=otherdogInfo_dto.getMem_mail()%>">
 								<button>채팅하기</button>
 							</a>
 						</p>
 					</div>
 
 					<div class="vs">
+					
 						<h1>VS</h1>
+						<h4>오늘 남은 매칭 횟수</h4>
+						<h4></h4>
+						
 					</div>
 
 					<div class="content right" align="center">
@@ -264,7 +280,7 @@ a button {
 							System.out.println("몇번 아이가 랜덤으로 걸렸을까?? :" + other_ran);
 
 							String random_group_mail2 = group_list2.get(other_ran);
-							System.out.print("랜덤으로 뽑힌 갱쥐의 메일 : " + random_group_mail2);
+							System.out.println("랜덤으로 뽑힌 갱쥐의 메일 : " + random_group_mail2);
 							GaeDTO otherdogInfo_dto2 = GaeDao.getGaeInfo(random_group_mail2);
 							%>
 							<%!String dog_sex2 = null;%>
@@ -353,7 +369,7 @@ a button {
 
 
 
-							&lt 내 강아지와 어울릴 것 같은 강아지 &gt <br> <br> <img
+							&lt 나와 다르지만 친해져보고 싶은 친구 &gt <br> <br> <img
 								src='imgFolder/<%=otherdogInfo_dto2.getGae_img()%>'><br>
 							<br>
 							<!--메일 :dto.getMem_mail()l() %><br>  -->
@@ -367,33 +383,16 @@ a button {
 
 							<!-- mem_mail 채팅상대 구분하는 상대방 메일  -->
 
-							<br> <br> 
-						<a href="chatReset.jsp?mem_mail=<%=otherdogInfo_dto2.getMem_mail()%>">
+							<br> <br><a
+								href="matchingcnt?email=<%=otherdogInfo_dto2.getMem_mail()%>">
 								<button>채팅하기</button>
 							</a>
 						</p>
 					</div>
-					<!-- Section Tittle -->
-
-
-
 
 				</div>
 			</div>
-
-
-			<!-- Section Tittle -->
-
-
-
-
-			<!--  <div class="col-lg-6">
-	                    <div class="about-img">
-	                        <img src="assets/img/gallery/about1.png" alt="">
-	                    </div>
-	                </div>
-			       	 
-			       	 </div>-->
+			
 		</section>
 		<!-- About  End-->
 	</main>

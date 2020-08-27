@@ -36,7 +36,7 @@
                     <div class="col-xl-12">
                         <!-- Hero Caption -->
                         <div class="hero-cap pt-100">
-                            <h2>QnA</h2>                        
+                            <h2>자유게시판</h2>                        
                         </div>
                     </div>
                 </div>

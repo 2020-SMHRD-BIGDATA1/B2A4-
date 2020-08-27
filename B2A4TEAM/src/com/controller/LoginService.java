@@ -20,8 +20,9 @@ public class LoginService extends HttpServlet {
 
 		String mail = request.getParameter("mail");
 		String pw = request.getParameter("pw");
-		//String mem_nick = request.getParameter("mem_nick");
-		
+		// String mem_nick = request.getParameter("mem_nick");
+		int matchingcnt = 1;
+
 		MemberDTO dto = new MemberDTO(mail, pw);
 		MemberDAO dao = new MemberDAO();
 		MemberDTO info = dao.login(dto);
@@ -29,10 +30,13 @@ public class LoginService extends HttpServlet {
 			// 로그인 성공시에는 session에 info라는 네임으로 info객체를 저장
 			HttpSession session = request.getSession();
 			session.setAttribute("info", info);
+			if (session.getAttribute("matchingcnt") == null) {
+				session.setAttribute("matchingcnt", matchingcnt);
+			}
 			response.sendRedirect("index.jsp");
-		}else {
+		} else {
 			response.sendRedirect("loginForm.jsp");
 		}
-		
+
 	}
 }

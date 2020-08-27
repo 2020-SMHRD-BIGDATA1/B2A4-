@@ -52,7 +52,7 @@
 					<div class="col-xl-12">
 						<!-- Hero Caption -->
 						<div class="hero-cap pt-100" style="text-align: center;">
-							<h1 style="color:black">자유게시판</h1>
+							<h1 style="color : #670000 ">자유게시판</h1>
 						</div>
 					</div>
 				</div>

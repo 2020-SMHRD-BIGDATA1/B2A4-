@@ -1,3 +1,4 @@
+<%@page import="com.controller.matchingcnt"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!doctype html>
@@ -25,11 +26,12 @@
 <link rel="stylesheet" href="assets/css/themify-icons.css">
 <link rel="stylesheet" href="assets/css/slick.css">
 <link rel="stylesheet" href="assets/css/nice-select.css">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/style.css?ver=3">
 
 </head>
 <body>
 	<%@ include file="header.jsp"%>
+
 	<main>
 		<!--? Hero Area Start-->
 		<div class="slider-area">
@@ -56,6 +58,14 @@
 									</a>
 								</p>
 							</div>
+							<p>
+								<%
+									if (info != null) {
+								%>오늘의 매칭가능 횟수 :<%=matchingcnt%>
+								<%
+									}
+								%>
+							</p>
 						</div>
 					</div>
 				</div>
@@ -73,8 +83,7 @@
 								<h2>GAEMANDA</h2>
 							</div>
 							<p>
-								당신의 반려견의 성향을 분석해드립니다. <br>
-								그리고 반려견의 친구를 찾아드립니다.
+								당신의 반려견의 성향을 분석해드립니다. <br> 그리고 반려견의 친구를 찾아드립니다.
 							</p>
 
 							<p></p>
@@ -265,7 +274,7 @@
 							<div class="gallery-img small-img "
 								style="background-image: url(assets/img/gallery/gallery2.png);"></div>
 							<div class="overlay">
-							<div class="overlay-content">
+								<div class="overlay-content">
 									<a href="assets/img/gallery/gallery2.png" class="img-pop-up"><i
 										class="ti-plus"></i></a>
 								</div>

@@ -4010,8 +4010,13 @@ transition
 }
 
 /* line 76, C:/Users/HP/Desktop/jun-2020/283.Personal/assets/scss/_h1-hero.scss */
+<<<<<<< HEAD
 .slider-area .hero__caption h2 {
 	font-size: 140px;
+=======
+.slider-area .hero__caption h1 {
+	font-size: 180px;
+>>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/B2A4-.git
 	font-weight: 300;
 	text-transform: uppercase;
 	color: #670000;
@@ -4189,7 +4194,11 @@ transition
 	width: 100%;
 	height: 27%;
 	background: #FFEFAE;
+<<<<<<< HEAD
 	right: 0px;
+=======
+	right: 0 px !important;
+>>>>>>> branch 'master' of https://github.com/2020-SMHRD-BIGDATA1/B2A4-.git
 	z-index: -1;
 	top: 0;
 }
