@@ -226,5 +226,30 @@ public class GaeDAO {
 		}
 		return group_list;
 	}
+	
+	public String getGroupNum (String character) {
+		
+		String characterNum = null;
+		
+		getConn();
+		try {
+			String sql = "select * from gae_group where mem_mail = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, character);
+			rs = psmt.executeQuery();
+
+			if (rs.next()) {
+				characterNum = rs.getString(2);
+			}
+
+		} catch (SQLException e) {
+
+		} finally {
+			close();
+		}
+		
+		
+		return characterNum;
+	}
 
 }

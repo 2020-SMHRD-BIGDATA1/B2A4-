@@ -35,6 +35,10 @@
    max-width: 180px;
    max-height: 180px;
 }
+.matchingcnt{
+	color: #670000;
+	font-size: 20px;
+}
 </style>
 </head>
 <body>
@@ -111,7 +115,9 @@
                   <div class="header-info-right d-none d-lg-block">
                      <a href="LogoutService" class="btn header-btn">Logout<i
                         class="ti-arrow-right"></i></a> <a href="update.jsp"
-                        class="btn header-btn">My Page <i class="ti-arrow-right"></i></a>
+                        class="btn header-btn">My Page <i class="ti-arrow-right"></i></a><br><br>
+                       	<p class="matchingcnt">오늘의 매칭가능 횟수 : <%=matchingcnt%>회<p>
+								
                   </div>
                   <%
                      } else {
