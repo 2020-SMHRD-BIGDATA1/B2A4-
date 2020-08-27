@@ -24,7 +24,7 @@
 						<div class="row align-items-center justify-content-between">
 							<div class="col-xl-7 col-lg-9 col-md-8">
 								<div class="wantToWork-caption wantToWork-caption2">
-									<h2>Do you want to know more about me?</h2>
+									<h2>Do you want to know more about GAEMANDA?</h2>
 								</div>
 							</div>
 							<div class="col-xl-2 col-lg-3 col-md-4">
