@@ -102,7 +102,7 @@
 
  }
  %></li>
-									<li><a href="contact.jsp" id="mapReady">주변정보</a></li>
+									<li><a href="index.jsp" id="mapReady">주변정보</a></li>
 								</ul>
 							</nav>
 						</div>
