@@ -32,7 +32,7 @@
 				</div>
 				<div class="form-group">
 					<input type="password" class="form-control" name="pw"
-						placeholder="PASSWORD(영문 숫자 혼합)">
+						placeholder="Password(영문 숫자 혼합)">
 				</div>
 				<div class="button-group">
 					<form action="index.jsp">

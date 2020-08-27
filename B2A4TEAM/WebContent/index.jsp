@@ -41,10 +41,19 @@
 						<div class="col-xl-12 col-lg-10 col-md-10 col-sm-10">
 							<!-- Hero Caption -->
 							<div class="hero__caption">
-								<h1>GaeManda</h1>
-								<p>개도 아무나 만나지 않는다</p>
+								<h2>
+								<em>
+									개도 <br>
+									아무나 만나지 <br>
+									않는다
+								</em>
+								</h2>
+								<br>
+								<br>
+								<p>
+								<h4>소중한 반려견을 위한 친구 만들기 서비스</h4>
 								<p class="cd-headline letters scale">
-									Head of design at <a href="#" class="cd-words-wrapper"> <b
+									Designed by B2A4 <a href="#" class="cd-words-wrapper"> <b
 										class="is-visible">반려견</b> <b>친구만들기</b> <b>개만다</b> <b>GaeManDa</b>
 									</a>
 								</p>
@@ -71,7 +80,7 @@
 						<div class="about-caption mb-50">
 							<!-- Section Tittle -->
 							<div class="section-tittle mb-35">
-								<h2>Matching</h2>
+								<h2>GAEMANDA</h2>
 							</div>
 							<p>
 								당신의 반려견의 성향을 분석해드립니다. <br> 그리고 반려견의 친구를 찾아드립니다.
@@ -89,29 +98,32 @@
 				<div class="row pt-40">
 					<div class="col-lg-3 col-md-4 col-sm-6">
 						<div class="experience">
-							<span>06 years</span>
-							<p>of experience</p>
+							<span>매칭하기</span>
+							<p>하루에 1번, 반려견의 성향과<br>
+							잘 어울리는 친구를 소개해드립니다.</p>
 						</div>
 					</div>
 					<div class="col-lg-3 col-md-4 col-sm-6">
 						<div class="experience">
-							<span>$40M+</span>
+							<span>채팅하기</span>
 							<p>
-								invested in projects I was<br> involved in
+								매칭이 연결된 상대와 자신의 반려견에 대해<br>
+								대화를 나누어 보세요.
+								
 							</p>
 						</div>
 					</div>
 					<div class="col-lg-3 col-md-4 col-sm-6">
 						<div class="experience">
-							<span>Multiple</span>
-							<p>industry awards</p>
+							<span>게시판</span>
+							<p>서로에게 도움이 되는 정보를 공유해보세요.</p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 		<!-- About  End-->
-		<!--? May-about Start -->
+		<!--? May-about Start 
 		<div class="may-about section-padding40">
 			<div class="container">
 				<div class="row">
@@ -189,7 +201,7 @@
 			</div>
 		</div>
 		<!-- May-about End -->
-		<!--? My Expertise Start -->
+		<!--? My Expertise Start 
 		<div class="our-services pt-top section-bg1">
 			<div class="container">
 				<div class="rwo">
@@ -234,7 +246,7 @@
 			</div>
 		</div>
 		<!-- My Expertise End -->
-		<!--? Gallery Area Start -->
+		<!--? Gallery Area Start 
 		<div class="gallery-area section-padding40">
 			<div class="container">
 				<div class="row">
