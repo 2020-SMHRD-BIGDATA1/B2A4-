@@ -82,23 +82,22 @@
 					<h1 style="color: white; font-size: 70px;">개 만 다</h1>
 				</div>
 			</header>
-			<ul>
+			<ul id="roomMem">
 
 				<%-- <%
 					int roomCnt = dao.roomCnt(info.getMem_mail());
 				%> --%>
-				<%!int roomnum = 0;%>
 				<%
 					ArrayList<Integer> roomCnt = dao.roomCnt(info.getMem_mail()); //채팅방 개수만큼 
 				ArrayList<String> roomPartnerMail = dao.chatRoom_list(info.getMem_mail()); //나의 채팅 상대들 이메일
 				for (int j = 0; j < roomPartnerMail.size(); j++) {
 				%>
 				<%
-					roomnum = roomCnt.get(j);
-				System.out.println("상대" + roomPartnerMail.get(j));
+					System.out.println("상대" + roomPartnerMail.get(j));
+				System.out.println("상대방번호" + roomCnt.get(j));
 				GaeDTO partner_dto = gaeDao.getGaeInfo(roomPartnerMail.get(j)); //mem_mail은 채팅상대 이미지
 				%>
-				<li class="chatroom"><img
+				<li class="chatroom" value="<%=roomCnt.get(j)%>"><img
 					src="imgFolder/<%=partner_dto.getGae_img()%>" alt="">
 					<div>
 
@@ -183,7 +182,8 @@
 				<!-- <div class="triangle"></div> -->
 				<div class="message1">
 					<%
-						ArrayList<ChatDTO> list = dao.selectReverse(roomnum);
+						request.getParameter("roomnumber");
+					ArrayList<ChatDTO> list = dao.selectReverse(0);
 
 					for (i = 0; i < list.size(); i++) {
 					%>
@@ -316,12 +316,13 @@
 					});
 				})
 
-		// html dom 이 다 로딩된 후 실행된다.
-		// chatroom 클래스 클릭했을때
-		$(".chatroom").click(function() {
-			// 현재 클릭한 태그가 chatroom class 이기 때문에
-			// a 옆의 태그중 ul 태그에 hide 클래스 태그를 넣던지 빼던지 한다.
-			$(".chatmain").toggleClass("chathead");
+		$(document).ready(function() {
+			$("#roomMem li").click(function() {
+				var roomnumber = $(this).attr('value');
+				console.log(roomnumber);
+				window.open('chatReset.jsp?roomnumber=' + roomnumber);
+
+			});
 		});
 	</script>
 </body>
