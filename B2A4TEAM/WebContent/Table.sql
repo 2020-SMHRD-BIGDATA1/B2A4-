@@ -122,14 +122,14 @@ ALTER table GAE_MEMBER enable constraints mem_mail_pk;
 
 )
 
-insert into gae_group values('mint', '1');
+insert into gae_group values('hi@naver.com', '1');
 insert into gae_group values('hodoo@daum.net', '2');
 insert into gae_group values('gaemanda@naver.com', '1');
 insert into gae_group values('yohan@naver.com', '2');
 insert into gae_group values('manggo@naver.com', '3');
 
-delete from gae_member where mem_mail = 'hodoo@naver.com';
-select * from gae_Group;
+delete from chat_content where writer = '¹ÎÆ®';
+select * from chat_content;
 
 
 

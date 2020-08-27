@@ -42,6 +42,7 @@
 							<!-- Hero Caption -->
 							<div class="hero__caption">
 								<h2>
+								<br>
 								<em>
 									개도 <br>
 									아무나 만나지 <br>
@@ -53,15 +54,15 @@
 								<p>
 								<h4>소중한 반려견을 위한 친구 만들기 서비스</h4>
 								<p class="cd-headline letters scale">
-									Designed by B2A4 <a href="#" class="cd-words-wrapper"> <b
-										class="is-visible">반려견</b> <b>친구만들기</b> <b>개만다</b> <b>GaeManDa</b>
+									Designed by B2A4 <a href="#" class="cd-words-wrapper"> 
+									<b class="is-visible">반려견</b> <b>친구만들기</b> <b>개만다</b> <b>GaeManDa</b>
 									</a>
 								</p>
 							</div>
 							<p>
-								오늘의 매칭가능 횟수 :<%
-								if (info != null) {
-							%><%=matchingcnt%>
+								<%
+									if (info != null) {
+								%>오늘의 매칭가능 횟수 :<%=matchingcnt%>
 								<%
 									}
 								%>

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8"%>
 <%@page import="com.model.MemberDTO"%>
 <!doctype html>
 <html class="no-js" lang="zxx">
@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=2">
 <link rel="manifest" href="site.webmanifest">
 <link rel="shortcut icon" type="image/x-icon"
-	href="assets/img/gaelogo.ico">
+   href="assets/img/gaelogo.ico">
 
 <!-- CSS here -->
 <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -31,168 +31,169 @@
 <link rel="stylesheet" href="Doc/css/headStyle.css">
 <style type="text/css">
 .logoImg {
-	margin-top: 50px;
-	max-width: 180px;
-	max-height: 180px;
+   margin-top: 50px;
+   max-width: 180px;
+   max-height: 180px;
 }
 </style>
+</head>
 <body>
-	<header>
-		<%!int matchingcnt = 0;%>
-		<%
-			MemberDTO info = (MemberDTO) session.getAttribute("info");
-		if (info != null) {
-			matchingcnt = (Integer) session.getAttribute("matchingcnt");
-		} else {
-			matchingcnt = 0;
-		}
-		%>
+   <header>
+      <%!int matchingcnt = 0;%>
+      <%
+         MemberDTO info = (MemberDTO) session.getAttribute("info");
+      if (info != null) {
+         matchingcnt = (Integer) session.getAttribute("matchingcnt");
+      } else {
+         matchingcnt = 0;
+      }
+      %>
 
-		<!-- ? Preloader Start -->
-		<div id="preloader-active">
-			<div
-				class="preloader d-flex align-items-center justify-content-center">
-				<div class="preloader-inner position-relative">
-					<div class="preloader-circle"></div>
-					<div class="preloader-img pere-text">
-						<img src="assets/img/logo/loder.png" alt="">
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- Preloader Start -->
-		<div class="header-area header-transparent">
-			<div class="main-header header-sticky">
-				<div class="container-fluid">
-					<div
-						class="menu-wrapper d-flex align-items-center justify-content-between">
-						<!-- Logo -->
-						<div class="logo">
-							<a href="index.jsp"><img class="logoImg" src="img/dog.png"
-								alt=""></a>
-						</div>
-						<!-- Main-menu -->
-						<div class="main-menu f-right d-none d-lg-block">
-							<nav>
-								<ul id="navigation">
-									<li><a href="index.jsp">홈</a></li>
-									<!--  class="active" <<밑줄 -->
+      <!-- ? Preloader Start -->
+      <div id="preloader-active">
+         <div
+            class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+               <div class="preloader-circle"></div>
+               <div class="preloader-img pere-text">
+                  <img src="assets/img/logo/loder.png" alt="">
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Preloader Start -->
+      <div class="header-area header-transparent">
+         <div class="main-header header-sticky">
+            <div class="container-fluid">
+               <div
+                  class="menu-wrapper d-flex align-items-center justify-content-between">
+                  <!-- Logo -->
+                  <div class="logo">
+                     <a href="index.jsp"><img class="logoImg" src="img/dog.png"
+                        alt=""></a>
+                  </div>
+                  <!-- Main-menu -->
+                  <div class="main-menu f-right d-none d-lg-block">
+                     <nav>
+                        <ul id="navigation">
+                           <li><a href="index.jsp">홈</a></li>
+                           <!--  class="active" <<밑줄 -->
 
-									<li><a <%if (info != null) {%> <%if (matchingcnt != 0) {%>
-										href="matchingMade.jsp" <%} else {%> href="index.jsp"
-										id="matchingchk" <%}%> <%} else {%> href="loginForm.jsp"
-										id="logChkMat" <%}%>>매칭하기</a></li>
-									<li><a <%if (info != null) {%> href="chatReset.jsp"
-										<%} else {%> href="loginForm.jsp" id="logChkChat" <%}%>>채팅하기</a></li>
+                           <li><a <%if (info != null) {%> <%if (matchingcnt != 0) {%>
+                              href="matchingMade.jsp" <%} else {%> href="index.jsp"
+                              id="matchingchk" <%}%> <%} else {%> href="loginForm.jsp"
+                              id="logChkMat" <%}%>>매칭하기</a></li>
+                           <li><a <%if (info != null) {%> href="chatReset.jsp"
+                              <%} else {%> href="loginForm.jsp" id="logChkChat" <%}%>>채팅하기</a></li>
 
-									<li><a <%if (info != null) {%> href="board.jsp"
-										<%} else {%> href="loginForm.jsp" id="logChkBoard" <%}%>>게시판</a>
-										<%
-											if (info != null) {
-										%>
-										<ul class="submenu">
-											<li><a href="board.jsp">자유게시판</a></li>
-											<li><a href="board.jsp">정보게시판</a></li>
-											<li><a href="board.jsp">질문게시판</a></li>
-										</ul> <%
- 	} else {
+                           <li><a <%if (info != null) {%> href="board.jsp"
+                              <%} else {%> href="loginForm.jsp" id="logChkBoard" <%}%>>게시판</a>
+                              <%
+                                 if (info != null) {
+                              %>
+                              <ul class="submenu">
+                                 <li><a href="board.jsp">자유게시판</a></li>
+                                 <li><a href="board.jsp">정보게시판</a></li>
+                                 <li><a href="board.jsp">질문게시판</a></li>
+                              </ul> <%
+    } else {
 
  }
  %></li>
-									<li><a href="index.jsp" id="mapReady">주변정보</a></li>
-								</ul>
-							</nav>
-						</div>
-						<!-- Header-btn -->
-						<%
-							if (info != null) {
-						%>
-						<div class="header-info-right d-none d-lg-block">
-							<a href="LogoutService" class="btn header-btn">Logout<i
-								class="ti-arrow-right"></i></a> <a href="update.jsp"
-								class="btn header-btn">My Page <i class="ti-arrow-right"></i></a>
-						</div>
-						<%
-							} else {
-						%>
-						<div class="header-info-right d-none d-lg-block">
-							<a href="loginForm.jsp" class="btn header-btn">Login <i
-								class="ti-arrow-right"></i></a>
-						</div>
-						<%
-							}
-						%>
+                           <li><a href="index.jsp" id="mapReady">주변정보</a></li>
+                        </ul>
+                     </nav>
+                  </div>
+                  <!-- Header-btn -->
+                  <%
+                     if (info != null) {
+                  %>
+                  <div class="header-info-right d-none d-lg-block">
+                     <a href="LogoutService" class="btn header-btn">Logout<i
+                        class="ti-arrow-right"></i></a> <a href="update.jsp"
+                        class="btn header-btn">My Page <i class="ti-arrow-right"></i></a>
+                  </div>
+                  <%
+                     } else {
+                  %>
+                  <div class="header-info-right d-none d-lg-block">
+                     <a href="loginForm.jsp" class="btn header-btn">Login <i
+                        class="ti-arrow-right"></i></a>
+                  </div>
+                  <%
+                     }
+                  %>
 
 
-						<!-- Mobile Menu -->
-						<div class="col-12">
-							<div class="mobile_menu d-block d-lg-none"></div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- Header End -->
-	</header>
-	<!-- JS here -->
+                  <!-- Mobile Menu -->
+                  <div class="col-12">
+                     <div class="mobile_menu d-block d-lg-none"></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Header End -->
+   </header>
+   <!-- JS here -->
 
-	<script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
-	<!-- Jquery, Popper, Bootstrap -->
-	<script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
-	<script src="./assets/js/popper.min.js"></script>
-	<script src="./assets/js/bootstrap.min.js"></script>
-	<!-- Jquery Mobile Menu -->
-	<script src="./assets/js/jquery.slicknav.min.js"></script>
+   <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+   <!-- Jquery, Popper, Bootstrap -->
+   <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+   <script src="./assets/js/popper.min.js"></script>
+   <script src="./assets/js/bootstrap.min.js"></script>
+   <!-- Jquery Mobile Menu -->
+   <script src="./assets/js/jquery.slicknav.min.js"></script>
 
-	<!-- Jquery Slick , Owl-Carousel Plugins -->
-	<script src="./assets/js/owl.carousel.min.js"></script>
-	<script src="./assets/js/slick.min.js"></script>
-	<!-- One Page, Animated-HeadLin -->
-	<script src="./assets/js/wow.min.js"></script>
-	<script src="./assets/js/animated.headline.js"></script>
-	<script src="./assets/js/jquery.magnific-popup.js"></script>
+   <!-- Jquery Slick , Owl-Carousel Plugins -->
+   <script src="./assets/js/owl.carousel.min.js"></script>
+   <script src="./assets/js/slick.min.js"></script>
+   <!-- One Page, Animated-HeadLin -->
+   <script src="./assets/js/wow.min.js"></script>
+   <script src="./assets/js/animated.headline.js"></script>
+   <script src="./assets/js/jquery.magnific-popup.js"></script>
 
-	<!-- Date Picker -->
-	<script src="./assets/js/gijgo.min.js"></script>
-	<!-- Nice-select, sticky -->
-	<script src="./assets/js/jquery.nice-select.min.js"></script>
-	<script src="./assets/js/jquery.sticky.js"></script>
-	<!-- Progress -->
-	<script src="./assets/js/jquery.barfiller.js"></script>
+   <!-- Date Picker -->
+   <script src="./assets/js/gijgo.min.js"></script>
+   <!-- Nice-select, sticky -->
+   <script src="./assets/js/jquery.nice-select.min.js"></script>
+   <script src="./assets/js/jquery.sticky.js"></script>
+   <!-- Progress -->
+   <script src="./assets/js/jquery.barfiller.js"></script>
 
-	<!-- counter , waypoint,Hover Direction -->
-	<script src="./assets/js/jquery.counterup.min.js"></script>
-	<script src="./assets/js/waypoints.min.js"></script>
-	<script src="./assets/js/jquery.countdown.min.js"></script>
-	<script src="./assets/js/hover-direction-snake.min.js"></script>
+   <!-- counter , waypoint,Hover Direction -->
+   <script src="./assets/js/jquery.counterup.min.js"></script>
+   <script src="./assets/js/waypoints.min.js"></script>
+   <script src="./assets/js/jquery.countdown.min.js"></script>
+   <script src="./assets/js/hover-direction-snake.min.js"></script>
 
-	<!-- contact js -->
-	<script src="./assets/js/contact.js"></script>
-	<script src="./assets/js/jquery.form.js"></script>
-	<script src="./assets/js/jquery.validate.min.js"></script>
-	<script src="./assets/js/mail-script.js"></script>
-	<script src="./assets/js/jquery.ajaxchimp.min.js"></script>
+   <!-- contact js -->
+   <script src="./assets/js/contact.js"></script>
+   <script src="./assets/js/jquery.form.js"></script>
+   <script src="./assets/js/jquery.validate.min.js"></script>
+   <script src="./assets/js/mail-script.js"></script>
+   <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
 
-	<!-- Jquery Plugins, main Jquery -->
-	<script src="./assets/js/plugins.js"></script>
-	<script src="./assets/js/main.js"></script>
-	<script>
-		window.onload = function() {
-			document.getElementById('logChkMat').onclick = function() {
-				alert('로그인을 해주세요.');
-			};
-			document.getElementById('logChkChat').onclick = function() {
-				alert('로그인을 해주세요.');
-			};
-			document.getElementById('logChkBoard').onclick = function() {
-				alert('로그인을 해주세요.');
-			};
-			document.getElementById('mapReady').onclick = function() {
-				alert('해당서비스는 준비중입니다.');
-			};
+   <!-- Jquery Plugins, main Jquery -->
+   <script src="./assets/js/plugins.js"></script>
+   <script src="./assets/js/main.js"></script>
+   <script>
+      window.onload = function() {
+         document.getElementById('logChkMat').onclick = function() {
+            alert('로그인을 해주세요.');
+         };
+         document.getElementById('logChkChat').onclick = function() {
+            alert('로그인을 해주세요.');
+         };
+         document.getElementById('logChkBoard').onclick = function() {
+            alert('로그인을 해주세요.');
+         };
+         document.getElementById('mapReady').onclick = function() {
+            alert('해당서비스는 준비중입니다.');
+         };
 
-			document.getElementById('matchingchk').onclick = function() {
-				alert('오늘 매칭 회수를 모두 소진하였습니다.');
-			};
-		}
-	</script>
+         document.getElementById('matchingchk').onclick = function() {
+            alert('오늘 매칭 회수를 모두 소진하였습니다.');
+         };
+      }
+   </script>
