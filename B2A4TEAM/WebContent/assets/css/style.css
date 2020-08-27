@@ -4011,7 +4011,7 @@ transition
 
 /* line 76, C:/Users/HP/Desktop/jun-2020/283.Personal/assets/scss/_h1-hero.scss */
 .slider-area .hero__caption h1 {
-	font-size: 280px;
+	font-size: 180px;
 	font-weight: 300;
 	text-transform: uppercase;
 	color: #670000;
@@ -4187,7 +4187,7 @@ transition
 	width: 100%;
 	height: 27%;
 	background: #FFEFAE;
-	right: -100px;
+	right: 0 px !important;
 	z-index: -1;
 	top: 0;
 }

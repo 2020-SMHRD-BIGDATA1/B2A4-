@@ -50,16 +50,27 @@
 	width: 33%;
 	height: 500px;
 	font-family: "Jua";
+	text-align: center;
+	
 }
 
 .vs h1 {
 	position: relative;
-	top: 50px;
-	line-height: 400px;
+	top: 180px;
 	text-align: center;
 	color: #670000;
 	font-weight: bold;
 	font-size: 200px font-family: "Jua";
+	vertical-align:middle;
+}
+.vs h4 {
+	position: relative;
+	top: 180px;
+	text-align: center;
+	color: #670000;
+	font-weight: bold;
+	font-size: 200px font-family: "Jua";
+	vertical-align:middle;
 }
 
 .content p {
@@ -133,7 +144,7 @@ a button {
 						ArrayList<String> group_list1 = GaeDao.getGroup(mycharacter, info.getMem_mail()); //group_list 이메일리스트
 
 						System.out.println("실험삼아 그룹리스트에 첫번째 아이: " + group_list1.get(0));
-						
+
 						Random random = new Random();
 						int ran = random.nextInt(group_list1.size());
 						System.out.println("몇번 아이가 랜덤으로 걸렸을까?? :" + ran);
@@ -244,14 +255,18 @@ a button {
 
 							<!-- mem_mail 채팅상대 구분하는 상대방 메일  -->
 							<br> <br> <a
-								href="chatReset.jsp?mem_mail=<%=otherdogInfo_dto.getMem_mail()%>">
+								href="matchingcnt?email=<%=otherdogInfo_dto.getMem_mail()%>">
 								<button>채팅하기</button>
 							</a>
 						</p>
 					</div>
 
 					<div class="vs">
+					
 						<h1>VS</h1>
+						<h4>오늘 남은 매칭 횟수</h4>
+						<h4></h4>
+						
 					</div>
 
 					<div class="content right" align="center">
@@ -368,16 +383,16 @@ a button {
 
 							<!-- mem_mail 채팅상대 구분하는 상대방 메일  -->
 
-							<br> <br> 
-						<a href="chatReset.jsp?mem_mail=<%=otherdogInfo_dto2.getMem_mail()%>">
+							<br> <br><a
+								href="matchingcnt?email=<%=otherdogInfo_dto2.getMem_mail()%>">
 								<button>채팅하기</button>
 							</a>
 						</p>
 					</div>
-	
+
 				</div>
 			</div>
-
+			
 		</section>
 		<!-- About  End-->
 	</main>
