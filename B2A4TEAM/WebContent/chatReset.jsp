@@ -85,6 +85,7 @@
 				<%-- <%
 					int roomCnt = dao.roomCnt(info.getMem_mail());
 				%> --%>
+				<%int numroom=0; %>
 				<%
 					ArrayList<Integer> roomCnt = dao.roomCnt(info.getMem_mail()); //채팅방 개수만큼 
 				ArrayList<String> roomPartnerMail = dao.chatRoom_list(info.getMem_mail()); //나의 채팅 상대들 이메일
@@ -136,52 +137,11 @@
 					alt="">
 			</header>
 			<ul id="chat1">
-				<!-- <li class="you">
-					<div class="entete">
-						<span class="status green"></span>
-						<h2>Vincent</h2>
-						<h3>10:12AM, Today</h3>
-					</div>
-					<div class="triangle"></div>
-					<div class="message">
-					아 진짜 모르겠다고 자증나네
-					</div>
-				</li>
-				<li class="me">
-					<div class="entete">
-						<h3>10:12AM, Today</h3>
-						<h2>Vincent</h2>
-						<span class="status blue"></span>
-					</div>
-					<div class="triangle"></div>
-					<div class="message">Lorem ipsum dolor sit amet, consectetuer
-						adipiscing elit. Aenean commodo ligula eget dolor.</div>
-				</li>
-				<li class="me">
-					<div class="entete">
-						<h3>10:12AM, Today</h3>
-						<h2>Vincent</h2>
-						<span class="status blue"></span>
-					</div>
-					<div class="triangle"></div>
-					<div class="message">OK</div>
-				</li>
-				<li class="you">
-					<div class="entete">
-						<span class="status green"></span> 온라인 오프라인
-						<h2>Vincent</h2>
-						<h3>10:12AM, Today</h3>
-					</div>
-					<div class="triangle"></div>
-					<div class="message">Lorem ipsum dolor sit amet, consectetuer
-						adipiscing elit. Aenean commodo ligula eget dolor.</div>
-				</li> -->
-				<!-- <li class="you"> -->
-				<!-- <div class="triangle"></div> -->
+				
 				<div class="message1">
 					<%
 						String roomnum = request.getParameter("roomnumber");
-					ArrayList<ChatDTO> list = dao.selectReverse(Integer.parseInt(roomnum));
+					ArrayList<ChatDTO> list = dao.selectReverse(0);
 
 					for (i = 0; i < list.size(); i++) {
 					%>

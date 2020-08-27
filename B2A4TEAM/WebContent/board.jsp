@@ -52,7 +52,7 @@
 					<div class="col-xl-12">
 						<!-- Hero Caption -->
 						<div class="hero-cap pt-100" style="text-align: center;">
-							<h1 style="color : #670000 ">자유게시판</h1>
+							<h1 style="color: #670000">자유게시판</h1>
 						</div>
 					</div>
 				</div>
@@ -68,24 +68,26 @@
 						style="text-align: center; border: 1px solid #dddddd">
 						<thead>
 							<tr>
-								<th style="background-color: #eeeeee; text-align: center;">번호</th>
-								<th style="background-color: #eeeeee; text-align: center;">제목</th>
-								<th style="background-color: #eeeeee; text-align: center;">작성자</th>
-								<th style="background-color: #eeeeee; text-align: center;">작성일</th>
+								<th style="background-color: #FFEFAE; text-align: center;">번호</th>
+								<th style="background-color: #FFEFAE; text-align: center;">제목</th>
+								<th style="background-color: #FFEFAE; text-align: center;">작성자</th>
+								<th style="background-color: #FFEFAE; text-align: center;">작성일</th>
 							</tr>
 						</thead>
 						<tbody>
 							<%
 								BbsDAO bbsDAO = new BbsDAO();
-								ArrayList<Bbs> list = bbsDAO.getList(pageNumber);
-								for (int i = 0; i < list.size(); i++) {
-									
+							ArrayList<Bbs> list = bbsDAO.getList(pageNumber);
+							for (int i = 0; i < list.size(); i++) {
 							%>
 							<tr>
-								<td><%= list.get(i).getBbsID()%></td>
-								<td><a style="color: black;" href="view.jsp?bbsID=<%=list.get(i).getBbsID()%>"><%= list.get(i).getBbsTitle().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %></a></td>
-								<td><%=bbsDAO.getNick(list.get(i).getMem_mail()) %></td>
-								<td><%=list.get(i).getBbsDate().substring(0, 11) + list.get(i).getBbsDate().substring(11, 13) + "시 "+ list.get(i).getBbsDate().substring(14, 16) + "분 "%></td>
+								<td><%=list.get(i).getBbsID()%></td>
+								<td><a style="color: black;"
+									href="view.jsp?bbsID=<%=list.get(i).getBbsID()%>"><%=list.get(i).getBbsTitle().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;")
+		.replaceAll("\n", "<br>")%></a></td>
+								<td><%=bbsDAO.getNick(list.get(i).getMem_mail())%></td>
+								<td><%=list.get(i).getBbsDate().substring(0, 11) + list.get(i).getBbsDate().substring(11, 13) + "시 "
+		+ list.get(i).getBbsDate().substring(14, 16) + "분 "%></td>
 							</tr>
 							<%
 								}

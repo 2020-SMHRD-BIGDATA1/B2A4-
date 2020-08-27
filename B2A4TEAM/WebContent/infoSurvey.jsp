@@ -11,7 +11,6 @@
 <script src="Doc/js/jquery-3.5.1.min.js"></script>
 <link rel="shortcut icon" type="image/x-icon"
 	href="assets/img/gaelogo.ico">
-
 <body>
 	<div class="container">
 		<div class="join-cover">
@@ -33,7 +32,7 @@
 							style="width: 250px; height: 150px;">
 					</tr>
 					<tr class="form-group" style="text-align: left">
-						<td style="text-align: left"><label for="a1" style="cursor:pointer"><input type="radio" id="a1"class="form-control" name="test1"
+						<td style="text-align: left;padding-left: 150px;"><label for="a1" style="cursor:pointer"><input type="radio" id="a1"class="form-control" name="test1"
 							value="0" required> 1.꼬리를 들고 다가와 뛰어오르며 손을 깨문다.</label> <br /> <label for="a2" style="cursor:pointer"><input
 							type="radio" id="a2" class="form-control" name="test1" value="1" required> 2.꼬리를 들고 다가와 손을 핥는다. </label><br /> <label for="a3" style="cursor:pointer"><input type="radio" id="a3"
 							class="form-control" name="test1" value="2" required> 3.꼬리를
@@ -53,7 +52,7 @@
 							style="width: 250px; height: 150px;">
 					</tr>
 					<tr class="form-group" style="text-align: left">
-						<td style="text-align: left"><label for="b1" style="cursor:pointer"><input type="radio" id="b1" class="form-control" name="test2"
+						<td style="text-align: left;padding-left: 150px;"><label for="b1" style="cursor:pointer"><input type="radio" id="b1" class="form-control" name="test2"
 							value="0" required> 1.꼬리를 들고 다가와 뛰어오르며 손을 깨문다. </label><br /> <label for="b2" style="cursor:pointer"><input
 							type="radio" id="b2" class="form-control" name="test2" value="1" required> 2.꼬리를 들고 다가와 손을 핥는다.</label> <br /> 
 							<label for="b3" style="cursor:pointer"><input type="radio" id="b3"
@@ -75,7 +74,7 @@
 							style="width: 250px; height: 150px;">
 					</tr>
 					<tr class="form-group" style="text-align: left">
-						<td style="text-align: left">
+						<td style="text-align: left; padding-left: 150px;">
 						<label for="c1" style="cursor:pointer"><input type="radio" id="c1" class="form-control" name="test3"
 							value="0" required> 1.뛴다. 문다. 으르렁거린다. (두개 이상 해당하면 체크)</label><br />
 							<label for="c2" style="cursor:pointer"><input type="radio" id="c2" class="form-control" name="test3" value="1"
@@ -99,7 +98,7 @@
 							style="width: 250px; height: 150px;">
 					</tr>
 					<tr class="form-group" style="text-align: left">
-						<td style="text-align: left">
+						<td style="text-align: left; padding-left: 150px;">
 						<label for="d1" style="cursor:pointer"><input type="radio" id="d1" class="form-control" name="test4"
 							value="0" required> 1.강하게 저항하고 물며 으르렁거린다. </label><br /> 
 							<label for="d2" style="cursor:pointer"><input
@@ -123,7 +122,7 @@
 							style="width: 250px; height: 150px;">
 					</tr>
 					<tr class="form-group" style="text-align: left">
-						<td style="text-align: left">
+						<td style="text-align: left;padding-left: 150px;">
 						<label for="e1" style="cursor:pointer"><input type="radio" id="e1" class="form-control" name="test5"
 							value="0" required> 1. 8~10초 사이에 반응 </label><br /> 
 							<label for="e2" style="cursor:pointer"><input
@@ -145,7 +144,7 @@
 							style="width: 250px; height: 150px;">
 					</tr>
 					<tr class="form-group" style="text-align: left">
-						<td style="text-align: left">
+						<td style="text-align: left;padding-left: 150px;">
 						<label for="f1" style="cursor:pointer"><input type="radio" id="f1" class="form-control" name="test6"
 							value="0" required> 1. 소리 나는 방향을 찾아 짖으며 다가간다. </label><br /> 
 							<label for="f2" style="cursor:pointer"><input
@@ -171,7 +170,7 @@
 							style="width: 250px; height: 150px;">
 					</tr>
 					<tr class="form-group" style="text-align: left">
-						<td style="text-align: left">
+						<td style="text-align: left;padding-left: 150px;">
 						<label for="g1" style="cursor:pointer"><input type="radio" id="g1" class="form-control" name="test7"
 							value="0" required> 1. 8~10초 사이에 반응 </label><br /> 
 							<label for="g2" style="cursor:pointer"><input
@@ -196,7 +195,7 @@
 							style="width: 250px; height: 150px;">
 					</tr>
 					<tr class="form-group" style="text-align: left">
-						<td style="text-align: left">
+						<td style="text-align: left;padding-left: 150px;">
 						<label for="h1" style="cursor:pointer"><input type="radio" id="h1" class="form-control" name="test8"
 							value="0" required> 1. 격렬하게 저항하고 손을 문다. </label><br /> 
 							<label for="h2" style="cursor:pointer"><input
