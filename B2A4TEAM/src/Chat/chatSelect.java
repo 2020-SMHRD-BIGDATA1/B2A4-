@@ -22,6 +22,13 @@ public class chatSelect extends HttpServlet {
 		ChatDAO dao = new ChatDAO();
 		
 		// 전체 메시지 가져오는 부분
+		String writer = request.getParameter("writer");
+		ArrayList<Integer> chat_index = dao.roomCnt(writer); //writer = info의 mem_nick
+		
+		for (int i = 0; i < chat_index.size(); i++) {
+			
+		}
+		
 		ArrayList<ChatDTO> list = dao.selectAll();
 		// json 변환 해주는 객체
 		Gson gson = new Gson();

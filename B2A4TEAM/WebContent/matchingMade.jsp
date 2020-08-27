@@ -229,7 +229,7 @@ a button {
 
 
 
-							&lt 내 강아지와 비슷한 강아지 &gt <br> <br> <img
+							&lt 나와 비슷한 강아지 &gt <br> <br> <img
 								src='imgFolder/<%=otherdogInfo_dto.getGae_img()%>'><br>
 							<br>
 							<!--메일 :dto.getMem_mail()l() %><br>  -->
@@ -264,7 +264,7 @@ a button {
 							System.out.println("몇번 아이가 랜덤으로 걸렸을까?? :" + other_ran);
 
 							String random_group_mail2 = group_list2.get(other_ran);
-							System.out.print("랜덤으로 뽑힌 갱쥐의 메일 : " + random_group_mail2);
+							System.out.println("랜덤으로 뽑힌 갱쥐의 메일 : " + random_group_mail2);
 							GaeDTO otherdogInfo_dto2 = GaeDao.getGaeInfo(random_group_mail2);
 							%>
 							<%!String dog_sex2 = null;%>
@@ -353,7 +353,7 @@ a button {
 
 
 
-							&lt 내 강아지와 어울릴 것 같은 강아지 &gt <br> <br> <img
+							&lt 나와 다르지만 친해져보고 싶은 친구 &gt <br> <br> <img
 								src='imgFolder/<%=otherdogInfo_dto2.getGae_img()%>'><br>
 							<br>
 							<!--메일 :dto.getMem_mail()l() %><br>  -->
@@ -373,27 +373,10 @@ a button {
 							</a>
 						</p>
 					</div>
-					<!-- Section Tittle -->
-
-
-
-
+	
 				</div>
 			</div>
 
-
-			<!-- Section Tittle -->
-
-
-
-
-			<!--  <div class="col-lg-6">
-	                    <div class="about-img">
-	                        <img src="assets/img/gallery/about1.png" alt="">
-	                    </div>
-	                </div>
-			       	 
-			       	 </div>-->
 		</section>
 		<!-- About  End-->
 	</main>
