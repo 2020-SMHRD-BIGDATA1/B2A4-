@@ -50,7 +50,7 @@ public class ChatDAO {
 
 		getConn();
 
-		String sql = "select * from chat_content where chat_index= 1 order by chat_time desc"; // 1번방 애들만 나옴
+		String sql = "select * from chat_content where chat_index= 47 order by chat_time desc"; // 1번방 애들만 나옴
 		try {
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
@@ -78,7 +78,7 @@ public class ChatDAO {
 		getConn();
 
 		try {
-			String sql = "insert into chat_content values(1,?,?,sysdate)";
+			String sql = "insert into chat_content values(47,?,?,sysdate)";
 			psmt = conn.prepareStatement(sql);
 
 			// psmt.setInt(1, dto.getChat_index());
@@ -148,7 +148,7 @@ public class ChatDAO {
 
 		getConn();
 
-		String sql = "select * from chat_content where chat_index= 1 order by chat_time desc"; // 1번방 애들만 나옴
+		String sql = "select * from chat_content where chat_index= 47 order by chat_time desc"; // 1번방 애들만 나옴
 		try {
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
@@ -171,16 +171,15 @@ public class ChatDAO {
 		return dto;
 	}
 
-	public ArrayList<ChatDTO> selectReverse(int roomnum) { // 디비에 있는거 시간순서로 나오게 하기 selectAll 안되가지구 그냥 정렬순서만 바꾼 dao 하나 더
+	public ArrayList<ChatDTO> selectReverse() { // 디비에 있는거 시간순서로 나오게 하기 selectAll 안되가지구 그냥 정렬순서만 바꾼 dao 하나 더
 															// 만듦
 		ArrayList<ChatDTO> list = new ArrayList<ChatDTO>();
 
 		getConn();
 
-		String sql = "select * from chat_content where chat_index= ? order by chat_time"; // 1번방 애들만 나옴
+		String sql = "select * from chat_content where chat_index= 47 order by chat_time"; // 1번방 애들만 나옴
 		try {
 			psmt = conn.prepareStatement(sql);
-			psmt.setInt(1, roomnum);
 			rs = psmt.executeQuery();
 			while (rs.next()) {
 

@@ -32,38 +32,53 @@
 							style="width: 250px; height: 150px;">
 					</tr>
 					<tr class="form-group" style="text-align: left">
-						<td style="text-align: left;padding-left: 150px;"><label for="a1" style="cursor:pointer"><input type="radio" id="a1"class="form-control" name="test1"
-							value="0" required> 1.꼬리를 들고 다가와 뛰어오르며 손을 깨문다.</label> <br /> <label for="a2" style="cursor:pointer"><input
-							type="radio" id="a2" class="form-control" name="test1" value="1" required> 2.꼬리를 들고 다가와 손을 핥는다. </label><br /> <label for="a3" style="cursor:pointer"><input type="radio" id="a3"
-							class="form-control" name="test1" value="2" required> 3.꼬리를
-							들고 다가온다. </label><br /> <label for="a4" style="cursor:pointer"><input type="radio" id="a4" class="form-control"
-							name="test1" value="3" required> 4.꼬리를 내리고 다가온다. </label><br /> <label for="a5" style="cursor:pointer"><input 
-							type="radio" id="a5" class="form-control" name="test1" value="4" required> 5.꼬리를 내리고 다가오면서 약간 머뭇거린다. </label><br />
-							<label for="a6" style="cursor:pointer"><input type="radio" id="a6"
-							class="form-control" name="test1" value="5" required> 6.오지
-							않는다. </label><br /></td>
+						<td style="text-align: left; padding-left: 150px;"><label
+							for="a1" style="cursor: pointer"><input type="radio"
+								id="a1" class="form-control" name="test1" value="0" required>
+								1.꼬리를 들고 다가와 뛰어오르며 손을 깨문다.</label> <br /> <label for="a2"
+							style="cursor: pointer"><input type="radio" id="a2"
+								class="form-control" name="test1" value="1" required>
+								2.꼬리를 들고 다가와 손을 핥는다. </label><br /> <label for="a3"
+							style="cursor: pointer"><input type="radio" id="a3"
+								class="form-control" name="test1" value="2" required>
+								3.꼬리를 들고 다가온다. </label><br /> <label for="a4" style="cursor: pointer"><input
+								type="radio" id="a4" class="form-control" name="test1" value="3"
+								required> 4.꼬리를 내리고 다가온다. </label><br /> <label for="a5"
+							style="cursor: pointer"><input type="radio" id="a5"
+								class="form-control" name="test1" value="4" required>
+								5.꼬리를 내리고 다가오면서 약간 머뭇거린다. </label><br /> <label for="a6"
+							style="cursor: pointer"><input type="radio" id="a6"
+								class="form-control" name="test1" value="5" required>
+								6.오지 않는다. </label><br /></td>
 					</tr>
 					<tr class="form-group">
-						<td class="surveyCon"><h2>Test2</h2>반려견을 내려놓고 일정한 거리만큼 떨어진
-							곳에서 무릎을 꿇거나 가볍게 손뼉을 치며 불러주세요.</td>
+						<td class="surveyCon"><h2>Test2</h2>앉아서 종이를 구기며 반려견의 시선을
+							끌어주세요. 반려견이 관심 있게 쳐다보면 구긴 종이 공을 강아지 앞 1~2m거리에 던져 줍니다.</td>
 					</tr>
 					<tr class="form-group">
 						<td class="surveyCon"><img src="assets/img/test2.jpg"
 							style="width: 250px; height: 150px;">
 					</tr>
 					<tr class="form-group" style="text-align: left">
-						<td style="text-align: left;padding-left: 150px;"><label for="b1" style="cursor:pointer"><input type="radio" id="b1" class="form-control" name="test2"
-							value="0" required> 1.꼬리를 들고 다가와 뛰어오르며 손을 깨문다. </label><br /> <label for="b2" style="cursor:pointer"><input
-							type="radio" id="b2" class="form-control" name="test2" value="1" required> 2.꼬리를 들고 다가와 손을 핥는다.</label> <br /> 
-							<label for="b3" style="cursor:pointer"><input type="radio" id="b3"
-							class="form-control" name="test2" value="2" required> 3.꼬리를
-							들고 다가온다. </label><br /> <label for="b4" style="cursor:pointer"><input type="radio" id="b4" class="form-control"
-							name="test2" value="3" required> 4.꼬리를 내리고 다가온다. </label><br /> 
-							<label for="b5" style="cursor:pointer"><input
-							type="radio" id="b5" class="form-control" name="test2" value="4" required> 5.꼬리를 내리고 다가오면서 약간 머뭇거린다. </label><br /> 
-							<label for="b6" style="cursor:pointer"><input type="radio" id="b6"
-							class="form-control" name="test2" value="5" required> 6.오지
-							않는다. </label><br /></td>
+						<td style="text-align: left; padding-left: 150px;"><label
+							for="b1" style="cursor: pointer"><input type="radio"
+								id="b1" class="form-control" name="test2" value="0" required>
+								1.물건을 쫓아가서 입에 물고 달아난다. </label><br /> <label for="b2"
+							style="cursor: pointer"><input type="radio" id="b2"
+								class="form-control" name="test2" value="1" required>
+								2.물건을 쫓아가서 물건 옆에서 맴돌며 돌아오지 않는다.</label> <br /> <label for="b3"
+							style="cursor: pointer"><input type="radio" id="b3"
+								class="form-control" name="test2" value="2" required>
+								3.물건을 쫓아가서 물건을 들고 돌아온다.</label><br /> <label for="b4"
+							style="cursor: pointer"><input type="radio" id="b4"
+								class="form-control" name="test2" value="3" required>
+								4.물건을 쫓아가기는 하지만 그냥 두고 돌아온다. </label><br /> <label for="b5"
+							style="cursor: pointer"><input type="radio" id="b5"
+								class="form-control" name="test2" value="4" required>
+								5.물건을 쫓아가려는 시도를 하지만 결국 관심을 두지 않는다.</label><br /> <label for="b6"
+							style="cursor: pointer"><input type="radio" id="b6"
+								class="form-control" name="test2" value="5" required>
+								6.물건을 전혀 쫓지않는다. </label><br /></td>
 					</tr>
 					<tr class="form-group">
 						<td class="surveyCon"><h2>Test3</h2>반려견의 옆쪽에 몸을 굽히고 앉아 반려견의
@@ -74,20 +89,23 @@
 							style="width: 250px; height: 150px;">
 					</tr>
 					<tr class="form-group" style="text-align: left">
-						<td style="text-align: left; padding-left: 150px;">
-						<label for="c1" style="cursor:pointer"><input type="radio" id="c1" class="form-control" name="test3"
-							value="0" required> 1.뛴다. 문다. 으르렁거린다. (두개 이상 해당하면 체크)</label><br />
-							<label for="c2" style="cursor:pointer"><input type="radio" id="c2" class="form-control" name="test3" value="1"
-							required> 2.뛴다. </label><br /> 
-							<label for="c3" style="cursor:pointer"><input type="radio" id="c3"
-							class="form-control" name="test3" value="2" required> 3.사람에게 안기며 얼굴을 핥으려 한다. </label><br /> 
-							<label for="c4" style="cursor:pointer"><input type="radio" id="c4"
-							class="form-control" name="test3" value="3" required> 4.몸을 숙이며 손을 핥는다. </label><br /> 
-							<label for="c5" style="cursor:pointer"><input type="radio" id="c5" class="form-control"
-							name="test3" value="4" required> 5.바닥에 누워 손을 핥는다. </label><br /> 
-							<label for="c6" style="cursor:pointer"><input
-							type="radio" id="c6" class="form-control" name="test3" value="5" required> 6.달아나서
-							거리를 둔다. </label><br /></td>
+						<td style="text-align: left; padding-left: 150px;"><label
+							for="c1" style="cursor: pointer"><input type="radio"
+								id="c1" class="form-control" name="test3" value="0" required>
+								1.뛴다. 문다. 으르렁거린다. (두개 이상 해당하면 체크)</label><br /> <label for="c2"
+							style="cursor: pointer"><input type="radio" id="c2"
+								class="form-control" name="test3" value="1" required>
+								2.뛴다. </label><br /> <label for="c3" style="cursor: pointer"><input
+								type="radio" id="c3" class="form-control" name="test3" value="2"
+								required> 3.사람에게 안기며 얼굴을 핥으려 한다. </label><br /> <label for="c4"
+							style="cursor: pointer"><input type="radio" id="c4"
+								class="form-control" name="test3" value="3" required>
+								4.몸을 숙이며 손을 핥는다. </label><br /> <label for="c5" style="cursor: pointer"><input
+								type="radio" id="c5" class="form-control" name="test3" value="4"
+								required> 5.바닥에 누워 손을 핥는다. </label><br /> <label for="c6"
+							style="cursor: pointer"><input type="radio" id="c6"
+								class="form-control" name="test3" value="5" required>
+								6.달아나서 거리를 둔다. </label><br /></td>
 					</tr>
 					<tr class="form-group">
 						<td class="surveyCon"><h2>Test4</h2>손바닥을 위로 가게 한 뒤 반려견의 복부에
@@ -98,19 +116,24 @@
 							style="width: 250px; height: 150px;">
 					</tr>
 					<tr class="form-group" style="text-align: left">
-						<td style="text-align: left; padding-left: 150px;">
-						<label for="d1" style="cursor:pointer"><input type="radio" id="d1" class="form-control" name="test4"
-							value="0" required> 1.강하게 저항하고 물며 으르렁거린다. </label><br /> 
-							<label for="d2" style="cursor:pointer"><input
-							type="radio" id="d2" class="form-control" name="test4" value="1" required> 2.강하게 저항한다. </label><br /> 
-							<label for="d3" style="cursor:pointer"><input type="radio" id="d3" class="form-control"
-							name="test4" value="2" required> 3.저항하다가 순응하고 핥는다. </label><br />
-							<label for="d4" style="cursor:pointer"><input type="radio" id="d4" class="form-control" name="test4" value="3"
-							required> 4.저항하지 않고 편안하게 앉는다. </label><br /> 
-							<label for="d5" style="cursor:pointer"><input type="radio" id="d5"
-							class="form-control" name="test4" value="4" required> 5.저항하지 않고 손을 핥는다. </label><br /> 
-							<label for="d6" style="cursor:pointer"><input type="radio" id="d6" class="form-control"
-							name="test4" value="5" required> 6.저항하지 않고 얼어 있다. </label><br /></td>
+						<td style="text-align: left; padding-left: 150px;"><label
+							for="d1" style="cursor: pointer"><input type="radio"
+								id="d1" class="form-control" name="test4" value="0" required>
+								1.강하게 저항하고 물며 으르렁거린다. </label><br /> <label for="d2"
+							style="cursor: pointer"><input type="radio" id="d2"
+								class="form-control" name="test4" value="1" required>
+								2.강하게 저항한다. </label><br /> <label for="d3" style="cursor: pointer"><input
+								type="radio" id="d3" class="form-control" name="test4" value="2"
+								required> 3.저항하다가 순응하고 핥는다. </label><br /> <label for="d4"
+							style="cursor: pointer"><input type="radio" id="d4"
+								class="form-control" name="test4" value="3" required>
+								4.저항하지 않고 편안하게 앉는다. </label><br /> <label for="d5"
+							style="cursor: pointer"><input type="radio" id="d5"
+								class="form-control" name="test4" value="4" required>
+								5.저항하지 않고 손을 핥는다. </label><br /> <label for="d6"
+							style="cursor: pointer"><input type="radio" id="d6"
+								class="form-control" name="test4" value="5" required>
+								6.저항하지 않고 얼어 있다. </label><br /></td>
 					</tr>
 
 					<tr class="form-group">
@@ -122,17 +145,20 @@
 							style="width: 250px; height: 150px;">
 					</tr>
 					<tr class="form-group" style="text-align: left">
-						<td style="text-align: left;padding-left: 150px;">
-						<label for="e1" style="cursor:pointer"><input type="radio" id="e1" class="form-control" name="test5"
-							value="0" required> 1. 8~10초 사이에 반응 </label><br /> 
-							<label for="e2" style="cursor:pointer"><input
-							type="radio" id="e2" class="form-control" name="test5" value="1" required> 2. 6~7초 사이에 반응 </label><br /> 
-							<label for="e3" style="cursor:pointer"><input type="radio" id="e3" class="form-control"
-							name="test5" value="2" required> 3. 5~6초 사이에 반응 </label><br /> 
-							<label for="e4" style="cursor:pointer"><input
-							type="radio" id="e4" class="form-control" name="test5" value="3" required> 4. 2~4초 사이에 반응 </label><br /> 
-							<label for="e5" style="cursor:pointer"><input type="radio" id="e5" class="form-control"
-							name="test5" value="4" required> 5. 1~2초 사이에 반응 </label><br /></td>
+						<td style="text-align: left; padding-left: 150px;"><label
+							for="e1" style="cursor: pointer"><input type="radio"
+								id="e1" class="form-control" name="test5" value="0" required>
+								1. 8~10초 사이에 반응 </label><br /> <label for="e2" style="cursor: pointer"><input
+								type="radio" id="e2" class="form-control" name="test5" value="1"
+								required> 2. 6~7초 사이에 반응 </label><br /> <label for="e3"
+							style="cursor: pointer"><input type="radio" id="e3"
+								class="form-control" name="test5" value="2" required> 3.
+								5~6초 사이에 반응 </label><br /> <label for="e4" style="cursor: pointer"><input
+								type="radio" id="e4" class="form-control" name="test5" value="3"
+								required> 4. 2~4초 사이에 반응 </label><br /> <label for="e5"
+							style="cursor: pointer"><input type="radio" id="e5"
+								class="form-control" name="test5" value="4" required> 5.
+								1~2초 사이에 반응 </label><br /></td>
 					</tr>
 
 					<tr class="form-group">
@@ -144,21 +170,24 @@
 							style="width: 250px; height: 150px;">
 					</tr>
 					<tr class="form-group" style="text-align: left">
-						<td style="text-align: left;padding-left: 150px;">
-						<label for="f1" style="cursor:pointer"><input type="radio" id="f1" class="form-control" name="test6"
-							value="0" required> 1. 소리 나는 방향을 찾아 짖으며 다가간다. </label><br /> 
-							<label for="f2" style="cursor:pointer"><input
-							type="radio" id="f2" class="form-control" name="test6" value="1" required> 2. 소리 나는 방향을 향해 짖는다. </label><br /> 
-							<label for="f3" style="cursor:pointer"><input type="radio" id="f3"
-							class="form-control" name="test6" value="2" required> 3.
-							소리 나는 방향을 향해 호기심을 보이며 다가간다. </label><br /> 
-							<label for="f4" style="cursor:pointer"><input type="radio" id="f4"
-							class="form-control" name="test6" value="3" required> 4.
-							소리 나는 방향을 바라본다. </label><br /> 
-							<label for="f5" style="cursor:pointer"><input type="radio" id="f5" class="form-control"
-							name="test6" value="4" required> 5. 놀라 뒤로 물러나 숨는다. </label><br />
-							<label for="f6" style="cursor:pointer"><input type="radio" id="f6" class="form-control" name="test6" value="5"
-							required> 6. 소리에 관심이 없다. </label><br /></td>
+						<td style="text-align: left; padding-left: 150px;"><label
+							for="f1" style="cursor: pointer"><input type="radio"
+								id="f1" class="form-control" name="test6" value="0" required>
+								1. 소리 나는 방향을 찾아 짖으며 다가간다. </label><br /> <label for="f2"
+							style="cursor: pointer"><input type="radio" id="f2"
+								class="form-control" name="test6" value="1" required> 2.
+								소리 나는 방향을 향해 짖는다. </label><br /> <label for="f3"
+							style="cursor: pointer"><input type="radio" id="f3"
+								class="form-control" name="test6" value="2" required> 3.
+								소리 나는 방향을 향해 호기심을 보이며 다가간다. </label><br /> <label for="f4"
+							style="cursor: pointer"><input type="radio" id="f4"
+								class="form-control" name="test6" value="3" required> 4.
+								소리 나는 방향을 바라본다. </label><br /> <label for="f5" style="cursor: pointer"><input
+								type="radio" id="f5" class="form-control" name="test6" value="4"
+								required> 5. 놀라 뒤로 물러나 숨는다. </label><br /> <label for="f6"
+							style="cursor: pointer"><input type="radio" id="f6"
+								class="form-control" name="test6" value="5" required> 6.
+								소리에 관심이 없다. </label><br /></td>
 					</tr>
 
 					<tr class="form-group">
@@ -170,20 +199,21 @@
 							style="width: 250px; height: 150px;">
 					</tr>
 					<tr class="form-group" style="text-align: left">
-						<td style="text-align: left;padding-left: 150px;">
-						<label for="g1" style="cursor:pointer"><input type="radio" id="g1" class="form-control" name="test7"
-							value="0" required> 1. 8~10초 사이에 반응 </label><br /> 
-							<label for="g2" style="cursor:pointer"><input
-							type="radio" id="g2" class="form-control" name="test7" value="1" required> 2. 쳐다보고 달려가 공격하듯이 문다. </label><br /> 
-							<label for="g3" style="cursor:pointer"><input type="radio" id="g3"
-							class="form-control" name="test7" value="2" required> 3.
-							호기심을 가지고 쳐다보며 물체를 탐색한다. </label><br /> 
-							<label for="g4" style="cursor:pointer"><input type="radio" id="g4"
-							class="form-control" name="test7" value="3" required> 4.
-							쳐다보고 짖는다. 이때 꼬리를 감춘다. </label><br /> 
-							<label for="g5" style="cursor:pointer"><input type="radio" id="g5"
-							class="form-control" name="test7" value="4" required> 5.
-							도망가 숨는다. </label><br /></td>
+						<td style="text-align: left; padding-left: 150px;"><label
+							for="g1" style="cursor: pointer"><input type="radio"
+								id="g1" class="form-control" name="test7" value="0" required>
+								1. 8~10초 사이에 반응 </label><br /> <label for="g2" style="cursor: pointer"><input
+								type="radio" id="g2" class="form-control" name="test7" value="1"
+								required> 2. 쳐다보고 달려가 공격하듯이 문다. </label><br /> <label for="g3"
+							style="cursor: pointer"><input type="radio" id="g3"
+								class="form-control" name="test7" value="2" required> 3.
+								호기심을 가지고 쳐다보며 물체를 탐색한다. </label><br /> <label for="g4"
+							style="cursor: pointer"><input type="radio" id="g4"
+								class="form-control" name="test7" value="3" required> 4.
+								쳐다보고 짖는다. 이때 꼬리를 감춘다. </label><br /> <label for="g5"
+							style="cursor: pointer"><input type="radio" id="g5"
+								class="form-control" name="test7" value="4" required> 5.
+								도망가 숨는다. </label><br /></td>
 					</tr>
 
 					<tr class="form-group">
@@ -195,21 +225,23 @@
 							style="width: 250px; height: 150px;">
 					</tr>
 					<tr class="form-group" style="text-align: left">
-						<td style="text-align: left;padding-left: 150px;">
-						<label for="h1" style="cursor:pointer"><input type="radio" id="h1" class="form-control" name="test8"
-							value="0" required> 1. 격렬하게 저항하고 손을 문다. </label><br /> 
-							<label for="h2" style="cursor:pointer"><input
-							type="radio" id="h2" class="form-control" name="test8" value="1" required> 2. 격렬하게 몸을 흔들며 저항한다. </label><br /> 
-							<label for="h3" style="cursor:pointer"><input type="radio" id="h3"
-							class="form-control" name="test8" value="2" required> 3.
-							저항과 순응을 반복한다. </label><br /> 
-							<label for="h4" style="cursor:pointer"><input type="radio" id="h4" class="form-control"
-							name="test8" value="3" required> 4. 저항하다 이내 순응한다. </label><br />
-							<label for="h5" style="cursor:pointer"><input type="radio" id="h5" class="form-control" name="test8" value="4"
-							required> 5. 저항하지 않고 손을 핥는다. </label><br /> 
-							<label for="h6" style="cursor:pointer"><input type="radio" id="h6"
-							class="form-control" name="test8" value="5" required> 6.
-							저항하지 않고 눈을 피한다. </label><br /></td>
+						<td style="text-align: left; padding-left: 150px;"><label
+							for="h1" style="cursor: pointer"><input type="radio"
+								id="h1" class="form-control" name="test8" value="0" required>
+								1. 격렬하게 저항하고 손을 문다. </label><br /> <label for="h2"
+							style="cursor: pointer"><input type="radio" id="h2"
+								class="form-control" name="test8" value="1" required> 2.
+								격렬하게 몸을 흔들며 저항한다. </label><br /> <label for="h3"
+							style="cursor: pointer"><input type="radio" id="h3"
+								class="form-control" name="test8" value="2" required> 3.
+								저항과 순응을 반복한다. </label><br /> <label for="h4" style="cursor: pointer"><input
+								type="radio" id="h4" class="form-control" name="test8" value="3"
+								required> 4. 저항하다 이내 순응한다. </label><br /> <label for="h5"
+							style="cursor: pointer"><input type="radio" id="h5"
+								class="form-control" name="test8" value="4" required> 5.
+								저항하지 않고 손을 핥는다. </label><br /> <label for="h6" style="cursor: pointer"><input
+								type="radio" id="h6" class="form-control" name="test8" value="5"
+								required> 6. 저항하지 않고 눈을 피한다. </label><br /></td>
 					</tr>
 
 				</table>

@@ -56,10 +56,12 @@
 	%>
 	<%
 		int cnt = dao.makeRoom(info.getMem_mail(), mem_mail);
-	if (cnt > 0) {
-		System.out.println("방생성 완료");
-	} else {
-		System.out.println("방생성 실패");
+	if (matchingcnt != 0) {
+		if (cnt > 0) {
+			System.out.println("방생성 완료");
+		} else {
+			System.out.println("방생성 실패");
+		}
 	}
 	%>
 	<div class="hero-area2 d-flex align-items-center">
@@ -83,9 +85,11 @@
 			<ul id="roomMem">
 
 				<%-- <%
-					int roomCnt = dao.roomCnt(info.getMem_mail());
-				%> --%>
-				<%int numroom=0; %>
+               int roomCnt = dao.roomCnt(info.getMem_mail());
+            %> --%>
+				<%
+					int numroom = 0;
+				%>
 				<%
 					ArrayList<Integer> roomCnt = dao.roomCnt(info.getMem_mail()); //채팅방 개수만큼 
 				ArrayList<String> roomPartnerMail = dao.chatRoom_list(info.getMem_mail()); //나의 채팅 상대들 이메일
@@ -125,23 +129,21 @@
 					String myImg = gaeDao.getmyImg(info.getMem_mail());
 				%>
 				<img src="imgFolder/<%=myImg%>" width="70px" height="70px" alt="">
+				<h1 style="color: black">
+					<%=info.getMem_nick()%>
+				</h1>
 				<div>
-					<h1 style="color: black">
-						<%=info.getMem_nick()%>
-					</h1>
 
 					<h3><%=info.getMem_addr()%></h3>
+
 				</div>
-				<img
-					src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/ico_star.png"
-					alt="">
 			</header>
 			<ul id="chat1">
-				
+
 				<div class="message1">
 					<%
 						String roomnum = request.getParameter("roomnumber");
-					ArrayList<ChatDTO> list = dao.selectReverse(0);
+					ArrayList<ChatDTO> list = dao.selectReverse();
 
 					for (i = 0; i < list.size(); i++) {
 					%>
@@ -151,7 +153,7 @@
 						}
 					%>
 				</div>
-				<!-- 	</li>  -->
+				<!--    </li>  -->
 
 
 
@@ -210,7 +212,7 @@
 				function(key) {
 					if (key.keyCode == 13) {
 
-						//let writer = $('#writer').val();		 
+						//let writer = $('#writer').val();       
 						let content = $('#content').val();
 
 						//$('#writer').val("");

@@ -18,7 +18,7 @@ select * from GAE_INFO;
 drop table gae_member;
 
 
-delete from GAE_MEMBER where mem_name = '박병관';
+delete from GAE_MEMBER where mem_name = '박수진';
 delete from gae_info where mem_mail='hodoo@naver.com'
 -- chat_room
 
@@ -27,6 +27,10 @@ drop sequence chat_index;
 create sequence chat_index
 increment by 1
 start with 1;
+
+
+
+
 
 drop table chat_room ;
 
@@ -107,14 +111,16 @@ select * from CHAT_ROOM;
 select * from GAE_GROUP;
 select * from chat_content;
 
-TRUNCATE TABLE GAE_INFO;
-TRUNCATE TABLE GAE_MEMBER;
-TRUNCATE TABLE BBS;
-TRUNCATE TABLE CHAT_ROOM;
-TRUNCATE TABLE chat_content;
-TRUNCATE TABLE chat_index;
+--TRUNCATE TABLE GAE_INFO;
+--TRUNCATE TABLE GAE_MEMBER;
+--TRUNCATE TABLE BBS;
+--TRUNCATE TABLE CHAT_ROOM;
+--TRUNCATE TABLE chat_content;
+--TRUNCATE TABLE chat_index;
+--TRUNCATE TABLE GAE_GROUP;
 
-delete from CHAT_ROOM where chat_index = 9
+delete from chat_content where chat_index = 47
+delete from CHAT_ROOM where chat_index = 47
 -- chat_room
 ALTER table GAE_MEMBER disable constraints mem_mail_pk cascade ;
 ALTER table GAE_MEMBER enable constraints mem_mail_pk;
@@ -135,3 +141,4 @@ select * from chat_content;
 
 
 select * from gae_group where gae_group='1' and mem_mail != 'gaemanda@naver.com';
+
