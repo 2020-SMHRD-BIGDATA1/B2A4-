@@ -7,6 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
 	rel="stylesheet">
 <script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="jquery-3.5.1.min.js"></script>
 <script src="Doc/js/jquery-3.5.1.min.js"></script>
 <link rel="shortcut icon" type="image/x-icon"
 	href="assets/img/gaelogo.ico">
@@ -41,7 +42,7 @@
 
 					<tr class="form-group">
 						<td class="joinTag">강아지 성별</td>
-						<td><select name="dog_gender">
+						<td><select name="dog_sex">
 								<option value="1">암컷</option>
 								<option value="0">수컷</option>
 						</select></td>
@@ -55,46 +56,46 @@
 					<tr class="form-group">
 						<td class="joinTag">강아지 견종</td>
 						<td><select name="dog_species">
-								<option value="골든 리트리버">골든 리트리버</option>
-								<option value="그레이하운드">그레이하운드</option>
-								<option value="뉴펀들랜드">뉴펀들랜드</option>
-								<option value="닥스훈트">닥스훈트</option>
-								<option value="도베르만">도베르만</option>
-								<option value="레브라도 리트리버">레브라도 리트리버</option>
-								<option value="말라뮤트">말라뮤트</option>
-								<option value="말티즈">말티즈</option>
-								<option value="믹스견">믹스견</option>
-								<option value="보더콜리">보더콜리</option>
-								<option value="불독">불독</option>
-								<option value="비글">비글</option>
-								<option value="비숑프리제">비숑프리제</option>
-								<option value="빠삐용">빠삐용</option>
-								<option value="샤페이">샤페이</option>
-								<option value="슈나우저">슈나우저</option>
-								<option value="스피츠">스피츠</option>
-								<option value="시바견">시바견</option>
-								<option value="시츄">시츄</option>
-								<option value="아메리칸 불리">아메리칸 불리</option>
-								<option value="요크셔테리어">요크셔테리어</option>
-								<option value="웰시코기">웰시코기</option>
-								<option value="진돗개">진돗개</option>
-								<option value="치와와">치와와</option>
-								<option value="코카스파니엘">코카스파니엘</option>
-								<option value="테리어">테리어</option>
-								<option value="퍼그">퍼그</option>
-								<option value="페키니즈">페키니즈</option>
-								<option value="포메라니안">포메라니안</option>
-								<option value="푸들(미니어쳐)">푸들(미니어쳐)</option>
-								<option value="푸들(스탠다드)">푸들(스탠다드)</option>
-								<option value="푸들(토이)">푸들(토이)</option>
-								<option value="프렌치 불독">프렌치 불독</option>
-								<option value="허스키">허스키</option>
-								<option value="기타">기타</option>
+								<option value="1">골든 리트리버</option>
+								<option value="2">그레이하운드</option>
+								<option value="3">뉴펀들랜드</option>
+								<option value="4">닥스훈트</option>
+								<option value="5">도베르만</option>
+								<option value="6">레브라도 리트리버</option>
+								<option value="7">말라뮤트</option>
+								<option value="8">말티즈</option>
+								<option value="9">믹스견</option>
+								<option value="10">보더콜리</option>
+								<option value="11">불독</option>
+								<option value="12">비글</option>
+								<option value="13">비숑프리제</option>
+								<option value="14">빠삐용</option>
+								<option value="15">샤페이</option>
+								<option value="16">슈나우저</option>
+								<option value="17">스피츠</option>
+								<option value="18">시바견</option>
+								<option value="19">시츄</option>
+								<option value="20">아메리칸 불리</option>
+								<option value="21">요크셔테리어</option>
+								<option value="22">웰시코기</option>
+								<option value="23">진돗개</option>
+								<option value="24">치와와</option>
+								<option value="25">코카스파니엘</option>
+								<option value="26">테리어</option>
+								<option value="27">퍼그</option>
+								<option value="28">페키니즈</option>
+								<option value="29">포메라니안</option>
+								<option value="30">푸들(미니어쳐)</option>
+								<option value="31">푸들(스탠다드)</option>
+								<option value="32">푸들(토이)</option>
+								<option value="33">프렌치 불독</option>
+								<option value="34">허스키</option>
+								<option value="35">기타</option>
 						</select></td>
 					</tr>
 					<tr class="form-group">
 						<td class="joinTag">강아지 중성화 여부</td>
-						<td><select name="dog_nue">
+						<td><select name="dog_cut">
 								<option value="1">했어요</option>
 								<option value="0">안했어요</option>
 						</select></td>
@@ -159,8 +160,8 @@
 					</tr>
 				</table>
 				<div class="button-group">
-					<button type="submit" class="btn-1" value="info">다음 강아지
-						성향분석 설문으로 이동</button>
+					<button type="submit" class="btn-1" value="info">최종
+						제출</button>
 				</div>
 			</form>
 		</div>
@@ -192,6 +193,8 @@
 			//obj.value = obj.value.replace(/[\a-zㄱ-ㅎㅏ-ㅣ가-힣]/g, '');
 			obj.value = obj.value.replace(/[\ㄱ-ㅎㅏ-ㅣ가-힣]/g, '');
 		}
+		
+
 	</script>
 </body>
 </html>

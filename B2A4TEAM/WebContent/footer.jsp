@@ -24,12 +24,12 @@
 						<div class="row align-items-center justify-content-between">
 							<div class="col-xl-7 col-lg-9 col-md-8">
 								<div class="wantToWork-caption wantToWork-caption2">
-									<h2>Do you want to know more about me?</h2>
+									<h2>Do you want to know more about GAEMANDA?</h2>
 								</div>
 							</div>
 							<div class="col-xl-2 col-lg-3 col-md-4">
-								<a href="#" class="btn white-btn f-right sm-left">Download
-									CV</a>
+								<!--  <a href="#" class="btn white-btn f-right sm-left">Download
+									CV</a>-->
 							</div>
 						</div>
 					</div>
@@ -69,8 +69,14 @@
 										<div class="form-box message-icon mb-25">
 											<textarea name="message" id="message" placeholder="Message"></textarea>
 										</div>
+
+										<script>
+											document.getElementById('send').onclick = function() {
+												alert('소중한 의견 감사합니다.');
+											};
+										</script>
 										<div class="submit-info">
-											<button class="submit-btn2" type="submit">SendMessage</button>
+											<button id="send" class="submit-btn2" type="submit">SendMessage</button>
 										</div>
 									</div>
 								</div>
@@ -103,13 +109,13 @@
 										document
 												.write(new Date().getFullYear());
 									</script>
-									All rights reserved | This template is made with <i
-										class="fa fa-heart" aria-hidden="true"></i> by <a
-										href="https://colorlib.com" target="_blank">Colorlib</a>
+									<i class="fa fa-heart" aria-hidden="true"></i> by <a
+										href="https://colorlib.com" target="_blank">B2A4</a>
 									<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 								</p>
 							</div>
 						</div>
+
 					</div>
 				</div>
 			</div>

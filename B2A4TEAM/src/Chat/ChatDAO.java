@@ -50,7 +50,7 @@ public class ChatDAO {
 
 		getConn();
 
-		String sql = "select * from chat_content where chat_index= 1 order by chat_time"; // 1번방 애들만 나옴
+		String sql = "select * from chat_content where chat_index= 47 order by chat_time desc"; // 1번방 애들만 나옴
 		try {
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
@@ -73,12 +73,12 @@ public class ChatDAO {
 		return list;
 	}
 
-	public int input(ChatDTO dto) {
+	public int input(ChatDTO dto) {// dto = writer, content
 
 		getConn();
 
 		try {
-			String sql = "insert into chat_content values(1,?,?,sysdate)";
+			String sql = "insert into chat_content values(47,?,?,sysdate)";
 			psmt = conn.prepareStatement(sql);
 
 			// psmt.setInt(1, dto.getChat_index());
@@ -92,32 +92,6 @@ public class ChatDAO {
 		}
 
 		return cnt;
-	}
-
-	public int chat_index(String mem_nick) {
-		int chat_index = 0;
-		getConn();
-
-		try {
-			String sql = "select chat_index from chat_room where chat_user1=? or chat_user2=?";
-			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, mem_nick);
-			psmt.setString(2, mem_nick);
-
-			rs = psmt.executeQuery();
-
-			while (rs.next()) {
-				chat_index = rs.getInt(1);
-
-			}
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close();
-		}
-
-		return chat_index;
 	}
 
 	public int makeRoom(String my_mail, String your_mail) {
@@ -147,24 +121,167 @@ public class ChatDAO {
 		getConn();
 
 		try {
-			String sql = "select chat_user1, chat_user2 from chat_room where chat_index=?";
+			String sql = "select * from chat_room where chat_index=?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1, chat_index);
 			rs = psmt.executeQuery();
-			
+
 			while (rs.next()) {
 
-				String user1 = rs.getString(1);
-				String user2 = rs.getString(2);
+				String user1 = rs.getString(2);
+				String user2 = rs.getString(3);
 
 				dto = new ChatroomDTO(user1, user2);
 			}
 		} catch (SQLException e) {
 
 			e.printStackTrace();
+		} finally {
+			close();
 		}
 
 		return dto;
 	};
+
+	public ChatDTO getChatlist() {
+		ChatDTO dto = null;
+
+		getConn();
+
+		String sql = "select * from chat_content where chat_index= 47 order by chat_time desc"; // 1번방 애들만 나옴
+		try {
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			if (rs.next()) {
+
+				String writer = rs.getString(2);
+				String content = rs.getString(3);
+				String date = rs.getString(4);
+
+				dto = new ChatDTO(writer, content, date);
+
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return dto;
+	}
+
+	public ArrayList<ChatDTO> selectReverse() { // 디비에 있는거 시간순서로 나오게 하기 selectAll 안되가지구 그냥 정렬순서만 바꾼 dao 하나 더
+															// 만듦
+		ArrayList<ChatDTO> list = new ArrayList<ChatDTO>();
+
+		getConn();
+
+		String sql = "select * from chat_content where chat_index= 47 order by chat_time"; // 1번방 애들만 나옴
+		try {
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			while (rs.next()) {
+
+				String writer = rs.getString(2);
+				String content = rs.getString(3);
+				String date = rs.getString(4);
+
+				ChatDTO dto = new ChatDTO(writer, content, date);
+				list.add(dto);
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return list;
+	}
+
+	public String otherNick(String mem_mail) {
+		String otherNick = null;
+
+		getConn();
+
+		try {
+			String sql = "select * from gae_member where mem_mail = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, mem_mail);
+
+			rs = psmt.executeQuery();
+
+			if (rs.next()) {
+				otherNick = rs.getString(4);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return otherNick;
+	};
+
+	public ArrayList<Integer> roomCnt(String mail) {
+
+		ArrayList<Integer> roomCnt = new ArrayList<Integer>();
+		getConn();
+
+		try {
+
+			String sql = "select * from chat_room where (chat_user1 = ? and chat_user2!=?) or (chat_user1 != ? and chat_user2=?)";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, mail);
+			psmt.setString(2, mail);
+			psmt.setString(3, mail);
+			psmt.setString(4, mail);
+			rs = psmt.executeQuery();
+
+			while (rs.next()) {
+				int chat_index = rs.getInt(1);
+				roomCnt.add(chat_index);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return roomCnt;
+	}
+
+	public ArrayList<String> chatRoom_list(String mail) {
+		ArrayList<String> chatRoom_list = new ArrayList<String>();
+		getConn();
+		try {
+			String sql = "select * from CHAT_ROOM  where (chat_user1 = ? and chat_user2!=?) or (chat_user1 != ? and chat_user2=?)";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, mail);
+			psmt.setString(2, mail);
+			psmt.setString(3, mail);
+			psmt.setString(4, mail);
+			rs = psmt.executeQuery();
+
+			while (rs.next()) {
+				String partner_mail = null;
+				String email1 = rs.getString(2);
+				String email2 = rs.getString(3);
+				if (email1.equals(mail) && !email2.equals(mail)) {
+					partner_mail = email2;
+				} else if (!email1.equals(mail) && email2.equals(mail)) {
+					partner_mail = email1;
+				}
+				// GaeDTO dto = new GaeDTO(email);
+				chatRoom_list.add(partner_mail);
+			}
+
+		} catch (SQLException e) {
+
+		} finally {
+			close();
+		}
+		return chatRoom_list;
+	}
 
 }

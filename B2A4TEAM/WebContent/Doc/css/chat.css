@@ -3,19 +3,21 @@
 * {
 	box-sizing: border-box;
 }
+
 @font-face {
 	src: url("../fonts/BMJUA_ttf.ttf");
 	font-family: "Jua";
 }
+
 body {
-	background-color: #abd9e9;
+	background-color: #3b3e49;
 	font-family: jua;
 }
 
 #container_chat {
 	width: 750px;
 	height: 800px;
-	background: #eff3f7;
+	background: #f7dc6a;
 	margin: 0 auto;
 	font-size: 0;
 	border-radius: 5px;
@@ -87,6 +89,10 @@ h2, h3 {
 	border-radius: 50%;
 	margin-left: 20px;
 	margin-right: 8px;
+	max-height: 60px;
+	max-width: 60px;
+	height: 60px;
+	width: 60px;
 }
 
 .aside li div {
@@ -96,7 +102,7 @@ h2, h3 {
 }
 
 .aside li h2 {
-	font-size: 14px;
+	font-size: 20px;
 	color: #fff;
 	font-weight: normal;
 	margin-bottom: 5px;
@@ -142,6 +148,8 @@ h2, h3 {
 
 .chatmain .chathead img:first-child {
 	border-radius: 50%;
+	max-width: 55px;
+	max-height: 55px
 }
 
 .chatmain .chathead img:last-child {
@@ -171,11 +179,12 @@ h2, h3 {
 	list-style-type: none;
 	overflow-y: scroll;
 	height: 535px;
-	border-top: 2px solid #fff;
-	border-bottom: 2px solid #fff;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
 }
 
 #chat1 li {
+	
 	padding: 10px 30px;
 }
 
@@ -195,7 +204,7 @@ h2, h3 {
 
 #chat1 .message1 {
 	padding: 20px;
-	color: #fff;
+	color: #black;
 	line-height: 25px;
 	max-width: 90%;
 	display: inline-block;
@@ -208,11 +217,11 @@ h2, h3 {
 }
 
 #chat1 .you .message1 {
-	background-color: #670000;
+	background-color: #FFEFAE;
 }
 
 #chat1 .me .message1 {
-	background-color: #670000;
+	background-color: #FFEFAE;
 }
 
 #chat1 .triangle {
@@ -243,14 +252,14 @@ h2, h3 {
 	display: block;
 	width: 100% !important;
 	height: 80px !important;
-	border-radius: 3px !important ;
+	border-radius: 3px !important;
 	padding: 20px !important;
 	font-size: 13px !important;
 	margin-bottom: 13px !important;
 }
 
 .chatmain #footer textarea::placeholder {
-	color: #ddd !important ;
+	color: #ddd !important;
 }
 
 .chatmain #footer img {
@@ -259,10 +268,10 @@ h2, h3 {
 }
 
 .chatmain #footer a {
-	text-decoration: none !important;  
+	text-decoration: none !important;
 	text-transform: uppercase !important;
 	font-weight: bold !important;
-	color: #6fbced !important;
+	color: black !important;
 	vertical-align: top !important;
 	margin-left: 333px !important;
 	margin-top: 5px !important;
@@ -270,10 +279,14 @@ h2, h3 {
 }
 
 #chat1 {
-	background-color: #670000;
+	background-color: #FFEFAE;
 }
 
 #chat1 li {
-	color: white;
+	color: black;
 	font-weight: bold;
+}
+
+::-webkit-scrollbar {
+	display: none;
 }

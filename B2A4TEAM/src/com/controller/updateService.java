@@ -11,39 +11,43 @@ import javax.servlet.http.HttpSession;
 import com.model.MemberDAO;
 import com.model.MemberDTO;
 
-@WebServlet("/JoinService")
-public class JoinService extends HttpServlet {
-	protected void service(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
+@WebServlet("/updateService")
+public class updateService extends HttpServlet {
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		request.setCharacterEncoding("UTF-8");
-
-		String name = request.getParameter("mem_name");
-		String mail = request.getParameter("mem_mail");
+		
+		HttpSession session = request.getSession();
+		MemberDTO info = (MemberDTO)session.getAttribute("info");
+		
+		
+		String mail = info.getMem_mail();
 		String pw = request.getParameter("mem_pw");
+		String name = request.getParameter("mem_name");
 		String nick = request.getParameter("mem_nick");
 		String gender = request.getParameter("mem_gender");
 		String birth = request.getParameter("mem_birth");
 		String tel = request.getParameter("mem_tel");
 		String addr = request.getParameter("mem_addr");
+		System.out.println(mail);
 
+		
 		MemberDAO dao = new MemberDAO();
 		MemberDTO dto = new MemberDTO(name, mail, pw, nick, gender, birth, tel, addr);
-		int cnt = dao.join(dto);
-			
+		int cnt = dao.update(dto); 
+		System.out.println(cnt);
+		
 		if (cnt > 0) {
-			System.out.println("회원가입 성공");
-			System.out.println(name);
+			System.out.println("회원정보 수정 성공");
 			
-			HttpSession session = request.getSession();
-			session.setAttribute("join_mail", mail);
-			// 설문조사 폼으로 이동
-			response.sendRedirect("infoSurvey.jsp");
+			// main.jsp로 이동
+			response.sendRedirect("index.jsp");
 		} else {
-			System.out.println("회원가입 실패");
-			// join.jsp로 이동
-			response.sendRedirect("joinForm.jsp");
+			System.out.println("회원정보 수정 실패");
+		
+	
 		}
+
 	}
 
 }

@@ -2439,12 +2439,28 @@ hr {
 
 
 
+
+
+
+
+
+
+
+
 :
 
 
 
 
+
+
+
+
  
+
+
+
+
 
 
 
@@ -2458,8 +2474,24 @@ translateY
 
 
 
+
+
+
+
+
+
+
+
 (-10
 px
+
+
+
+
+
+
+
+
 
 
 
@@ -2476,12 +2508,28 @@ transform
 
 
 
+
+
+
+
+
+
+
+
 :
 
 
 
 
+
+
+
+
  
+
+
+
+
 
 
 
@@ -2495,8 +2543,24 @@ translateY
 
 
 
+
+
+
+
+
+
+
+
 (-10
 px
+
+
+
+
+
+
+
+
 
 
 
@@ -2516,12 +2580,28 @@ px
 
 
 
+
+
+
+
+
+
+
+
 :
 
 
 
 
+
+
+
+
  
+
+
+
+
 
 
 
@@ -2535,8 +2615,24 @@ translateY
 
 
 
+
+
+
+
+
+
+
+
 (-20
 px
+
+
+
+
+
+
+
+
 
 
 
@@ -2553,12 +2649,28 @@ transform
 
 
 
+
+
+
+
+
+
+
+
 :
 
 
 
 
+
+
+
+
  
+
+
+
+
 
 
 
@@ -2572,8 +2684,24 @@ translateY
 
 
 
+
+
+
+
+
+
+
+
 (-20
 px
+
+
+
+
+
+
+
+
 
 
 
@@ -2729,12 +2857,28 @@ to {
 
 
 
+
+
+
+
+
+
+
+
 :
 
 
 
 
+
+
+
+
  
+
+
+
+
 
 
 
@@ -2748,8 +2892,24 @@ rotate
 
 
 
+
+
+
+
+
+
+
+
 (360
 deg
+
+
+
+
+
+
+
+
 
 
 
@@ -2766,7 +2926,19 @@ transform
 
 
 
+
+
+
+
+
+
+
+
 :
+
+
+
+
 
 
 
@@ -2776,7 +2948,19 @@ transform
 
 
 
+
+
+
+
 rotate
+
+
+
+
+
+
+
+
 
 
 
@@ -2793,8 +2977,24 @@ deg
 
 
 
+
+
+
+
+
+
+
+
 );
 -webkit-transition
+
+
+
+
+
+
+
+
 
 
 
@@ -2808,12 +3008,28 @@ deg
 
 
 
+
+
+
+
  
 
 
 
 
+
+
+
+
 .6s
+
+
+
+
+
+
+
+
 
 
 
@@ -2832,7 +3048,19 @@ deg
 
 
 
+
+
+
+
+
+
+
+
 :
+
+
+
+
 
 
 
@@ -2842,7 +3070,19 @@ deg
 
 
 
+
+
+
+
 .6s
+
+
+
+
+
+
+
+
 
 
 
@@ -2861,7 +3101,19 @@ transition
 
 
 
+
+
+
+
+
+
+
+
 :
+
+
+
+
 
 
 
@@ -2871,7 +3123,19 @@ transition
 
 
 
+
+
+
+
 .6s
+
+
+
+
+
+
+
+
 
 
 
@@ -2903,12 +3167,28 @@ keyframes zoom { 0% {
 
 
 
+
+
+
+
+
+
+
+
 :
 
 
 
 
+
+
+
+
  
+
+
+
+
 
 
 
@@ -2922,8 +3202,24 @@ rotate
 
 
 
+
+
+
+
+
+
+
+
 (360
 deg
+
+
+
+
+
+
+
+
 
 
 
@@ -2940,7 +3236,19 @@ transform
 
 
 
+
+
+
+
+
+
+
+
 :
+
+
+
+
 
 
 
@@ -2950,7 +3258,19 @@ transform
 
 
 
+
+
+
+
 rotate
+
+
+
+
+
+
+
+
 
 
 
@@ -2967,8 +3287,24 @@ deg
 
 
 
+
+
+
+
+
+
+
+
 );
 -webkit-transition
+
+
+
+
+
+
+
+
 
 
 
@@ -2982,12 +3318,28 @@ deg
 
 
 
+
+
+
+
  
 
 
 
 
+
+
+
+
 .6s
+
+
+
+
+
+
+
+
 
 
 
@@ -3006,7 +3358,19 @@ deg
 
 
 
+
+
+
+
+
+
+
+
 :
+
+
+
+
 
 
 
@@ -3016,7 +3380,19 @@ deg
 
 
 
+
+
+
+
 .6s
+
+
+
+
+
+
+
+
 
 
 
@@ -3035,7 +3411,19 @@ transition
 
 
 
+
+
+
+
+
+
+
+
 :
+
+
+
+
 
 
 
@@ -3045,7 +3433,19 @@ transition
 
 
 
+
+
+
+
 .6s
+
+
+
+
+
+
+
+
 
 
 
@@ -4010,12 +4410,19 @@ transition
 }
 
 /* line 76, C:/Users/HP/Desktop/jun-2020/283.Personal/assets/scss/_h1-hero.scss */
+.slider-area .hero__caption h2 {
+	font-size: 140px;
+}
+
 .slider-area .hero__caption h1 {
-	font-size: 280px;
+	font-size: 180px;
+	font-size: 180px;
 	font-weight: 300;
 	text-transform: uppercase;
 	color: #670000;
 	line-height: 1;
+	margin-top: 39px;
+	margin-top: 39px;
 	margin-bottom: 39px;
 	margin-bottom: 39px;
 }
@@ -4148,7 +4555,7 @@ transition
 .about-area {
 	background: #ffff;
 	position: relative;
-	margin-right: 100px;
+	margin-right: 0px;
 	position: relative;
 }
 
@@ -4186,8 +4593,13 @@ transition
 	content: "";
 	width: 100%;
 	height: 27%;
+	HEAD background: #FFEFAE;
+	HEAD right: 0px;
+	right: 0 px !important;
+	z-index: -1;
 	background: #FFEFAE;
-	right: -100px;
+	right: 0px;
+	right: 0 px !important;
 	z-index: -1;
 	top: 0;
 }
@@ -4224,7 +4636,7 @@ transition
 
 /* line 44, C:/Users/HP/Desktop/jun-2020/283.Personal/assets/scss/_about.scss */
 .about-area .about-caption p {
-	font-size: 16px;
+	font-size: 25px;
 	line-height: 1.6;
 	margin-bottom: 35px;
 	padding-right: 50px;
@@ -7503,8 +7915,6 @@ b, sup, sub, u, del {
 	padding-left: 30px;
 	line-height: 1.82em !important;
 }
-
-
 
 /* line 427, C:/Users/HP/Desktop/jun-2020/283.Personal/assets/scss/_elements.scss */
 .unordered-list li:before {

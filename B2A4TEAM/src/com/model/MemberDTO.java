@@ -32,6 +32,28 @@ public class MemberDTO {
 		this.mem_nick = mem_nick;
 	}
 
+	public MemberDTO(String mem_pw, String mem_name, String mem_nick, String mem_gender, String mem_birth, String mem_tel, String mem_addr) {
+		
+		this.mem_name = mem_name;
+		this.mem_pw = mem_pw;
+		this.mem_nick = mem_nick;
+		this.mem_gender = mem_gender;
+		this.mem_birth = mem_birth;
+		this.mem_tel = mem_tel;
+		this.mem_addr = mem_addr;
+	}
+	public MemberDTO(String mail) {
+		this.mem_mail=mail;
+
+	}
+
+	public MemberDTO(String mail, String pw, String mem_nick, String addr) {
+		this.mem_mail=mail;
+		this.mem_pw=pw;
+		this.mem_nick=mem_nick;
+		this.mem_addr=addr;
+	}
+
 	public String getMem_name() {
 		return mem_name;
 	}

@@ -63,10 +63,11 @@ public class MemberDAO {
 				String mail = rs.getString(2);
 				String pw = rs.getString(3);
 				String mem_nick = rs.getString(4);
-				info = new MemberDTO(mail, pw, mem_nick);
-				
+				String addr = rs.getString(8);
+				info = new MemberDTO(mail, pw, mem_nick, addr);
+
 				System.out.println("로그인 성공");
-			
+
 			} else {
 				System.out.println("로그인 실패");
 			}
@@ -77,7 +78,6 @@ public class MemberDAO {
 		}
 		return info;
 	}
-	
 
 	public int join(MemberDTO dto) {
 		int cnt = 0;
@@ -101,6 +101,64 @@ public class MemberDAO {
 			close();
 		}
 
+		return cnt;
+	}
+
+	public boolean idCheck(String id) {
+		boolean check = false;
+
+		getConnction();
+		try {
+			String sql = "select mem_mail from gae_member where mem_mail=?";
+			psmt = conn.prepareStatement(sql);
+
+			psmt.setString(1, id);
+
+			rs = psmt.executeQuery();
+
+			if (rs.next()) {
+				check = true;
+			} else {
+				check = false;
+			}
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return check;
+	}
+
+	public int update(MemberDTO dto) {
+		
+		getConnction();
+		int cnt = 0;
+		try {
+			// 비번 이름 닉네임 성별 생일 번호 주소
+
+			String sql = "update gae_member set mem_pw = ?, mem_name = ?, mem_nick = ?, mem_gender=?, mem_birth=? ,mem_tel = ?, mem_addr=? where mem_mail = ?";
+			psmt = conn.prepareStatement(sql);
+
+			psmt.setString(1, dto.getMem_pw());
+			psmt.setString(2, dto.getMem_name());
+			psmt.setString(3, dto.getMem_nick());
+			psmt.setString(4, dto.getMem_gender());
+			psmt.setString(5, dto.getMem_birth());
+			psmt.setString(6, dto.getMem_tel());
+			psmt.setString(7, dto.getMem_addr());
+			psmt.setString(8, dto.getMem_mail());
+			
+			System.out.println( dto.getMem_mail()+"dao안에서의 mail");
+
+			cnt = psmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
 		return cnt;
 	}
 
