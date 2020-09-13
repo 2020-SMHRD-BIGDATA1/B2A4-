@@ -338,15 +338,15 @@
 						contentType : false, // 비동기 파일 업로드시 꼭 설정해줘야 하는 속성
 						type : 'POST',
 						success : function(res) {
-							$('#chat').empty();
+							$('#chat1').empty();
 							for (var i = 0; i < res.length; i++) {
 								$('#chat').prepend(
 										'<li>' + res[i].writer + " : "
 												+ res[i].content
 												+ res[i].date.substring(0, 16)
 												+ "</li>");
-								$('#chat')
-										.scrollTop($('#chat')[0].scrollHeight);
+								$('#chat1')
+										.scrollTop($('#chat1')[0].scrollHeight);
 							}
 						},
 						error : function(xhr) {

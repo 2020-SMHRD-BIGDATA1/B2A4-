@@ -179,7 +179,7 @@ h2, h3 {
 	padding: 10px 30px;
 }
 
-#chat1 h2, #chat h3 {
+#chat1 h2, #chat1 h3 {
 	display: inline-block;
 	font-size: 13px;
 	font-weight: normal;
